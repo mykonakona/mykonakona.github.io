@@ -2,14 +2,16 @@ language: python
 python: :- '2.7'
 branches:
   only:
-  - source
+    - source
 install:
-- sudo pip install pelican jinja2 markdown ghp-import
+    - pip install pelican 
+    - pip install jinja2 
+    - pip install markdown 
+    - pip install ghp-import
 script:
-- make publish
+    - make publish
 deploy:
   provider: pages
-  repo: mykonakona/mykonakona.github.io
   target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
