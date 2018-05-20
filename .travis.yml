@@ -6,15 +6,13 @@ branches:
 install:
 - sudo pip install pelican jinja2 markdown ghp-import
 script:
-- git clone --depth 1 https://$GH_TOKEN@github.com/mykonakona/mykonakona.github.io output
 - make publish
-after success:
-- cd output
-- git config --global user.email "mykonakona@foxmail.com"
-- git config --global user.name "mykonakona"
-- git add -A .
-- git commit - "Update from travis"
-- git push --quiet "https://${GH_TOKEN}@github.com/mykonakona/mykonakona.github.io.git" master:master
-env:
-  global:
-    secure: i/crcxBEmwLwiTKlVDmDBO9LL/frX6jt4knMzU9i/PBHZPlpLChdAVlT8nkdrP0nrEErVP6nzht2RBg27r4khq/Vel0trwY9JcWmqj+mojBahAAf1LTpNfor0UfWLtaucagV5zcRotq/4UiuxEYNPAcIWbSmtCBQ9rthp5q8dn8CBPOLrFmiOl0q327+grbgV42PM8YXFrLZ0DXdFCsPhmcQNmZKUjQuvQxnCrwLJypczVz/7yT3yRibKq9Pg+hVlH4xE9/duWXkrPbw/TGV6sH8/JZg5bJNoIUp7zhS5+N+jvpjPWTo2JXDlV2hVsYZYD+TxJo2ZX5e0IXqoJfuq9hNR4F7TzyQ1KCRWSj1C2GJ8QR3PBMjjWiTFhh94I5pUMtcrUbsQy1tyqT4DVYO7/Pir/Tyyv2OBM4b0wbgYVc+R8+dJprk9hcIZkbHLHqCVra2h6W8Z4d/X0JD1LLLh4cktKBD2xVvbIPSbmyTHpP+M4XjZc5cGDEbqiQmyip7wa7ikL1VCeyM51kBDFGu1ckvfVwF3Hz00BKJDMEmzuZDiFD0hc+ovXMTrDo5qmm6l/7cHMJg0jVTkJAbbQkqmh5zQnTQM3qrGvVkPzXqMh/oN2E4f/nOA6CW8aEMM/jxfZtz6iDFBc4jDjX9uGh75NozgqYVC3TWYTAWHoDD/9s=
+deploy:
+  provider: pages
+  repo: mykonakona/mykonakona.github.io
+  target_branch: master
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  local_dir: output
+  on:
+    branch: source
