@@ -10,6 +10,8 @@ script:
 - make publish
 after success:
 - cd output
+- git config --global user.email "mykonakona@foxmail.com"
+- git config --global user.name "mykonakona"
 - git add -A .
 - git commit - "Update from travis"
 - git push --quiet
