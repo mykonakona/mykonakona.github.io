@@ -13,6 +13,8 @@ deploy:
   target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
+  name: $GIT_NAME
+  email: $GIT_EMAIL
   local_dir: output
   on:
     branch: source
