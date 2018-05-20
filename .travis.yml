@@ -6,6 +6,7 @@ branches:
 install:
 - sudo pip install pelican jinja2 markdown ghp-import
 script:
+- git clone --depth 1 https://$GH_TOKEN@github.com/mykonakona/mykonakona.github.io output
 - make publish
 after success:
 - cd output
