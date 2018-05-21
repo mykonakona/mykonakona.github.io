@@ -35,7 +35,8 @@ DEFAULT_PAGINATION = 5
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-THEME = "/home/mint64/virtualenvs/pelican/lib/python3.5/site-packages/pelican/themes/elegant"
+#THEME = "/home/mint64/virtualenvs/pelican/lib/python3.5/site-packages/pelican/themes/elegant"
+THEME = "theme"
 #THEME = bulrush.PATH
 #JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 #JINJA_FILTERS = bulrush.FILTERS
