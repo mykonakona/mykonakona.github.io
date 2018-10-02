@@ -1,11 +1,11 @@
 Title: 一个小脚本背后的shell script细节
 Date: 2018-09-28 14:30
-Modified: 2018-09-28 14:30
+Modified: 2018-10-02 15:37
 Category: liunx
 Tags: liunx, shell
 Slug: a-little-learning-of-shell-script
 Authors: mykonakona
-Summary: Short version for index and feeds
+Summary: 事情的起因是因为公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。然而实际运行时发现的问题，让我意识到自己对shell script的认识仍停留在一个一知半解的阶段。
 
 ## 0. 引子
 事情的起因是因为公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。
@@ -15,7 +15,6 @@ Summary: Short version for index and feeds
 [![image.png](https://i.postimg.cc/W1ZrT2YR/image.png)](https://postimg.cc/mPbhSGGV)
 
 查看元素发现表情的url还是很有规律的，不用上正则了。在shell下写脚本就够用了，很快就写好了一个：
-
 ```
 !/bin/sh
 if [ ! -d "./bdpao/" ]
@@ -39,24 +38,19 @@ done
 zip -q -r bdpao.zip ./bdpao
 ```
 
-
 然而实际运行时发现的问题，让我意识到自己对shell script的认识仍停留在一个一知半解的阶段。
 
 ## 1. 不同的循环风格
-
 关于shell中常用的for循环的风格，根据[Linux shell 用for循环100次的方法][1]介绍的内容主要有C风格、Python风格（使用in）及使用seq。
 
 ### 1.1. C风格
-
 我在编写脚本时，是先用C风格的for循环实现的，本来以为直接sh bdpao.sh就可以跑，但是实际运行时报了一个这样的错：
-
 ```
 bdpao.sh: 8: bdpao.sh: Syntax error: Bad for loop variable
 ```
 
 stackoverflow里有人也提了类似的问题[syntax-error-bad-for-loop-variable][2]，这里的解答说的比较清楚：
-
-The for (( expr ; expr ; expr )) syntax is not available in sh.
++ The for (( expr ; expr ; expr )) syntax is not available in sh.
 
 即是说C风格在sh是不可用的。
 
@@ -64,7 +58,6 @@ The for (( expr ; expr ; expr )) syntax is not available in sh.
 
 ### 1.2. Python风格
 继续试了试Python风格，sh bdpao.sh后报了和之前不一样的错：
-
 ```
 bdpao.sh: 11: [: Illegal number: {1..33}
 ```
@@ -73,13 +66,11 @@ bdpao.sh: 11: [: Illegal number: {1..33}
 
 ### 1.3. 使用seq
 那么seq是不是也是一样呢？我把脚本修改成使用seq的形式，仍然报错了：
-
 ```
 bdpao.sh: 12: [: Illegal number: seq 1 33
 ```
 
 不仅如此，bash bdpao.sh时，继续报错：
-
 ```
 ./bdpao.sh: line 12: [: seq 1 33: integer expression expected
 ```
@@ -89,10 +80,10 @@ bdpao.sh: 12: [: Illegal number: seq 1 33
 原来这里我犯了一个最大的错误，但也是小白最大的陷阱，就是是'与`的区别，我在一知半解下把反引号当成单引号！但这两者意义完全不同。
 
 据[(())与()还有${}差在哪？][3]在bash shell中, \$()与\`\`(反引号)都是用来做命令替换(command substitution)的。所谓的命令替换是通过完成\`\`或者$()里面的 命令，将其结果替换出来，再重组命令行。例如：
-
 ```
 $ echo the last sunday is $(date -d "last sunday" +%Y-%m-%d)
 ```
+
 将'改正为`后，用sh命令和bash命令都可以运行。
 
 ## 2. sh，./，还是bash？
@@ -101,7 +92,6 @@ $ echo the last sunday is $(date -d "last sunday" +%Y-%m-%d)
 [what-is-the-purpose-of-the-sh-command][4]中有朋友解答了这一疑问：使用sh命令的目的是通过这一命令来指定运行环境。这种C风格、Python风格的for循环可以在shell下直接使用的原因是，大部分系统默认使用的shell是/bin/bash，这一点可以通过[查看当前使用的shell][5]来验证。
 
 通过`echo $SHELL`可以发现系统默认的shell是/bin/bash，通过`echo $$`查当前shell的进程号，结果如下：
-
 ```
 mint64@mint64-virtual-machine ~/Documents $ echo $$
 2265
@@ -112,15 +102,14 @@ mint64    44981   2265  0 15:56 pts/6    00:00:00 grep --color=auto 2265
 ```
 
 当前系统使用的也确实是bash，这种通过查shell进程号确认当前使用shell的操作可以通过grep与awk的组合来做：
-
 ```
 ps | grep $$ | awk '{print $4}'
 ```
+
 ### 2.1. 三种情况
 那么我们究竟应该如何选择shell脚本的执行命令呢？据[difference-between-and-sh-in-unix][6]的解答，使用sh file格式执行shell script时会新建一个shell进程，使用. file格式时是在当前的shell进程中执行shell脚本文件，而使用./file则是在当前目录下执行文件。
 
 解答中还很贴心的举例说明了这三种情况，如果有一个名为test.sh的shell脚本文件，其内容为：
-
 ```
 #!/bin/sh
 
