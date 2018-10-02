@@ -1,8 +1,8 @@
 Title: 一个小脚本背后的shell script细节
 Date: 2018-09-28 14:30
 Modified: 2018-10-02 15:37
-Category: liunx
-Tags: liunx, shell
+Category: Liunx
+Tags: Liunx, Shell
 Slug: a-little-learning-of-shell-script
 Authors: mykonakona
 Summary: 事情的起因是因为公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。然而实际运行时发现的问题，让我意识到自己对shell script的认识仍停留在一个一知半解的阶段。
