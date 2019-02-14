@@ -16,7 +16,7 @@ Summary: 事情的起因是因为公司目前在用的即时通讯软件里可�
 
 查看元素发现表情的url还是很有规律的，不用上正则了。在shell下写脚本就够用了，很快就写好了一个：
 ```
-!/bin/sh
+#!/bin/sh
 if [ ! -d "./bdpao/" ]
 then
    mkdir bdpao
