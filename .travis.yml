@@ -10,7 +10,7 @@ install:
     - pip install markdown 
     - pip install ghp-import
 script:
-    - git clone --depth 1 https://github.com/mykonakona/pelican-elegant theme
+    - git clone --depth 1 https://github.com/mykonakona/elegant theme
     - make publish
 deploy:
   provider: pages
