@@ -1,3 +1,12 @@
+Title: 一个小脚本背后的shell script细节
+Date: 2019-02-14 16:05
+Modified: 2019-02-14 16:05
+Category: Windows
+Tags: Windows, Powershell
+Slug: a-powershell-script-to-telnet-amount-of-remote-ports
+Authors: mykonakona
+Summary: 这篇16年左右写的，先占个坑，后面再调格式8。
+
 ##前言
 这篇16年左右写的，先占个坑，后面再调格式8。
 
