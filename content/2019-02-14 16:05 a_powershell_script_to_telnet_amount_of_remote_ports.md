@@ -1,4 +1,4 @@
-Title: Powershell批量Telnet端口脚本
+Title: 批量telnet端口的powershell脚本
 Date: 2019-02-14 16:05
 Modified: 2019-02-14 16:05
 Category: Windows
