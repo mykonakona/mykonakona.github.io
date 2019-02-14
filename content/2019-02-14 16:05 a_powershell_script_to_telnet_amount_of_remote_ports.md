@@ -2,7 +2,7 @@ Title: 批量telnet端口的powershell脚本
 Date: 2019-02-14 16:05
 Modified: 2019-02-14 16:05
 Category: Windows
-Tags: Windows, Powershell
+Tags: Windows, Powershell, Network
 Slug: a-powershell-script-to-telnet-amount-of-remote-ports
 Authors: mykonakona
 Summary: 这篇16年左右写的，先占个坑，后面再调格式8。
