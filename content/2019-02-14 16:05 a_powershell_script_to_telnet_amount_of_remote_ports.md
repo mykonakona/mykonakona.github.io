@@ -1,4 +1,4 @@
-Title: 一个小脚本背后的shell script细节
+Title: Powershell批量Telnet端口脚本
 Date: 2019-02-14 16:05
 Modified: 2019-02-14 16:05
 Category: Windows
