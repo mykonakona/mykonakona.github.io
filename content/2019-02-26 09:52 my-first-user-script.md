@@ -19,21 +19,22 @@ Summary: 很羞耻……
 
 于是开始找一些用户脚本编写的教程，打算自己写一个只做跳转不干其他事情的脚本。但在实际编码时我发现网上关于用户脚本编写与调试的内容都太简陋了。一些所谓的教程连如何调试用户脚本讲不清楚。有关调试基本写的都是什么“调出控制台”之类的正确的废话。就我自己而言，有些场景可能我会打日志，但多数时候我还是希望能够打断点调试的。所以我开一个坑记录我自己在编写用户脚本时遇到的一些问题，希望能给同样没什么基础却又想写一个属于自己的脚本的朋友一点点帮助。
 
-1. 区别与普通的js文件，用户脚本的文件名是.user.js。
+1. 区别于普通的js文件，用户脚本文件的后缀名是.user.js。
 
-2. 只要@namespace不变，@name是可以随意修改的。但如果用户脚本在更新版本的同时修改了@namespace，用户将因为@namespace修改的缘故无法升级到该用户脚本的最新版本。只能重新安装最新版本的脚本。所以对于开发者来说@namespace的修改还需要慎重。这一点在Greasyfork关于脚本元属性值[3]的站点帮助里也有提及。
+2. 只要@namespace不变，@name是可以随意修改的。但如果用户脚本在更新版本的同时修改了@namespace，用户将因为@namespace修改的缘故无法升级到该用户脚本的最新版本。只能重新安装最新版本的脚本。所以对于开发者来说@namespace的修改还需要慎重。这一点在Greasyfork关于脚本元属性值[3]的站点帮助里也有提及:
 
-### “@namespace 与 @name 这两个属性被作为脚本的唯一标识符，用户脚本管理器根据它们来判断一个脚本是否已安装。Sleazy Fork 也需要这些属性，若用户在更新脚本时改变了两者中的任意一项，将发出警告。”
+“@namespace 与 @name 这两个属性被作为脚本的唯一标识符，用户脚本管理器根据它们来判断一个脚本是否已安装。Sleazy Fork 也需要这些属性，若用户在更新脚本时改变了两者中的任意一项，将发出警告。”
 
 3. 一般来说@match就可以匹配你希望脚本生效的网址，但对JavLib这种有备用地址且经常会变的网站，可以用@include与正则来匹配，前提是备用地址有一定规律（比如\w\d\d\w.com的这种组合）。
 
-4. FF下用户脚本的断点调试可以通过安装附加组件Omnibbug达成。
+4. FF（我使用的版本是65.0.1）下安装附加组件[Omnibug][4]后就可以对用户脚本进行断点调试。
 
-5. 以[我的第一个用户脚本][4]为例，功能其实有点类似searchEngineJump，但由于这是一个adult脚本，所以是在Sleazyfork发布而不是Greasyfork发布，因此需要勾选Adult Content选项。
+5. 以[我的第一个用户脚本][5]为例，功能其实有点类似searchEngineJump，但由于这是一个adult脚本，所以是在Sleazyfork发布而不是Greasyfork发布，因此需要勾选Adult Content选项。
 
 未完待续……
 
 [1]: https://greasyfork.org/zh-CN
 [2]: https://bbs.saraba1st.com/2b/forum.php?mod=viewthread&tid=1810856
 [3]: https://greasyfork.org/zh-CN/help/meta-keys
-[4]: https://sleazyfork.org/zh-CN/scripts/377603）
+[4]: https://addons.mozilla.org/zh-CN/firefox/addon/omnibug/
+[5]: https://sleazyfork.org/zh-CN/scripts/377603）
