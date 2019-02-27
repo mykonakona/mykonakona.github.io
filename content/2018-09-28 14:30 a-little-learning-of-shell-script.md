@@ -1,16 +1,16 @@
 ---
-Title: 一个小需求背后的shell script细节
+Title: [Linux]一个小需求背后的shell script细节
 Date: 2018-09-28 14:30
 Modified: 2018-10-02 15:37
 Category: Linux
 Tags: Linux, Shell
-Slug: a-little-learning-of-shell-script
+Slug: details-of-shell-script-behind-a-simple-requirement
 Authors: mykonakona
-Summary: 事情的起因是因为公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。然而实际运行时发现的问题，让我意识到自己对shell script的认识仍停留在一个一知半解的阶段。
+Summary: 想导一份百度的泡泡表情到公司的IM里。写脚本时发现了一些以前不怎么在意的shell script方面的问题。
 ---
 
 ## 0. 引子
-事情的起因是因为公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。
+公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。
 
 看起来这玩意可以下载的地方还挺多的，但实际下载完发现下载站上的大小都偏大，于是就想是不是直接从百度贴吧里批量下载。
 
