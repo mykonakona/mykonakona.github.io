@@ -1,9 +1,9 @@
 ---
-Title: 我的第一个用户脚本
+Title: [UserScript]我的第一个用户脚本
 Date: 2019-02-26 09:52
 Modified: 2019-02-26 19:52
-Category: User Scripts
-Tags: User Scripts
+Category: UserScript
+Tags: UserScript
 Slug: my-first-user-script
 Authors: mykonakona
 Summary: 编写用户脚本时碰到的一些坑。
