@@ -1,5 +1,5 @@
 ---
-Title: [Powershell]批量telnet端口完成网络打通测试
+Title: [Powershell]批量telnet端口完成网络打通验证
 Date: 2019-02-14 16:05
 Modified: 2019-02-14 16:05
 Category: Windows
