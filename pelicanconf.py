@@ -13,7 +13,7 @@ DISQUS_SITENAME = "mykonakona's weblog"
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = u'en'
 
 # @see http://docs.getpelican.com/en/3.5.0/settings.html#url-settings
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
@@ -39,7 +39,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = Flase
 
 #THEME = "/home/mint64/virtualenvs/pelican/lib/python3.5/site-packages/pelican/themes/elegant"
 THEME = "theme"
