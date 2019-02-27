@@ -9,7 +9,7 @@ SITEURL = 'https://mykonakona.github.io/'
 
 PATH = 'content'
 
-DISQUS_SITENAME = "mykonakona's weblog"
+DISQUS_SITENAME = "mykonakonas-weblog"
 
 TIMEZONE = 'Asia/Shanghai'
 
