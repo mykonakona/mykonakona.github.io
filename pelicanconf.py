@@ -11,7 +11,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'zh'
+DEFAULT_LANG = 'en'
 
 # @see http://docs.getpelican.com/en/3.5.0/settings.html#url-settings
 ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
