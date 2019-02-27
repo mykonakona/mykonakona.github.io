@@ -1,5 +1,5 @@
 ---
-Title: 一个小脚本背后的shell script细节
+Title: 一个小需求背后的shell script细节
 Date: 2018-09-28 14:30
 Modified: 2018-10-02 15:37
 Category: Linux
