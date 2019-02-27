@@ -32,7 +32,7 @@ Summary: 编写用户脚本时碰到的一些坑。
 
 5. 以[我的第一个用户脚本][5]为例，功能其实有点类似searchEngineJump，但由于这是一个adult脚本，所以是在[Sleazyfork][6]发布而不是Greasyfork发布，同时发布时需要勾选Adult Content选项。
 
-6. 未完待续……
+6. 待后续补充……
 
 [1]: https://greasyfork.org/zh-CN
 [2]: https://bbs.saraba1st.com/2b/forum.php?mod=viewthread&tid=1810856
