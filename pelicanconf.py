@@ -9,6 +9,8 @@ SITEURL = ''
 
 PATH = 'content'
 
+DISQUS_SITENAME = "mykonakona's weblog"
+
 TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
