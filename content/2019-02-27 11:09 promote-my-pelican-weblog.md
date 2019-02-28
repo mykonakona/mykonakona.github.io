@@ -62,5 +62,7 @@ AUTHOR_FEED_RSS = None
 
 先把`DEFAULT_PAGINATION`改成了10。后面文章有11篇时再看看是不是还会发生这个问题……
 
+## 20190228
+
 [1]: https://github.com/getpelican/pelican/issues/1419
 [2]: https://github.com/getpelican/pelican/issues/1221
