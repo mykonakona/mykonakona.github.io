@@ -63,6 +63,14 @@ AUTHOR_FEED_RSS = None
 先把`DEFAULT_PAGINATION`改成了10。后面文章有11篇时再看看是不是还会发生这个问题……
 
 ## 20190228
+给博客加了disqus，但过程及其曲折。先说正确的方法：去注册disqus，然后在`pelicanconf.py`里把`DISQUS-SITENAME = "xxx"`加进去，同时需要配置的还有:
+```
+# 以https或http开头，io后面不带/，具体可以看pelican的最新文档
+SITEURL = 'https://xxx.github.io'
+# 这项在publishconf.py里也要设成False
+RELATIVE_URLS = False
+```
+这时重新`make html`后再发布就可以看效果了。
 
 [1]: https://github.com/getpelican/pelican/issues/1419
 [2]: https://github.com/getpelican/pelican/issues/1221
