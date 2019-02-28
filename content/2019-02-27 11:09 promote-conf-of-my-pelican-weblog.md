@@ -1,12 +1,12 @@
 ---
-Title: [Pelican]博客优化日志
+Title: [Pelican]优化我的Pelican博客配置
 Date: 2019-02-27 11:09
-Modified: 2019-02-27 11:09
+Modified: 2019-02-28 16:42
 Category: Pelican
 Tags: Pelican
-Slug: promote-my-pelican-weblog
+Slug: promote-conf-of-my-pelican-weblog
 Authors: mykonakona
-Summary: 优化我的Pelican博客。
+Summary: 优化我的Pelican博客配置。
 ---
 
 ## 20190227
@@ -24,8 +24,7 @@ ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 ```
 
 以这篇文章为例，在发布后你可以mykonakona.github.io的master分支下的`2019/02/27/fix-bugs-of-my-pelican-weblog`目录找到渲染后的页面（index.html)，它的url为:
-https://mykonakona.github.io/2019/02/27/fix-bugs-of-my-pelican-weblog/
-和设置也可以对应起来。
+https://mykonakona.github.io/2019/02/27/fix-bugs-of-my-pelican-weblog/，和设置也可以对应起来。
 
 ###2.构建时常看见Travis CI的job log有下面的WARNING信息：
 
@@ -50,9 +49,9 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 ```
 
-这时候回忆起来基本上都是默认，没做什么特别修改，那为啥还有这个提示出来。
+这时候回忆起来基本上都是默认，没做什么特别修改，十分困惑为什么有这个提示出来。
 
-仔细查了查，发现其实publishconf.py是继承自pelicanconf.py（这点还是看到一个[issue][1]后才注意到的，捂脸），publishconf.py里关于FEED的选项也改成None就不会弹出提示了。（这点也提醒读者在做这类静态博客的gernerater选型时还是要关注一下语言，如果熟悉js用hexo可能就好很多，不会像我这样浪费时间找问题。）
+仔细查了查，发现其实publishconf.py是继承自pelicanconf.py（这点还是看到一个[issue][1]后才注意到的，捂脸），publishconf.py里关于FEED的选项也改成None就不会弹出提示了，但后面还是考虑要把订阅加上的。（这点也提醒大家在做这类静态博客的gernerater选型时还是要关注一下语言，如果熟悉js用hexo可能就好很多，可以节省很多时间。）
 
 最后一条似乎是配置里的`Default_Lang`没有`zh`，就改回`en`了，懒。
 
@@ -61,16 +60,6 @@ AUTHOR_FEED_RSS = None
 **临时解决**：其实这应该不算什么问题，因为我看这情况在其他人的pelican博客里也有出现。这两对文件内容应该是完全一样的，不会影响访问。但这时候就又有点强迫症发作，找了找居然真有人提了[issue][2]上去，里面提到用默认主题就没事。猜测可能是主题不支持pelicanconf.py里设置的`DEFAULT_PAGINATION`的值太小。我之前设的值是5，然后到了第6篇文章的时候就会生成一个额外的2.html。
 
 先把`DEFAULT_PAGINATION`改成了10。后面文章有11篇时再看看是不是还会发生这个问题……
-
-## 20190228
-给博客加了disqus，但过程及其曲折。先说正确的方法：去注册disqus，然后在`pelicanconf.py`里把`DISQUS-SITENAME = "xxx"`加进去，同时需要配置的还有:
-```
-# 以https或http开头，io后面不带/，具体可以看pelican的最新文档
-SITEURL = 'https://xxx.github.io'
-# 这项在publishconf.py里也要设成False
-RELATIVE_URLS = False
-```
-这时重新`make html`后再发布就可以看效果了。
 
 [1]: https://github.com/getpelican/pelican/issues/1419
 [2]: https://github.com/getpelican/pelican/issues/1221
