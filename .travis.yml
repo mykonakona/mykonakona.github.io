@@ -10,7 +10,7 @@ install:
     - pip install markdown 
     - pip install ghp-import
 script:
-    - git clone --depth 1 https://github.com/mykonakona/elegant theme
+    - git clone --depth 1 https://github.com/mykonakona/blue-penguin theme
     - make html
     - make publish
 deploy:
