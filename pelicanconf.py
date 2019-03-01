@@ -61,8 +61,10 @@ DISPLAY_HOME   = True
 DISPLAY_MENU   = True
 
 # provided as examples, they make ‘clean’ urls. used by MENU_INTERNAL_PAGES.
-TAGS_URL           = 'tags'
-TAGS_SAVE_AS       = 'tags/index.html'
+ABOUT_URL           = 'ABOUT'
+ABOUT_SAVE_AS       = 'about/index.html'
+#TAGS_URL           = 'tags'
+#TAGS_SAVE_AS       = 'tags/index.html'
 #AUTHORS_URL        = 'authors'
 #AUTHORS_SAVE_AS    = 'authors/index.html'
 CATEGORIES_URL     = 'categories'
@@ -72,7 +74,8 @@ ARCHIVES_SAVE_AS   = 'archives/index.html'
 
 # use those if you want pelican standard pages to appear in your menu
 MENU_INTERNAL_PAGES = (
-    ('Tags', TAGS_URL, TAGS_SAVE_AS),
+    ('About', ABOUT_URL, ABOUT_SAVE_AS),
+    #('Tags', TAGS_URL, TAGS_SAVE_AS),
     #('Authors', AUTHORS_URL, AUTHORS_SAVE_AS),
     ('Categories', CATEGORIES_URL, CATEGORIES_SAVE_AS),
     ('Archives', ARCHIVES_URL, ARCHIVES_SAVE_AS),
