@@ -6,7 +6,7 @@ Category: Windows
 Tags: Windows, Powershell, Network
 Slug: a-powershell-script-to-telnet-amount-of-remote-ports
 Authors: mykonakona
-Summary: 这篇16年左右写的，先占个坑，后面再调格式8。
+Summary: 这篇16年左右写的，先占个坑，有空再修改……
 ---
 
 ##前言
