@@ -55,9 +55,7 @@ AUTHOR_FEED_RSS = None
 
 ###3.自动构建完之后，master分支里除了一个index.html还会有一个index2.html，author目录下除了一个mykonakona.html外还会有一个mykonakona2.html。
 
-**临时解决**：其实这应该不算什么问题，因为我看这情况在其他人的pelican博客里也有出现。这两对文件内容应该是完全一样的，不会影响访问。但这时候就又有点强迫症发作，找了找居然真有人提了[issue][2]上去，里面提到用默认主题就没事。猜测可能是主题不支持pelicanconf.py里设置的`DEFAULT_PAGINATION`的值太小。我之前设的值是5，然后到了第6篇文章的时候就会生成一个额外的2.html。
-
-先把`DEFAULT_PAGINATION`改成了10。后面文章有11篇时再看看是不是还会发生这个问题……
+**已解决**：其实这不算问题，因为pelican默认就是这样设置的（见[using-pagination-patterns][2]），比如设置的`DEFAULT_PAGINATION`设的值是5，然后到了第6篇文章的时候就会在index.html之外再生成一个index2.html。所以如果文章比较多又不希望仓库里有太多这种类型的html（这是什么奇怪需求？？？），可以把`DEFAULT_PAGINATION`的调小一点，或者参考[using-pagination-patterns][2]设置`PAGINATION_PATTERNS`。
 
 [1]: https://github.com/getpelican/pelican/issues/1419
-[2]: https://github.com/getpelican/pelican/issues/1221
+[2]: https://docs.getpelican.com/en/stable/settings.html#using-pagination-patterns
