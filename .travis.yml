@@ -10,7 +10,7 @@ install:
 script:
     - git clone --depth 1 https://github.com/mykonakona/pelican-plugins plugins
     - git clone --depth 1 https://github.com/mykonakona/elegant theme
-    - git clone --depth 1 https://$GH_TOKEN@github.com/mykonakona/mykonakon.github.io --branch master output
+    - git clone --depth 1 https://github.com/mykonakona/mykonakon.github.io --branch master output
     - env SITEURL="mykonakona.github.io" make publish
 deploy:
   provider: pages
