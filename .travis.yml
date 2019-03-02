@@ -8,7 +8,6 @@ install:
     - pip install pelican 
     - pip install jinja2 markdown ghp-import beautifulsoup4
 script:
-    - mkdir output
     - git clone --depth 1 https://github.com/mykonakona/pelican-plugins plugins
     - git clone --depth 1 https://github.com/mykonakona/elegant theme
     - env SITEURL="mykonakona.github.io" make publish
