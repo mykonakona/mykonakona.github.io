@@ -12,66 +12,95 @@ Summary: 记录一下怎么用jhao104/proxy_pool
 ## 环境：
 LinuxMint_x64_xfce
 
-##准备工作：
+## 准备工作：
 
-### [安装git（Debian/Ubuntu）][1]
+[安装git（Debian/Ubuntu）][1]
 ```
-#For the latest stable version for your release of Debian/Ubuntu
+For the latest stable version for your release of Debian/Ubuntu
 $ apt-get install git
-#For Ubuntu, this PPA provides the latest stable upstream Git version
+
+For Ubuntu, this PPA provides the latest stable upstream Git version
 $ add-apt-repository ppa:git-core/ppa # apt update; apt install git
 ```
 
-###(可选）安装vim
+(可选）安装vim
 ```
 $ sudo apt-get install vim
 ```
 
-###安装pip(Debian/Ubuntu)
+[安装pip(Debian/Ubuntu)][2]
 ```
-#Python 2:
+Python 2:
 $ sudo apt install python-pip
 
-#Python 3:
+Python 3:
 $ sudo apt install python3-venv python3-pip
 ```
 
-###安装virtualenv（Python3版本）
+安装virtualenv（Python3版本）
 ```
-$pip3 install virtualenv
-```
-
-###Creating virtual environments（Python3版本）
-```
-#Python3:
-python3 -m venv /path/to/new/virtual/environment
+$ pip3 install virtualenv
 ```
 
-###安装gcc（用于后续SSDB的编译）
+[Creating virtual environments（Python3版本）][3]
+```
+Python3:
+$ python3 -m venv /path/to/new/virtual/environment
+```
+
+安装gcc（用于后续SSDB的编译）
 ```
 $ sudo apt-get instll gcc
 ```
 
-安装SSDB
+安装SSDB[（以下引自项目文档）][4]
 ```
-wget --no-check-certificate https://github.com/ideawu/ssdb/archive/master.zip
-unzip master
-cd ssdb-master
-make
-# optional, install ssdb in /usr/local/ssdb
-sudo make install
+$ wget --no-check-certificate https://github.com/ideawu/ssdb/archive/master.zip
+$ unzip master
+$ cd ssdb-master
+$ make
+optional, install ssdb in /usr/local/ssdb
+$ sudo make install
 ```
 
-安装proxy_pool
+安装jhao104/proxy_pool[(以下引自项目文档）][5]
 ```
 下载源码:
 $ git clone https://github.com/jhao104/proxy_pool.git
-#建议这里先去激活新建的python虚拟环境
+
+建议这里先去激活新建的python虚拟环境：
 $ cd /path/to/new/virtual/environment
 $ cd bin
 $ source activate
-#安装依赖:
+
+安装依赖:
 $ pip install -r requirements.txt
 ```
 
+## 启动:
+step1. 修改配置文件使jhao104/proxy_pool与SSDB使用的端口号一致。
+
+step2. 启动SSDB[（以下引自项目文档）][4]
+```
+start master:
+$ ./ssdb-server ssdb.conf
+
+or start as daemon:
+$ ./ssdb-server -d ssdb.conf
+```
+
+step3. 启动jhao104/proxy_pool[（以下引自项目文档）][5]
+如果你的依赖已经安全完成并且具备运行条件,可以直接在Run下运行main.py。
+到Run目录下:
+>>>python main.py
+
+如果运行成功你应该看到有4个main.py进程。
+
+你也可以分别运行他们,
+依次到Api下启动ProxyApi.py,Schedule下启动ProxyRefreshSchedule.py和ProxyValidSchedule.py即可。
+
 [1]: https://git-scm.com/download/linux "安装git（Debian/Ubuntu）"
+[2]: https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers "安装pip(Debian/Ubuntu)"
+[3]: https://docs.python.org/3/library/venv.html "Creating virtual environments（Python3版本）"
+[4]: http://ssdb.io/zh_cn/ "（以下引自项目文档）"
+[5]: https://github.com/jhao104/proxy_pool  "（以下引自项目文档）"
