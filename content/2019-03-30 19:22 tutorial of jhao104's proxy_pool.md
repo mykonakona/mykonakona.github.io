@@ -9,10 +9,9 @@ Authors: mykonakona
 Summary: 记录一下怎么用jhao104/proxy_pool
 ---
 
-## 环境：
-LinuxMint_x64_xfce
+## 环境准备工作：
 
-## 准备工作：
+使用操作系统为：Linux Mint 19.1 "Tessa" - Xfce (64-bit)
 
 [安装git（Debian/Ubuntu）][1]
 ```
@@ -98,6 +97,13 @@ step3. 启动jhao104/proxy_pool[（以下引自项目文档）][5]
 
 你也可以分别运行他们,
 依次到Api下启动ProxyApi.py,Schedule下启动ProxyRefreshSchedule.py和ProxyValidSchedule.py即可。
+
+## 验证:
+示例脚本get_status.py（通过api访问http://127.0.0.1:5010 查看当前代理池可用代理数）
+```
+import requests
+print(requests.get("http://127.0.0.1:5010/get_status/").content)
+```
 
 [1]: https://git-scm.com/download/linux "安装git（Debian/Ubuntu）"
 [2]: https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers "安装pip(Debian/Ubuntu)"
