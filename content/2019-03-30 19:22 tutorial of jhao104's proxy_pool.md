@@ -89,9 +89,9 @@ $ ./ssdb-server -d ssdb.conf
 ```
 
 step3. 启动jhao104/proxy_pool[（以下引自项目文档）][5]
+
 如果你的依赖已经安全完成并且具备运行条件,可以直接在Run下运行main.py。
-到Run目录下:
->>>python main.py
+到Run目录下:python main.py
 
 如果运行成功你应该看到有4个main.py进程。
 
