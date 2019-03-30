@@ -22,11 +22,6 @@ For Ubuntu, this PPA provides the latest stable upstream Git version
 $ add-apt-repository ppa:git-core/ppa # apt update; apt install git
 ```
 
-(可选）安装vim
-```
-$ sudo apt-get install vim
-```
-
 [安装pip(Debian/Ubuntu)][2]
 ```
 Python 2:
@@ -90,13 +85,15 @@ $ ./ssdb-server -d ssdb.conf
 
 step3. 启动jhao104/proxy_pool[（以下引自项目文档）][5]
 
-如果你的依赖已经安全完成并且具备运行条件,可以直接在Run下运行main.py。
-到Run目录下:python main.py
+如果你的依赖已经安全完成并且具备运行条件,可以直接在Run目录下运行main.py:
+```
+$ python main.py
+```
 
 如果运行成功你应该看到有4个main.py进程。
 
-你也可以分别运行他们,
-依次到Api下启动ProxyApi.py,Schedule下启动ProxyRefreshSchedule.py和ProxyValidSchedule.py即可。
+你也可以分别运行他们:
+依次到Api下启动ProxyApi.py，Schedule下启动ProxyRefreshSchedule.py和ProxyValidSchedule.py即可。
 
 ## 验证:
 示例脚本get_status.py（通过api访问http://127.0.0.1:5010 查看当前代理池可用代理数）
@@ -104,6 +101,7 @@ step3. 启动jhao104/proxy_pool[（以下引自项目文档）][5]
 import requests
 print(requests.get("http://127.0.0.1:5010/get_status/").content)
 ```
+如在terminal中打印出当前的raw代理数和useful代理数，表示jhao104/proxy_pool已搭建成功:-)
 
 [1]: https://git-scm.com/download/linux "安装git（Debian/Ubuntu）"
 [2]: https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers "安装pip(Debian/Ubuntu)"
