@@ -8,6 +8,8 @@ Slug: tutorial-of-jhao104's-proxy_pool
 Authors: mykonakona
 Summary: 记录一下怎么用jhao104/proxy_pool
 ---
+## 背景：
+爬虫（spider）的目的大多是为了从特定网站上爬取我们所感兴趣的数据。但不是所有站点都欢迎这类数据爬取的行为，一种比较常见的反爬虫策略是屏蔽一段时间内多次访问站点的某个ip。为了突破这类反爬策略对单机爬取数据的限制，一种方法是维护一个代理池（proxy pool），通过使用不同的代理来规避网站的检测。jhao104/proxy_pool是Github上在国内使用比较多的一个代理池项目，这次主要记录一下从头开始建一个jhao104/proxy_pool的过程。
 
 ## 环境准备工作：
 
