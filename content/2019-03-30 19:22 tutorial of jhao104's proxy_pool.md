@@ -59,7 +59,7 @@ optional, install ssdb in /usr/local/ssdb
 $ sudo make install
 ```
 
-安装jhao104/proxy_pool[(以下引自项目文档）][5]
+安装jhao104/proxy_pool[（以下引自项目文档）][5]
 ```
 下载源码:
 $ git clone https://github.com/jhao104/proxy_pool.git
