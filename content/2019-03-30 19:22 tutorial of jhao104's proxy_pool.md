@@ -24,7 +24,7 @@ For Ubuntu, this PPA provides the latest stable upstream Git version
 $ add-apt-repository ppa:git-core/ppa # apt update; apt install git
 ```
 
-[安装pip(Debian/Ubuntu)][2]
+[安装pip（Debian/Ubuntu）][2]
 ```
 Python 2:
 $ sudo apt install python-pip
