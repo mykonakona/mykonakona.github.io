@@ -15,12 +15,12 @@ Summary: 感觉已经可以套用到大多数的还在使用Flash播放器的场
 
 然后live48不出意料地还在用flash，我的火狐进去之后就是一块白板。虽然最后临时用CentBrowser刷了一下公演，但毕竟不是我的主力浏览器，刷完之后就莫名地感觉不爽……
 
-扒了扒greasefork，这方面脚本还是比较多的，其中[dilidili flash to html5 fix](https://greasyfork.org/zh-CN/scripts/378188-dilidili-flash-to-html5-fix)，这个脚本用了dplayer。抄的过程中就感觉，如果只考虑满足最基本的需求，基本上还在使用Flash播放器的视频站都可以采用这个思路通过加载用户脚本做h5播放器的替换。
+扒了扒greasefork，这方面脚本还是比较多的。找了一个用了dplayer的脚本[dilidili flash to html5 fix](https://greasyfork.org/zh-CN/scripts/378188-dilidili-flash-to-html5-fix)开始抄。抄的过程中就感觉：如果只考虑满足最基本的需求，基本上还在使用Flash播放器的视频站都可以采用这个思路通过加载用户脚本做h5播放器的替换。
 
-# 开始：
+## 开始：
 
-+ 选用dplayer，在head或者body加载dplayer的类库和hls的类库。
-+ 在触发window.onload后，清空原播放器div下的子元素，append一个新div进去用于新播放器的使用。
++ 在head或者body加载dplayer的类库和hls的类库。
++ 触发window.onload后，清空原播放器div下的子元素，append一个新div进去用于新播放器的使用。
 + 写一个dplayer的构造函数，配好从原页面提取的视频url、视频类型为hls等配置项即可。
 
 最后的结果可见[live48 html5 player](https://greasyfork.org/zh-CN/scripts/382316)。
