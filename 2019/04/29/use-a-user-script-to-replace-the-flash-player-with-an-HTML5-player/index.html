@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="mykonakona" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="UserScript, HTML5, UserScript, " />
+
+<meta property="og:title" content="[UserScript]使用用户脚本将Flash播放器替换为HTML5播放器"/>
+<meta property="og:url" content="https://mykonakona.github.io/2019/04/29/use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player/" />
+<meta property="og:description" content="感觉已经可以套用到大多数的还在使用Flash播放器的场景了。" />
+<meta property="og:site_name" content="mykonakona&#39;s weblog" />
+<meta property="og:article:author" content="mykonakona" />
+<meta property="og:article:published_time" content="2019-04-29T14:38:00+08:00" />
+<meta property="og:article:modified_time" content="2019-04-29T14:38:00+08:00" />
+<meta name="twitter:title" content="[UserScript]使用用户脚本将Flash播放器替换为HTML5播放器">
+<meta name="twitter:description" content="感觉已经可以套用到大多数的还在使用Flash播放器的场景了。">
+
+        <title>[UserScript]使用用户脚本将Flash播放器替换为HTML5播放器 · mykonakona&#39;s weblog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/custom.css" media="screen">
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="https://mykonakona.github.io/"><span class=site-name>mykonakona's weblog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="https://mykonakona.github.io">Home</a></li>
+                            <li ><a href="https://mykonakona.github.io/about">About</a></li>
+                            <li ><a href="https://mykonakona.github.io/categories">Categories</a></li>
+                            <li ><a href="https://mykonakona.github.io/tags">Tags</a></li>
+                            <li ><a href="https://mykonakona.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://mykonakona.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://mykonakona.github.io/2019/04/29/use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player/"> [UserScript]使用用户脚本将Flash播放器替换为HTML5播放器 </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <p>做这个东西的动机其实是为了刷48的公演直播，本来一直在b站上看是没有问题的。但看这个月的n队N.E.W公演的那天，b站不知为何没有直播源了……</p>
+<p>也来不及搞清楚没有源这个事情是不是又是丝芭想搞闭环，总之当时除了模拟器登口袋，好像电脑上刷直播的方法就只剩在live.48.cn上看。</p>
+<p>然后live48不出意料地还在用flash，我的火狐进去之后就是一块白板。虽然最后临时用CentBrowser刷了一下公演，但毕竟不是我的主力浏览器，刷完之后就莫名地感觉不爽……</p>
+<p>扒了扒greasefork，这方面脚本还是比较多的。找了一个用了dplayer的脚本<a href="https://greasyfork.org/zh-CN/scripts/378188-dilidili-flash-to-html5-fix">dilidili flash to html5 fix</a>开始抄。抄的过程中就感觉：如果只考虑满足最基本的需求，基本上还在使用Flash播放器的视频站都可以采用这个思路通过加载用户脚本做h5播放器的替换。</p>
+<h2>开始：</h2>
+<ul>
+<li>在head或者body加载dplayer的类库和hls的类库。</li>
+<li>触发window.onload后，清空原播放器div下的子元素，append一个新div进去用于新播放器的使用。</li>
+<li>写一个dplayer的构造函数，配好从原页面提取的视频url、视频类型为hls等配置项即可。</li>
+</ul>
+<p>最后的结果可见<a href="https://greasyfork.org/zh-CN/scripts/382316">live48 html5 player</a>。</p>
+            <div>
+</div>
+
+            
+            <section>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://mykonakona.github.io/2019/04/29/use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player/#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'mykonakonas-weblog';
+        var disqus_identifier = 'https://mykonakona.github.io/2019/04/29/use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player/';
+    var disqus_url = 'https://mykonakona.github.io/2019/04/29/use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player/';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-04-29T14:38:00+08:00">Apr 29, 2019</time>
+
+<h4>Last Updated</h4>
+<time datetime="2019-04-29T14:38:00+08:00">Apr 29, 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://mykonakona.github.io/categories.html#userscript-ref">UserScript</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://mykonakona.github.io/tags#html5-ref">HTML5
+                    <span>1</span>
+</a></li>
+                <li><a href="https://mykonakona.github.io/tags#userscript-ref">UserScript
+                    <span>2</span>
+</a></li>
+            </ul>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'mykonakonas-weblog';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>

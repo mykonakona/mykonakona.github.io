@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="mykonakona" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Linux, Shell, Linux, " />
+
+<meta property="og:title" content="[Linux]一个小需求背后的shell script细节"/>
+<meta property="og:url" content="https://mykonakona.github.io/2018/09/28/details-of-shell-script-behind-a-simple-requirement/" />
+<meta property="og:description" content="想导一份百度的泡泡表情到公司的IM里。写脚本时发现了一些以前不怎么在意的shell script方面的问题。" />
+<meta property="og:site_name" content="mykonakona&#39;s weblog" />
+<meta property="og:article:author" content="mykonakona" />
+<meta property="og:article:published_time" content="2018-09-28T14:30:00+08:00" />
+<meta property="og:article:modified_time" content="2018-10-02T15:37:00+08:00" />
+<meta name="twitter:title" content="[Linux]一个小需求背后的shell script细节">
+<meta name="twitter:description" content="想导一份百度的泡泡表情到公司的IM里。写脚本时发现了一些以前不怎么在意的shell script方面的问题。">
+
+        <title>[Linux]一个小需求背后的shell script细节 · mykonakona&#39;s weblog
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://mykonakona.github.io/theme/css/custom.css" media="screen">
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="https://mykonakona.github.io/"><span class=site-name>mykonakona's weblog</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="https://mykonakona.github.io">Home</a></li>
+                            <li ><a href="https://mykonakona.github.io/about">About</a></li>
+                            <li ><a href="https://mykonakona.github.io/categories">Categories</a></li>
+                            <li ><a href="https://mykonakona.github.io/tags">Tags</a></li>
+                            <li ><a href="https://mykonakona.github.io/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="https://mykonakona.github.io/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="https://mykonakona.github.io/2018/09/28/details-of-shell-script-behind-a-simple-requirement/"> [Linux]一个小需求背后的shell script细节 </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            <h2>0. 引子</h2>
+<p>公司目前在用的即时通讯软件里可用的表情太少，所以想导一份百度的泡泡表情进去。</p>
+<p>看起来这玩意可以下载的地方还挺多的，但实际下载完发现下载站上的大小都偏大，于是就想是不是直接从百度贴吧里批量下载。</p>
+<p><a href="https://postimg.cc/mPbhSGGV"><img alt="image.png" src="https://i.postimg.cc/W1ZrT2YR/image.png"></a></p>
+<p>查看元素发现表情的url还是很有规律的，不用上正则了。在shell下写脚本就够用了，很快就写好了一个：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;./bdpao/&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+   mkdir bdpao
+<span class="k">else</span>
+   <span class="nb">echo</span> <span class="s2">&quot;folder existed&quot;</span>
+<span class="k">fi</span>
+<span class="c1">#我只想要黄脸表情，不需要其他的物件表情，所以把值设置为33</span>
+<span class="k">for</span> <span class="o">((</span> <span class="nv">i</span><span class="o">=</span><span class="m">1</span><span class="p">;</span> i&lt;<span class="o">=</span><span class="m">33</span><span class="p">;</span> i++ <span class="o">))</span>
+<span class="k">do</span>
+   <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span> -le <span class="m">9</span> <span class="o">]</span>
+   <span class="k">then</span>
+       <span class="nv">dlurl</span><span class="o">=</span><span class="s2">&quot;http://tb2.bdstatic.com/tb/editor/images/face/i_f0&quot;</span><span class="nv">$i</span><span class="s2">&quot;.png?t=20140803&quot;</span>
+       wget -q <span class="s2">&quot;</span><span class="nv">$dlurl</span><span class="s2">&quot;</span> -O ./bdpao/0<span class="nv">$i</span>.png
+   <span class="k">else</span>
+       <span class="nv">dlurl</span><span class="o">=</span><span class="s2">&quot;http://tb2.bdstatic.com/tb/editor/images/face/i_f&quot;</span><span class="nv">$i</span><span class="s2">&quot;.png?t=20140803&quot;</span>
+       wget -q <span class="s2">&quot;</span><span class="nv">$dlurl</span><span class="s2">&quot;</span> -O ./bdpao/<span class="nv">$i</span>.png
+   <span class="k">fi</span>
+<span class="k">done</span>
+zip -q -r bdpao.zip ./bdpao
+</code></pre></div>
+</td></tr></table>
+
+<p>然而实际运行时发现的问题，让我意识到自己对shell script的认识仍停留在一个一知半解的阶段。</p>
+<h2>1. 不同的循环风格</h2>
+<p>关于shell中常用的for循环的风格，根据<a href="https://blog.csdn.net/wr339988/article/details/70768499" title="Linux shell 用for循环100次的方法">Linux shell 用for循环100次的方法</a>介绍的内容主要有C风格、Python风格（使用in）及使用seq。</p>
+<h3>1.1. C风格</h3>
+<p>我在编写脚本时，是先用C风格的for循环实现的，本来以为直接sh bdpao.sh就可以跑，但是实际运行时报了一个这样的错：</p>
+<div class="highlight"><pre><span></span><code><span class="err">bdpao.sh: 8: bdpao.sh: Syntax error: Bad for loop variable</span>
+</code></pre></div>
+
+
+<p>stackoverflow里有人也提了类似的问题<a href="https://stackoverflow.com/questions/30358065/syntax-error-bad-for-loop-variable" title="syntax-error-bad-for-loop-variable">syntax-error-bad-for-loop-variable</a>，这里的解答说的比较清楚：
++ The for (( expr ; expr ; expr )) syntax is not available in sh.</p>
+<p>即是说C风格在sh是不可用的。</p>
+<p>解决方案：可以用<code>bash bdpao.sh</code>，或者改成while循环再用<code>sh bdpao.sh</code>运行。</p>
+<h3>1.2. Python风格</h3>
+<p>继续试了试Python风格，sh bdpao.sh后报了和之前不一样的错：</p>
+<div class="highlight"><pre><span></span><code><span class="err">bdpao.sh: 11: [: Illegal number: {1..33}</span>
+</code></pre></div>
+
+
+<p>但换成bash可以运行，说明Python风格在sh下也不可用。</p>
+<h3>1.3. 使用seq</h3>
+<p>那么seq是不是也是一样呢？我把脚本修改成使用seq的形式，仍然报错了：</p>
+<div class="highlight"><pre><span></span><code><span class="err">bdpao.sh: 12: [: Illegal number: seq 1 33</span>
+</code></pre></div>
+
+
+<p>不仅如此，bash bdpao.sh时，继续报错：</p>
+<div class="highlight"><pre><span></span><code><span class="err">./bdpao.sh: line 12: [: seq 1 33: integer expression expected</span>
+</code></pre></div>
+
+
+<p>为什么会这样呢，难道sh和bash都不支持seq，那为什么还有很多shell的教程里用seq做循环？</p>
+<p>原来这里我犯了一个最大的错误，但也是小白最大的陷阱，就是是'与`的区别，我在一知半解下把反引号当成单引号！但这两者意义完全不同。</p>
+<p>据<a href="http://wiki.jikexueyuan.com/project/13-questions-of-shell/eight.html" title="(())与()还有${}差在哪？">(())与()还有${}差在哪？</a>在bash shell中, \$()与``(反引号)都是用来做命令替换(command substitution)的。所谓的命令替换是通过完成``或者$()里面的 命令，将其结果替换出来，再重组命令行。例如：</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> the last sunday is <span class="k">$(</span>date -d <span class="s2">&quot;last sunday&quot;</span> +%Y-%m-%d<span class="k">)</span>
+</code></pre></div>
+
+
+<p>将'改正为`后，用sh命令和bash命令都可以运行。</p>
+<h2>2. sh，./，还是bash？</h2>
+<p>问题好像是解决了，但之前看《UNIX/Linux/OS X中的Shell编程（第4版）》里讲循环的章节，都是在shell下使用类似<code>for  i in {1..33}</code>形式的循环写法。我在自己的linux试了一下也是可以，为什么把内容写进.sh文件里就会有这些问题？执行.sh脚本的时候，什么时候应该用sh，什么时候应该用bash？</p>
+<p><a href="https://superuser.com/questions/408890/what-is-the-purpose-of-the-sh-command" title="what-is-the-purpose-of-the-sh-command">what-is-the-purpose-of-the-sh-command</a>中有朋友解答了这一疑问：使用sh命令的目的是通过这一命令来指定运行环境。这种C风格、Python风格的for循环可以在shell下直接使用的原因是，大部分系统默认使用的shell是/bin/bash，这一点可以通过<a href="https://www.cnblogs.com/softwaretesting/archive/2012/02/14/2350688.html" title="查看当前使用的shell">查看当前使用的shell</a>来验证。</p>
+<p>通过<code>echo $SHELL</code>可以发现系统默认的shell是/bin/bash，通过<code>echo $$</code>查当前shell的进程号，结果如下：</p>
+<div class="highlight"><pre><span></span><code><span class="err">mint64@mint64-virtual-machine ~/Documents $ echo $$</span>
+<span class="err">2265</span>
+<span class="err">mint64@mint64-virtual-machine ~/Documents $ ps -ef | grep &#39;2265&#39;</span>
+<span class="err">mint64     2265   2258  0 Sep26 pts/6    00:00:01 bash</span>
+<span class="err">mint64    44980   2265  0 15:56 pts/6    00:00:00 ps -ef</span>
+<span class="err">mint64    44981   2265  0 15:56 pts/6    00:00:00 grep --color=auto 2265</span>
+</code></pre></div>
+
+
+<p>当前系统使用的也确实是bash，这种通过查shell进程号确认当前使用shell的操作可以通过grep与awk的组合来做：</p>
+<div class="highlight"><pre><span></span><code><span class="err">ps | grep $$ | awk &#39;{print $4}&#39;</span>
+</code></pre></div>
+
+
+<h3>2.1. 三种情况</h3>
+<p>那么我们究竟应该如何选择shell脚本的执行命令呢？据<a href="https://stackoverflow.com/questions/22087378/difference-between-and-sh-in-unix" title="difference-between-and-sh-in-unix">difference-between-and-sh-in-unix</a>的解答，使用sh file格式执行shell script时会新建一个shell进程，使用. file格式时是在当前的shell进程中执行shell脚本文件，而使用./file则是在当前目录下执行文件。</p>
+<p>解答中还很贴心的举例说明了这三种情况，如果有一个名为test.sh的shell脚本文件，其内容为：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="nv">TEST</span><span class="o">=</span>present
+</code></pre></div>
+</td></tr></table>
+
+<p>使用<code>sh test.sh</code>执行时，会运行一个新的sh，然后把脚本里的变量在这个sh中定义，最后退出。因此退出后如果用<code>echo $TEST</code>将没有结果输出，因为这个变量仅在<code>sh test.sh</code>时使用的sh里，在外部的shell不存在。</p>
+<p>如果用<code>. test.sh</code>执行，<code>echo $TEST</code>可以输出present的结果，因为这种方式是在当前的shell中执行shell脚本文件，而不是像<code>sh test.sh</code>一样新建一个sh。</p>
+<p>如果用<code>./test.sh</code>执行，这时#!/bin/sh被检测，等价于<code>/bin/sh ./test.sh</code>。</p>
+<p>即是说，如果不需要指定运行环境的情况下，shell脚本文件的头部不加<a href="https://zh.wikipedia.org/zh-hans/Shebang" title="Shebang">shebang</a>的内容也是可以的。</p>
+<h2>3. 小结</h2>
+<p>现在网上不少教程只告诉你怎么做，并不会告诉你是为什么，所以网上搜到的海量内容不等同于自己的知识，只有甄别、消化乃至加工后的内容才能称得上是真正掌握。</p>
+<p>最后，从需求入手永远是学习技术最快的一种方式。</p>
+            <div>
+</div>
+
+            
+            <section>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://mykonakona.github.io/2018/09/28/details-of-shell-script-behind-a-simple-requirement/#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'mykonakonas-weblog';
+        var disqus_identifier = 'https://mykonakona.github.io/2018/09/28/details-of-shell-script-behind-a-simple-requirement/';
+    var disqus_url = 'https://mykonakona.github.io/2018/09/28/details-of-shell-script-behind-a-simple-requirement/';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2018-09-28T14:30:00+08:00">Sep 28, 2018</time>
+
+<h4>Last Updated</h4>
+<time datetime="2018-10-02T15:37:00+08:00">Oct 2, 2018</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://mykonakona.github.io/categories.html#linux-ref">Linux</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://mykonakona.github.io/tags#linux-ref">Linux
+                    <span>4</span>
+</a></li>
+                <li><a href="https://mykonakona.github.io/tags#shell-ref">Shell
+                    <span>4</span>
+</a></li>
+            </ul>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'mykonakonas-weblog';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>
