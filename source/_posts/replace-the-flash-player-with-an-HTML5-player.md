@@ -2,7 +2,7 @@
 title: 使用用户脚本将Flash播放器替换为HTML5播放器
 date: 2019-04-29 14:38
 categories: coding
-tags: UserScript
+tags: userscript
 ---
 
 做这个东西的动机其实是为了刷48的公演直播，本来一直在b站上看是没有问题的。但看这个月的n队N.E.W公演的那天，b站不知为何没有直播源了……
