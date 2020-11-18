@@ -2,27 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://mykonakona.github.io/2020/08/24/acme-verify-error/</loc>
-    
-    <lastmod>2020-11-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mykonakona.github.io/2020/11/16/douyin-auto-thumbup/</loc>
-    
-    <lastmod>2020-11-18</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://mykonakona.github.io/2018/05/23/hello-world/</loc>
-    
-    <lastmod>2020-11-18</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://mykonakona.github.io/2020/03/31/hyper-v-sucks/</loc>
     
     <lastmod>2020-11-18</lastmod>
@@ -51,14 +30,28 @@
   </url>
   
   <url>
-    <loc>http://mykonakona.github.io/googleceee8729d9b76e32.html</loc>
+    <loc>http://mykonakona.github.io/about/index.html</loc>
     
     <lastmod>2020-11-18</lastmod>
     
   </url>
   
   <url>
-    <loc>http://mykonakona.github.io/about/index.html</loc>
+    <loc>http://mykonakona.github.io/2020/08/24/acme-verify-error/</loc>
+    
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mykonakona.github.io/2020/11/16/douyin-auto-thumbup/</loc>
+    
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://mykonakona.github.io/2018/05/23/hello-world/</loc>
     
     <lastmod>2020-11-18</lastmod>
     
