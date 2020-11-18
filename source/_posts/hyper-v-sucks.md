@@ -1,13 +1,14 @@
 ---
-Title: [Virtual Machine]Hyper-V使用记录
-Date: 2020-03-31 22:53
-Modified: 2020-03-31 22:53
-Category: Virtual Machine
-Tags: Virtual Machine, Hyper-V, Androidx86
-Slug: Hyper-V sucks
-Authors: mykonakona
-Summary: 好难用，大概以后不会在用了……
+title: Hyper-V使用记录
+date: 2020-03-31 22:53
+categories: coding
+tags: Virtual Machine 
 ---
+
+更新：好消息是蓝叠出了兼容Hyper-V的版本，坏消息是这个版本在我的电脑上没用起来。
+
+<!-- more -->
+
 ## 0. 起因
 终于对自己一直使用的旧笔记本到了忍无可忍的地步，于是今年3月份在做了各种调研后购入了新机器（Lenove S740, i5 16G版本）。装机过程中我为了偷懒，打算直接用Win10自带的Hyper-V。自己打的如意算盘是可以省得装其他虚拟机软件，也能试一试好不好用。
 

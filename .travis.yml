@@ -1,23 +1,24 @@
-language: python
-python:
-    - "3.6"
+language: node_js 
+node_js:
+  - 10  # 使用 nodejs LTS v10
 branches:
   only:
-    - source
-install:
-    - pip install pelican 
-    - pip install jinja2 markdown ghp-import beautifulsoup4
-script:
-    - git clone --depth 1 https://github.com/mykonakona/pelican-plugins plugins
-    - git clone --depth 1 https://github.com/mykonakona/elegant theme
-    - env SITEURL="mykonakona.github.io" make publish
-deploy:
+    - source # 只监控 source 的 branch
+cache:
+  directories:
+    - node_modules # 缓存 node_modules 加快构建速度
+before_script: ## 根据你所用的主题和自定义的不同，这里会有所不同
+  - npm install -g hexo-cli # 在 CI 环境内安装 Hexo
+  - mkdir themes
+  - git clone https://github.com/SUZEMEF/hexo-theme-minos.git themes/minos
+script: 
+  - hexo generate # generate static files
+deploy: # 根据个人情况，这里会有所不同
   provider: pages
-  target_branch: master
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  name: $GIT_NAME
-  email: $GIT_EMAIL
-  local_dir: output
+  skip_cleanup: true # 构建完成后不清除
+  token: $GH_TOKEN # 你刚刚设置的 token
+  keep_history: true # 保存历史
   on:
-    branch: source
+    branch: source # hexo 站点源文件所在的 branch
+  local_dir: public 
+  target_branch: master # 存放生成站点文件的 branch，使用 username.github.io 必须是 master

@@ -1,15 +1,13 @@
 ---
-Title: [UserScript]使用用户脚本将Flash播放器替换为HTML5播放器
-Date: 2019-04-29 14:38
-Modified: 2019-04-29 14:38
-Category: UserScript
-Tags: UserScript, HTML5
-Slug: use-a-user-script-to-replace-the-flash-player-with-an-HTML5-player
-Authors: mykonakona
-Summary: 感觉已经可以套用到大多数的还在使用Flash播放器的场景了。
+title: 使用用户脚本将Flash播放器替换为HTML5播放器
+date: 2019-04-29 14:38
+categories: coding
+tags: UserScript, HTML5 
 ---
 
 做这个东西的动机其实是为了刷48的公演直播，本来一直在b站上看是没有问题的。但看这个月的n队N.E.W公演的那天，b站不知为何没有直播源了……
+
+<!-- more -->
 
 也来不及搞清楚没有源这个事情是不是又是丝芭想搞闭环，总之当时除了模拟器登口袋，好像电脑上刷直播的方法就只剩在live.48.cn上看。
 
