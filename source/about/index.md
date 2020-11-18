@@ -15,4 +15,4 @@ title: 有的没的
 [1]: https://github.com/ppoffice/hexo-theme-minos
 [2]: https://travis-ci.org/
 [3]: https://valine.js.org/
-[4]: https://github.com/SUZEMEF/hexo-theme-minos
+[4]: https://github.com/mykonakona/hexo-theme-minos
