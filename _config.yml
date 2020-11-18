@@ -115,3 +115,5 @@ feed:
 
 sitemap:
     path: sitemap.xml
+    tag: false
+    category: false
