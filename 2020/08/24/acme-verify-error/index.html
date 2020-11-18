@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>acme.sh的Verify error:Invalid response from报错 - mykonakona</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script> loadCSS("https://fonts.loli.net/css?family=Lora|Montserrat|Fira+Mono|Material+Icons")</script>
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lora|Montserrat|Fira+Mono|Material+Icons" media="all">
+<noscript>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora|Montserrat|Anonymous+Pro:400|Material+Icons"/>
+</noscript>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="mykonakona" type="application/atom+xml">
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    SUZEMEF
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">归档</a>
+            
+            <a class="navbar-item "
+               href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="RSS" href="https://SUZEMEF.github.io/atom.xml" target="_blank" rel="noopener">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            acme.sh的Verify error:Invalid response from报错
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-08-24T08:49:00.000Z" itemprop="datePublished">8月 24 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/coding/">coding</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3 分钟 读完 (约 494 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>&#x4E4B;&#x524D;&#x5728;hostdare&#x8D2D;&#x5165;&#x8FC7;&#x4E00;&#x53F0;VPS&#xFF0C;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#xFF0C;&#x6240;&#x4EE5;&#x62FF;&#x6765;&#x505A;&#x5907;&#x80CE;&#xFF0C;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x90E8;&#x4E86;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x5728;&#x4E0A;&#x9762;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x6700;&#x4F4E;&#x9650;&#x5EA6;&#x7684;&#x5B89;&#x5168;&#xFF0C;&#x7528;acme&#x7ED9;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x90FD;&#x624B;&#x52A8;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x904D;&#x8BC1;&#x4E66;&#xFF0C;&#x8FD8;&#x633A;&#x9EBB;&#x70E6;&#x7684;&#xFF08;&#x5F53;&#x65F6;&#x56E0;&#x4E3A;&#x4E00;&#x4E9B;&#x539F;&#x56E0;&#xFF0C;&#x901A;&#x914D;&#x7B26;&#x8BC1;&#x4E66;&#x6CA1;&#x80FD;&#x7528;&#x8D77;&#x6765;&#x2026;&#x2026;&#xFF09;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x7528;&#x670D;&#x52A1;&#x662F;freshrss&#xFF0C;&#x4ECA;&#x5929;&#x8BBF;&#x95EE;&#x65F6;&#x7A81;&#x7136;&#x53D1;&#x73B0;&#x8BC1;&#x4E66;&#x8FC7;&#x671F;&#x4E86;&#xFF0C;&#x6309;&#x8BF4;acme&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x7EED;&#x671F;&#x7684;&#x3002;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;<code>acme.sh.log</code>&#xFF0C;&#x62A5;&#x4E86;&#x4E00;&#x6761;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#xFF1A;</p>
+<a id="more"></a>
+
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Mon Aug 24 00:09:56 CST 2020] yousite.xyz:Verify error:Invalid response from https://yousite.xyz/.well-known/acme-challenge/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [*.*.*.*]: 404</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x8BF4;&#x660E;acme&#x662F;&#x6709;&#x5728;&#x81EA;&#x52A8;&#x53BB;&#x66F4;&#x65B0;&#x8BC1;&#x4E66;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x5230;verify&#x8FD9;&#x4E00;&#x6B65;&#x65F6;&#x4F1A;&#x901A;&#x4E0D;&#x8FC7;&#x3002;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0;&#x9879;&#x76EE;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x6761;issue&#xFF1A;<a href="https://github.com/acmesh-official/acme.sh/issues/132" target="_blank" rel="noopener" title="Verify error:Invalid response #132">Verify error:Invalid response #132</a>&#x91CC;&#x6709;&#x89E3;&#x7B54;&#xFF1A;</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x540C;&#x6837;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x662F;nginx&#x7684;&#x8BDD;&#xFF0C;&#x4E00;&#x822C;&#x662F;&#x56E0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x62D2;&#x7EDD;&#x8BBF;&#x95EE;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;2&#x4E2A;&#xFF0C;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;</span><br><span class="line"></span><br><span class="line">1.&#x5728;include *.conf; &#x4E0B;&#x65B9;&#x52A0;&#x5165;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#xFF1A;</span><br><span class="line"></span><br><span class="line">server {</span><br><span class="line"></span><br><span class="line">listen 80;</span><br><span class="line"></span><br><span class="line">server_name yoursite.com www.yoursite.com;</span><br><span class="line"></span><br><span class="line">include *.conf;      // &#x52A0;&#x5165;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1B;</span><br><span class="line"></span><br><span class="line">       location ^~ /.well-known/acme-challenge/ </span><br><span class="line">    {</span><br><span class="line">        default_type &quot;text/plain&quot;;</span><br><span class="line">        root  /home/wwwroot/yoursite;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    location = /.well-known/acme-challenge/ </span><br><span class="line">    {</span><br><span class="line">        try_files $uri =404;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">2.&#x5728; yoursite.conf &#x4E2D;&#xFF0C;&#x628A;&#x62D2;&#x7EDD;&#x8BBF;&#x95EE;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;&#x6389;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</span><br><span class="line"></span><br><span class="line">        #  location ~ /\.</span><br><span class="line">        #  {</span><br><span class="line">        #      deny all;</span><br><span class="line">        #  }</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x6211;&#x7684;nginx&#x628A;&#x5404;&#x670D;&#x52A1;&#x7684;&#x914D;&#x7F6E;&#x5355;&#x72EC;&#x653E;&#x5728;&#x4E86;&#x65B0;&#x5EFA;&#x7684;<code>\etc\nginx\conf\conf.d\xxx.conf</code>&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;<code>location</code>&#x90E8;&#x5206;&#x8981;&#x653E;&#x5230;<code>xxx.conf</code>&#x4E0B;&#xFF0C;&#x540E;&#x7EED;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;nginx&#x7684;&#x914D;&#x7F6E;&#xFF1A;</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/nginx/sbin</span><br><span class="line">./nginx -s reload</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x4E3A;&#x4E86;&#x9A8C;&#x8BC1;&#x914D;&#x7F6E;&#x662F;&#x5426;&#x751F;&#x6548;&#xFF0C;&#x8FD9;&#x91CC;&#x66F4;&#x65B0;&#x4E86;&#x4E00;&#x4E0B;acme&#x4E4B;&#x540E;&#x505A;&#x4E86;&#x4E00;&#x6B21;&#x8BC1;&#x4E66;&#x624B;&#x52A8;&#x66F4;&#x65B0;&#x3002;</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.acme.sh/</span><br><span class="line">acme.sh --upgrade</span><br><span class="line">acme.sh --renew  -d domain.com</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>&#x8FD9;&#x6B21;&#x7B7E;&#x53D1;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x4E8E;&#x662F;&#x53C8;&#x6C34;&#x4E86;&#x4E00;&#x8D34;&#xFF08;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#x505A;&#x4E86;&#x8131;&#x654F;&#x5904;&#x7406;&#xFF09;&#x2026;&#x2026;</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/VPS/">#VPS</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2020/09/04/lenovo-yoga-s740-review/">聊聊Yoga S740</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2020/05/27/the-way-I-build-a-static-blog/">我搭静态博客</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread',
+        appId: 'ntDA6wjf0rnD89w8PlMFlvnJ-MdYXbMMI',
+        appKey: 'ubI8DQfMobLrHgNNXDRQzPya',
+        notify: false,
+        verify: false,
+        avatar: '',
+        placeholder: 'Comments',
+        meta: ['nick', 'mail'],
+        visitor: true,
+        lang: ''
+    })
+</script>
+
+
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2020 mykonakona&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.loli.net/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script> -->
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
