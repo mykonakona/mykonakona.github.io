@@ -468,7 +468,8 @@ figure.highlight {
 
 .ins-section .ins-section-header,
 .ins-section .ins-search-item {
-  padding: 8px 15px; }
+  padding: 8px 15px;
+  background-color: #18222D; }
 
 .ins-section .ins-section-header {
   color: #9a9a9a;
