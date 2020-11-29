@@ -123,7 +123,7 @@
         <span class="column is-narrow">
             
             
-            4 分钟 读完 (约 528 字)
+            4 分钟 读完 (约 526 字)
         </span>
         
     </div>
@@ -147,10 +147,10 @@
 </li>
 <li><p>&#x9000;&#x51FA;adb shell&#xFF08;&#x5982;&#x5FEB;&#x6377;&#x952E;&#x65E0;&#x6548;&#xFF0C;&#x53EF;&#x5173;&#x6389;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#x540E;&#x91CD;&#x5F00;&#xFF09;</p>
 </li>
-<li><p>&#x91CD;&#x65B0;&#x8FDB;&#x5165;adb shell&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#xFF08;&#x6B64;&#x4E3A;&#x5FAA;&#x73AF;100&#x6B21;&#x7248;&#x672C;&#xFF09;&#xFF1A;   </p>
-<p> for i in <code>seq 1 100</code>; do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 0.1; done </p>
+<li><p>&#x91CD;&#x65B0;&#x8FDB;&#x5165;adb shell&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x6B7B;&#x5FAA;&#x73AF;&#xFF0C;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#xFF1A;    </p>
+<p> i=1; while [ i -gt 0 ];  do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 5; done</p>
 </li>
-<li><p>&#x591A;&#x5F00;&#x65F6;&#x76F4;&#x63A5;&#x6267;&#x884C;nox_adb shell&#x4F1A;&#x62A5; error: more than one device and emulator&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x8FD9;&#x65F6;&#x9700;&#x8981;&#x5148;nox_adb devices&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6709;&#x8BBE;&#x5907;&#x4E0E;&#x6A21;&#x62DF;&#x5668;&#xFF1A;</p>
+<li><p>&#x591A;&#x5F00;&#x65F6;&#x76F4;&#x63A5;&#x6267;&#x884C;nox_adb shell&#x4F1A;&#x62A5; error: more than one device and emulator&#xFF0C;&#x8FD9;&#x65F6;&#x9700;&#x8981;&#x5148;nox_adb devices&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6709;&#x8BBE;&#x5907;&#x4E0E;&#x6A21;&#x62DF;&#x5668;&#xFF1A;</p>
 <p> C:\Program Files (x86)\Nox\bin&gt;nox_adb devices<br> List of devices attached<br> 127.0.0.1:62025 device<br> 127.0.0.1:62001 device</p>
 </li>
 <li><p>&#x5728;&#x6267;&#x884C;adb&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x4E3A;&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x8BBE;&#x5907;&#x7684;&#x5E8F;&#x5217;&#x53F7;<code>nox_adb -s 127.0.0.1:62025 shell</code></p>
