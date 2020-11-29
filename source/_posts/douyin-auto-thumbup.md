@@ -25,11 +25,11 @@ tags: android
 
 6. 退出adb shell（如快捷键无效，可关掉命令行窗口后重开）
 
-7. 重新进入adb shell，运行命令（此为循环100次版本）：   
-
-    for i in `seq 1 100`; do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 0.1; done 
+7. 重新进入adb shell，直接写成一个死循环，运行命令：    
+    
+    i=1; while [ i -gt 0 ];  do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 5; done
    
-8. 多开时直接执行nox_adb shell会报 error: more than one device and emulator的错误，这时需要先nox_adb devices查看当前有设备与模拟器：
+8. 多开时直接执行nox_adb shell会报 error: more than one device and emulator，这时需要先nox_adb devices查看当前有设备与模拟器：
 
     C:\Program Files (x86)\Nox\bin>nox_adb devices
     List of devices attached
