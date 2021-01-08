@@ -1,8 +1,8 @@
 ---
 title: 如何解决智冠版天龙八部等繁体Windows老游戏在Win10下的乱码问题
 date: 2020-12-08 16:45:00
-categories: game
-tags: VPS 
+categories: life
+tags: game
 ---
 
 这个问题早已有之，早期的解决方案是安装AppLocale等软件进行转码，但上述软件目前在Win10环境下基本全部失效。
