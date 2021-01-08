@@ -1,6 +1,6 @@
 ---
 title: 给自己的VPS的新服务新增配证书
-date: 2020-05-27 21:59:00
+date: 2021-01-08 15:28:00
 categories: coding
 tags: VPS
 ---
@@ -28,3 +28,5 @@ acme.sh --installcert -d che.xxx.xyz --keypath  /data/che.xxx.xyz.key  --fullcha
 证书部分完成后就是重新修改nginx的配置，这次得按照正式使用的场景进行修改，改完后还是同样需要让新配置生效。
 
 nginx生效后，就可以通过https访问了。
+
+后记：其实图床这个事情也和[我搭静态博客](https://mykonakona.github.io/2020/05/27/the-way-I-build-a-static-blog/)的想法或者说理念有点冲突，实际是有人拿github直接做图床的，想了想还是不大好意思这么做。
