@@ -114,46 +114,6 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2020/12/08/how-to-solve-the-traditional-chinese-garbled-code-problem-of-old-windows-games/" itemprop="url">如何解决智冠版天龙八部等繁体Windows老游戏在Win10下的乱码问题</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-12-08T08:45:00.000Z" itemprop="datePublished">12月 8 2020</time>
-        </span>
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/game/">game</a>
-        </span>
-        
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 读完 (约 564 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x65E9;&#x5DF2;&#x6709;&#x4E4B;&#xFF0C;&#x65E9;&#x671F;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x5B89;&#x88C5;AppLocale&#x7B49;&#x8F6F;&#x4EF6;&#x8FDB;&#x884C;&#x8F6C;&#x7801;&#xFF0C;&#x4F46;&#x4E0A;&#x8FF0;&#x8F6F;&#x4EF6;&#x76EE;&#x524D;&#x5728;Win10&#x73AF;&#x5883;&#x4E0B;&#x57FA;&#x672C;&#x5168;&#x90E8;&#x5931;&#x6548;&#x3002;</p></body></html>
-        <p class="article-more-link">
-            <a href="/2020/12/08/how-to-solve-the-traditional-chinese-garbled-code-problem-of-old-windows-games/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
             <a href="/2020/08/24/acme-verify-error/" itemprop="url">acme.sh的Verify error:Invalid response from报错</a>
         
     </h1>
@@ -177,10 +137,50 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x4E4B;&#x524D;&#x5728;hostdare&#x8D2D;&#x5165;&#x8FC7;&#x4E00;&#x53F0;VPS&#xFF0C;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#xFF0C;&#x6240;&#x4EE5;&#x62FF;&#x6765;&#x505A;&#x5907;&#x80CE;&#xFF0C;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x90E8;&#x4E86;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x5728;&#x4E0A;&#x9762;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x6700;&#x4F4E;&#x9650;&#x5EA6;&#x7684;&#x5B89;&#x5168;&#xFF0C;&#x7528;acme&#x7ED9;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x90FD;&#x624B;&#x52A8;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x904D;&#x8BC1;&#x4E66;&#xFF0C;&#x8FD8;&#x633A;&#x9EBB;&#x70E6;&#x7684;&#xFF08;&#x5F53;&#x65F6;&#x56E0;&#x4E3A;&#x4E00;&#x4E9B;&#x539F;&#x56E0;&#xFF0C;&#x901A;&#x914D;&#x7B26;&#x8BC1;&#x4E66;&#x6CA1;&#x80FD;&#x7528;&#x8D77;&#x6765;&#x2026;&#x2026;&#xFF09;&#x3002;</p>
-<p>&#x5176;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x7528;&#x670D;&#x52A1;&#x662F;freshrss&#xFF0C;&#x4ECA;&#x5929;&#x8BBF;&#x95EE;&#x65F6;&#x7A81;&#x7136;&#x53D1;&#x73B0;&#x8BC1;&#x4E66;&#x8FC7;&#x671F;&#x4E86;&#xFF0C;&#x6309;&#x8BF4;acme&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x7EED;&#x671F;&#x7684;&#x3002;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;<code>acme.sh.log</code>&#xFF0C;&#x62A5;&#x4E86;&#x4E00;&#x6761;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#xFF1A;</p></body></html>
+        <html><head></head><body><p>之前在hostdare购入过一台VPS，速度一般，所以拿来做备胎，乱七八糟部了一些服务在上面，考虑到最低限度的安全，用acme给每个服务都手动生成了一遍证书，还挺麻烦的（当时因为一些原因，通配符证书没能用起来……）。</p>
+<p>其中最常用的一个自用服务是freshrss，今天访问时突然发现证书过期了，按说acme是可以自动续期的。查了一下<code>acme.sh.log</code>，报了一条这个错误：</p></body></html>
         <p class="article-more-link">
             <a href="/2020/08/24/acme-verify-error/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2020/05/27/add-https-for-new-web-service-on-vps/" itemprop="url">给自己的VPS的新服务新增配证书</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-05-27T13:59:00.000Z" itemprop="datePublished">5月 27 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/coding/">coding</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3 分钟 读完 (约 456 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>我已经忘记为啥我这个站没法生成通配符证书了，现在每加一个应用就得重新生成一遍，还是挺折腾的，很容易忘记。我还是先把这个过程记下来吧。</p></body></html>
+        <p class="article-more-link">
+            <a href="/2020/05/27/add-https-for-new-web-service-on-vps/#more">阅读更多</a>
         </p>
     
     </div>
@@ -199,7 +199,7 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 mykonakona&nbsp;
+                &copy; 2021 mykonakona&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>

@@ -137,9 +137,9 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x56E0;&#x4E3A;&#x4E00;&#x4E9B;&#x4E3B;&#x64AD;&#x4F1A;&#x628A;&#x70B9;&#x8D5E;&#x8FBE;&#x5230;&#x591A;&#x5C11;&#x4E07;&#x4F5C;&#x4E3A;&#x4E00;&#x9879;&#x6307;&#x6807;&#xFF0C;&#x81EA;&#x5DF1;&#x53C8;&#x61D2;&#x5F97;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x628A;&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x7ED9;&#x81EA;&#x52A8;&#x5316;&#x3002;</p>
-<p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x641C;&#x5230;&#x7684;&#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x57FA;&#x4E8E;adb&#x7684;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x964B;&#x7684;&#x6574;&#x5408;&#x4E86;&#x76F8;&#x5173;&#x8D44;&#x6599;&#x7684;win&#x4E0B;&#x7684;&#x6559;&#x5B66;&#x3002;</p>
-<p>&#x5176;&#x539F;&#x7406;&#x4E3A;&#xFF1A;&#x76F4;&#x63A5;&#x4F7F;&#x7528;adb&#x7684;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#x901F;&#x5EA6;&#x4F1A;&#x4E0D;&#x591F;&#x5FEB;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x518D;&#x8F93;&#x51FA;&#x7684;&#x65B9;&#x5F0F;&#x6A21;&#x62DF;&#x5728;dy&#x4E3B;&#x64AD;&#x754C;&#x9762;&#x5FEB;&#x901F;&#x70B9;&#x51FB;&#x7684;&#x884C;&#x4E3A;&#x3002;</p></body></html>
+        <html><head></head><body><p>因为一些主播会把点赞达到多少万作为一项指标，自己又懒得点，所以想把这个工作给自动化。</p>
+<p>现在可以搜到的实现基本都是基于adb的，这是一个简陋的整合了相关资料的win下的教学。</p>
+<p>其原理为：直接使用adb的点击事件速度会不够快，可以通过记录用户操作再输出的方式模拟在dy主播界面快速点击的行为。</p></body></html>
         <p class="article-more-link">
             <a href="/2020/11/16/douyin-auto-thumbup/#more">阅读更多</a>
         </p>
@@ -179,10 +179,50 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x4E4B;&#x524D;&#x5728;hostdare&#x8D2D;&#x5165;&#x8FC7;&#x4E00;&#x53F0;VPS&#xFF0C;&#x901F;&#x5EA6;&#x4E00;&#x822C;&#xFF0C;&#x6240;&#x4EE5;&#x62FF;&#x6765;&#x505A;&#x5907;&#x80CE;&#xFF0C;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x90E8;&#x4E86;&#x4E00;&#x4E9B;&#x670D;&#x52A1;&#x5728;&#x4E0A;&#x9762;&#xFF0C;&#x8003;&#x8651;&#x5230;&#x6700;&#x4F4E;&#x9650;&#x5EA6;&#x7684;&#x5B89;&#x5168;&#xFF0C;&#x7528;acme&#x7ED9;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x90FD;&#x624B;&#x52A8;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x904D;&#x8BC1;&#x4E66;&#xFF0C;&#x8FD8;&#x633A;&#x9EBB;&#x70E6;&#x7684;&#xFF08;&#x5F53;&#x65F6;&#x56E0;&#x4E3A;&#x4E00;&#x4E9B;&#x539F;&#x56E0;&#xFF0C;&#x901A;&#x914D;&#x7B26;&#x8BC1;&#x4E66;&#x6CA1;&#x80FD;&#x7528;&#x8D77;&#x6765;&#x2026;&#x2026;&#xFF09;&#x3002;</p>
-<p>&#x5176;&#x4E2D;&#x6700;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x81EA;&#x7528;&#x670D;&#x52A1;&#x662F;freshrss&#xFF0C;&#x4ECA;&#x5929;&#x8BBF;&#x95EE;&#x65F6;&#x7A81;&#x7136;&#x53D1;&#x73B0;&#x8BC1;&#x4E66;&#x8FC7;&#x671F;&#x4E86;&#xFF0C;&#x6309;&#x8BF4;acme&#x662F;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x7EED;&#x671F;&#x7684;&#x3002;&#x67E5;&#x4E86;&#x4E00;&#x4E0B;<code>acme.sh.log</code>&#xFF0C;&#x62A5;&#x4E86;&#x4E00;&#x6761;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#xFF1A;</p></body></html>
+        <html><head></head><body><p>之前在hostdare购入过一台VPS，速度一般，所以拿来做备胎，乱七八糟部了一些服务在上面，考虑到最低限度的安全，用acme给每个服务都手动生成了一遍证书，还挺麻烦的（当时因为一些原因，通配符证书没能用起来……）。</p>
+<p>其中最常用的一个自用服务是freshrss，今天访问时突然发现证书过期了，按说acme是可以自动续期的。查了一下<code>acme.sh.log</code>，报了一条这个错误：</p></body></html>
         <p class="article-more-link">
             <a href="/2020/08/24/acme-verify-error/#more">阅读更多</a>
+        </p>
+    
+    </div>
+    
+    
+</article>
+
+
+
+
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            <a href="/2020/05/27/add-https-for-new-web-service-on-vps/" itemprop="url">给自己的VPS的新服务新增配证书</a>
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2020-05-27T13:59:00.000Z" itemprop="datePublished">5月 27 2020</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/coding/">coding</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            3 分钟 读完 (约 456 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>我已经忘记为啥我这个站没法生成通配符证书了，现在每加一个应用就得重新生成一遍，还是挺折腾的，很容易忘记。我还是先把这个过程记下来吧。</p></body></html>
+        <p class="article-more-link">
+            <a href="/2020/05/27/add-https-for-new-web-service-on-vps/#more">阅读更多</a>
         </p>
     
     </div>
@@ -220,8 +260,8 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x52A8;&#x6001;&#x535A;&#x5BA2;&#x5176;&#x5B9E;&#x4E00;&#x76F4;&#x4EE5;&#x6765;&#x90FD;&#x5F88;&#x5438;&#x5F15;&#x6211;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E0D;&#x4E45;&#x4E4B;&#x524D;&#xFF0C;&#x6211;&#x8FD8;&#x5728;&#x81EA;&#x5DF1;&#x7684;VPS&#x4E0A;&#x642D;&#x5EFA;&#x4E86;&#x6700;&#x8FD1;&#x6BD4;&#x8F83;&#x706B;&#x7684;halo&#x3002;&#x57DF;&#x540D;&#x3001;&#x8BC1;&#x4E66;&#x7B7E;&#x53D1;&#x3001;&#x53CD;&#x4EE3;&#x7684;&#x914D;&#x7F6E;&#x7B49;&#x7B49;&#x90FD;&#x505A;&#x597D;&#x4E86;&#x3002;&#x4F46;&#x7ECF;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x6298;&#x817E;&#xFF0C;&#x6700;&#x540E;&#x8FD8;&#x662F;&#x56DE;&#x6765;&#x91CD;&#x65B0;&#x4F7F;&#x7528;github page&#x3002;</p>
-<p>&#x505A;&#x51FA;&#x8FD9;&#x4E2A;&#x51B3;&#x5B9A;&#x6709;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x7406;&#x7531;&#x2014;&#x2014;&#x52A8;&#x6001;&#x535A;&#x5BA2;&#x771F;&#x7684;&#x8D35;&#xFF1A;&#x597D;&#x7684;&#x57DF;&#x540D;&#x9700;&#x8981;&#x94B1;&#xFF0C;&#x7EBF;&#x8DEF;&#x6D41;&#x7545;&#x7684;VPS&#x4E5F;&#x9700;&#x8981;&#x94B1;&#x3002;&#x5EC9;&#x4EF7;VPS&#x670D;&#x52A1;&#x5546;&#x7684;&#x7EBF;&#x8DEF;&#x4E00;&#x8A00;&#x96BE;&#x5C3D;&#xFF0C;&#x6211;&#x7684;&#x76EE;&#x7684;&#x4E5F;&#x4EC5;&#x6B62;&#x4E8E;&#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x4E9B;&#x60F3;&#x6CD5;&#x548C;&#x5174;&#x8DA3;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x66F4;&#x5927;&#x7684;&#x91CE;&#x5FC3;&#x3002;&#x56E0;&#x6B64;&#x6743;&#x8861;&#x4E0B;&#x6765;&#x6211;&#x66F4;&#x503E;&#x5411;&#x4E8E;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x6027;&#x4EF7;&#x6BD4;&#x7684;&#x65B9;&#x6848;&#x3002;</p></body></html>
+        <html><head></head><body><p>动态博客其实一直以来都很吸引我。事实上不久之前，我还在自己的VPS上搭建了最近比较火的halo。域名、证书签发、反代的配置等等都做好了。但经过一系列的折腾，最后还是回来重新使用github page。</p>
+<p>做出这个决定有一个重要的理由——动态博客真的贵：好的域名需要钱，线路流畅的VPS也需要钱。廉价VPS服务商的线路一言难尽，我的目的也仅止于记录自己的一些想法和兴趣，不会有更大的野心。因此权衡下来我更倾向于选择一个具有性价比的方案。</p></body></html>
         <p class="article-more-link">
             <a href="/2020/05/27/the-way-I-build-a-static-blog/#more">阅读更多</a>
         </p>
@@ -261,7 +301,7 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x66F4;&#x65B0;&#xFF1A;&#x597D;&#x6D88;&#x606F;&#x662F;&#x84DD;&#x53E0;&#x51FA;&#x4E86;&#x517C;&#x5BB9;Hyper-V&#x7684;&#x7248;&#x672C;&#xFF0C;&#x574F;&#x6D88;&#x606F;&#x662F;&#x8FD9;&#x4E2A;&#x7248;&#x672C;&#x5728;&#x6211;&#x7684;&#x7535;&#x8111;&#x4E0A;&#x6CA1;&#x7528;&#x8D77;&#x6765;&#x3002;</p></body></html>
+        <html><head></head><body><p>更新：好消息是蓝叠出了兼容Hyper-V的版本，坏消息是这个版本在我的电脑上没用起来。</p></body></html>
         <p class="article-more-link">
             <a href="/2020/03/31/hyper-v-sucks/#more">阅读更多</a>
         </p>
@@ -301,7 +341,7 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>&#x505A;&#x8FD9;&#x4E2A;&#x4E1C;&#x897F;&#x7684;&#x52A8;&#x673A;&#x5176;&#x5B9E;&#x662F;&#x4E3A;&#x4E86;&#x5237;48&#x7684;&#x516C;&#x6F14;&#x76F4;&#x64AD;&#xFF0C;&#x672C;&#x6765;&#x4E00;&#x76F4;&#x5728;b&#x7AD9;&#x4E0A;&#x770B;&#x662F;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#x7684;&#x3002;&#x4F46;&#x770B;&#x8FD9;&#x4E2A;&#x6708;&#x7684;n&#x961F;N.E.W&#x516C;&#x6F14;&#x7684;&#x90A3;&#x5929;&#xFF0C;b&#x7AD9;&#x4E0D;&#x77E5;&#x4E3A;&#x4F55;&#x6CA1;&#x6709;&#x76F4;&#x64AD;&#x6E90;&#x4E86;&#x2026;&#x2026;</p></body></html>
+        <html><head></head><body><p>做这个东西的动机其实是为了刷48的公演直播，本来一直在b站上看是没有问题的。但看这个月的n队N.E.W公演的那天，b站不知为何没有直播源了……</p></body></html>
         <p class="article-more-link">
             <a href="/2019/04/29/replace-the-flash-player-with-an-HTML5-player/#more">阅读更多</a>
         </p>
@@ -322,7 +362,7 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; 2020 mykonakona&nbsp;
+                &copy; 2021 mykonakona&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
