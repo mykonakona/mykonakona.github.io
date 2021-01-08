@@ -1,5 +1,5 @@
 ---
-title: 给自己的VPS的新服务新增配证书
+title: 给自己VPS的新服务新增证书
 date: 2021-01-08 15:28:00
 categories: coding
 tags: VPS
