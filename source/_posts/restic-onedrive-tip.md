@@ -20,3 +20,8 @@ tags: VPS
 两相对照后，我发现我当时也是无脑`apt-get install resitc`了，没有考虑到现在VPS上的系统版本是UBuntu的LTS版本。导致我在VPS安装的restic的这个版本是0.8.3，而根据讨论贴里的信息，restic在0.9.0版本里才加入rclone支持。
 
 因此需要重装一下restic，我的步骤是先根据go主页的[Download and install](https://golang.org/doc/install)安装好go环境，之后再通过`wget https://github.com/restic/restic/releases/download/v0.12.0/restic-0.12.0.tar.gz`下载官方的包，解压后再执行`make`去编译。编译完成后生成的可执行的restic文件就可以正常使用了。
+
+如果需要配置定时任务，可以用crontab或者systemd。crontab的话可以先把`RESTIC_PASSWORD="here is your password"`加到`~/.bashrc`或者`~/etc/profile`里，之后在`crontab -e`添加任务配置：
+```
+0 4 * * * . ~/.bashrc; /home/user/restic-0.12.0/restic -r rclone:onedrivedb:Backup backup /home/user/data; /home/user/restic-0.12.0/restic forget -q --prune --keep-hourly 24 --keep-daily 7
+```
