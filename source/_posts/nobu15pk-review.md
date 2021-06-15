@@ -1,8 +1,8 @@
 ---
 title: 信野15pk吐槽
 date: 2021-02-15 16:18:00
-categories: life
-tags: game
+categories: game
+tags: [Koei, SLG]
 ---
 
 聊聊印象比较深的几个点：

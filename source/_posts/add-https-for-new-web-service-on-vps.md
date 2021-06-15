@@ -1,7 +1,7 @@
 ---
 title: 给自己VPS的新服务新增证书
 date: 2021-01-08 15:28:00
-categories: coding
+categories: Coding
 tags: VPS
 ---
 

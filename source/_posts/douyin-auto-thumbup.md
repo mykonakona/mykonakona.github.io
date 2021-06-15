@@ -1,7 +1,7 @@
 ---
 title: 抖音自动点赞
 date: 2020-11-16 16:04:00
-categories: coding
+categories: Coding
 tags: android
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: restic使用onedrive的贴士
 date: 2021-03-30 10:02:00
-categories: coding
+categories: Coding
 tags: VPS 
 ---
 

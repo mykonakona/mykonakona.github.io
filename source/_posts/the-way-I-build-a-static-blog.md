@@ -1,8 +1,8 @@
 ---
 title: 我搭静态博客
 date: 2020-05-27 21:59:00
-categories: coding
-tags: hexo
+categories: Coding
+tags: Hexo
 ---
 
 动态博客其实一直以来都很吸引我。事实上不久之前，我还在自己的VPS上搭建了最近比较火的halo。域名、证书签发、反代的配置等等都做好了。但经过一系列的折腾，最后还是回来重新使用github page。

@@ -1,8 +1,8 @@
 ---
 title: Hyper-V使用记录
 date: 2020-03-31 22:53
-categories: coding
-tags: virtualization 
+categories: Coding
+tags: [Virtualization, Hyper-V]
 ---
 
 更新：好消息是蓝叠出了兼容Hyper-V的版本，坏消息是这个版本在我的电脑上没用起来。
