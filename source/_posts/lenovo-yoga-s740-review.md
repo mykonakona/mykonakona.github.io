@@ -1,7 +1,7 @@
 ---
 title: 聊聊Yoga S740
 date: 2020-09-04 22:32:00
-categories: Life
+categories: Digital
 tags: Laptop
 ---
 
