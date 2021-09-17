@@ -8,10 +8,10 @@ body, html {
   color: #fefefe; }
 
 a {
-  color: #009170; }
+  color: #00DBAB; }
 
 a:hover {
-  color: #005240; }
+  color: #00C298; }
 
 a.navbar-item.is-active, a.navbar-item:hover, a.navbar-link.is-active, a.navbar-link:hover {
   background-color: #f5f5f5;

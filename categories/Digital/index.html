@@ -26,17 +26,22 @@
 <link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
 
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery.min.css" />
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery-indicator.min.css" />
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery-video.min.css" />
 
     
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
-    
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
+
 
 <link rel="stylesheet" href="/css/style.css">
 
     
 <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
 
 <script> loadCSS("https://fonts.loli.net/css?family=Lora|Montserrat|Fira+Mono|Material+Icons")</script>
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Lora|Montserrat|Fira+Mono|Material+Icons" media="all">
@@ -46,6 +51,16 @@
 
 
 
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="mykonakona" type="application/atom+xml">
@@ -76,6 +91,9 @@
             
             <a class="navbar-item "
                href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/gallery">相册</a>
             
             <a class="navbar-item "
                href="/about">关于</a>
@@ -197,6 +215,140 @@
     moment.locale("zh-CN");
 </script>
 
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery({
+                rowHeight : 250,
+                lastRow : 'nojustify',
+                margins : 30
+            });
+            }
+        });
+    })(jQuery);
+
+    
+</script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-helper.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-fullscreen.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-indicator.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-video.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-vimeo.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-youtube.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/jquery.blueimp-gallery.js"></script>
+<script>
+    document.getElementById('links').onclick = function (event) {
+      event = event || window.event
+      var target = event.target || event.srcElement
+      var link = target.src ? target.parentNode : target
+      var options = { index: link, event: event }
+      var links = this.getElementsByTagName('a')
+      blueimp.Gallery(links, options)
+    }
+  </script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
 
 
 
