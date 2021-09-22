@@ -42,22 +42,18 @@ Caelum在Ragha的帮助下终于从绝望中看到一丝胜机，但残酷的现
 小结：
 这是我第一次参加Dominions5的邮件联机局，我想用三个关键词来概括：
 
-    幸运
-    诚实地说本场游戏无论是知识的积累还是对机制的理解，参赛的大家水平都比我高。因此在最后如果没有Ragha站出来帮助我，又或者horror拆掉的是我防守的王座，恐怕howfar局就会是另一个结果。
-    协作
-    Dominions从结果上看是一个零和游戏，玩家间免不了出现相互算计的情况。但是玩家也应该意识到，在过程中，如果大家目标一致，就应该放下猜忌团结协作，这样才能达成共赢。
-    坚持
-    Dominions联机像一场长跑，可能大家碰到坚持不下去的情况会想要烂掉，这也是人之常情。但说得鸡汤一点，如果坚持下去，也可能会发生意想不到的结果。这可能也是开赛者饼公希望我们能够切身体验的主题之一。
+- 幸运：诚实地说本场游戏无论是知识的积累还是对机制的理解，参赛的大家水平都比我高。因此在最后如果没有Ragha站出来帮助我，又或者horror拆掉的是我防守的王座，恐怕howfar局就会是另一个结果。
+- 协作：Dominions从结果上看是一个零和游戏，玩家间免不了出现相互算计的情况。但是玩家也应该意识到，在过程中，如果大家目标一致，就应该放下猜忌团结协作，这样才能达成共赢。
+- 坚持：Dominions联机像一场长跑，可能大家碰到坚持不下去的情况会想要烂掉，这也是人之常情。但说得鸡汤一点，如果坚持下去，也可能会发生意想不到的结果。这可能也是开赛者饼公希望我们能够切身体验的主题之一。
 
 最后我想说的是，真的非常推荐常年单机的新手尝试联机。Dominions联机的游玩体验和单机大不相同。联机中风云变幻的局势可以倒逼玩家主动学习提高游戏水平，希望已经入坑的大家有机会都能感受到Dominions联机的魅力与乐趣，也欢迎更多新玩家尝试游玩Dominions系列😄
 
-<div id="links"  class="links">
-<a href="https://che.jakku.top/images/2021/09/18/7d13e163cdd2ae970958bd953adbdf2b.png"><img src="https://che.jakku.top/images/2021/09/18/7d13e163cdd2ae970958bd953adbdf2b.th.png alt="7d13e163cdd2ae970958bd953adbdf2b.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/b48027e996319bd63ec4662e52385fba.png"><img src="https://che.jakku.top/images/2021/09/18/b48027e996319bd63ec4662e52385fba.th.png alt="b48027e996319bd63ec4662e52385fba.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/fa48ff15994d90c6fad566685910766b.png"><img src="https://che.jakku.top/images/2021/09/18/fa48ff15994d90c6fad566685910766b.th.png alt="fa48ff15994d90c6fad566685910766b.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/baf5b5095970bb42e2583bb133ef727e.png"><img src="https://che.jakku.top/images/2021/09/18/baf5b5095970bb42e2583bb133ef727e.th.png alt="baf5b5095970bb42e2583bb133ef727e.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/1a7a0175d27c9dba5c4e57734535cb2d.png"><img src="https://che.jakku.top/images/2021/09/18/1a7a0175d27c9dba5c4e57734535cb2d.th.png alt="1a7a0175d27c9dba5c4e57734535cb2d.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/296736f060c9bf6f175cfa47056f78a7.png"><img src="https://che.jakku.top/images/2021/09/18/296736f060c9bf6f175cfa47056f78a7.th.png alt="296736f060c9bf6f175cfa47056f78a7.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/53fcbcd0fc6b24b28e238533ae10fd64.png"><img src="https://che.jakku.top/images/2021/09/18/53fcbcd0fc6b24b28e238533ae10fd64.th.png alt="53fcbcd0fc6b24b28e238533ae10fd64.th.png" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/18/c6f11489c11dc4b38e5b67fba591c96b.png"><img src="https://che.jakku.top/images/2021/09/18/c6f11489c11dc4b38e5b67fba591c96b.th.png alt="c6f11489c11dc4b38e5b67fba591c96b.th.png" border="0"></a>
-</div>
+终场数据：
+![省份](https://che.jakku.top/images/2021/09/18/7d13e163cdd2ae970958bd953adbdf2b.png)
+![要塞](https://che.jakku.top/images/2021/09/18/b48027e996319bd63ec4662e52385fba.png)
+![收入](https://che.jakku.top/images/2021/09/18/fa48ff15994d90c6fad566685910766b.png)
+![宝石收入](https://che.jakku.top/images/2021/09/18/baf5b5095970bb42e2583bb133ef727e.png)
+![研究](https://che.jakku.top/images/2021/09/18/1a7a0175d27c9dba5c4e57734535cb2d.png)
+![神域](https://che.jakku.top/images/2021/09/18/296736f060c9bf6f175cfa47056f78a7.png)
+![军队数量](https://che.jakku.top/images/2021/09/18/53fcbcd0fc6b24b28e238533ae10fd64.png)
+![登神点](https://che.jakku.top/images/2021/09/18/c6f11489c11dc4b38e5b67fba591c96b.png)

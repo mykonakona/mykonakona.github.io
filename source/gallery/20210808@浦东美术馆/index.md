@@ -5,8 +5,14 @@ layout: "blueimpgallery"
 
 ## 20210808@浦东美术馆
 
-### 光：泰特美术馆珍藏展
-2021.07.08 - 2021.11.14
+### 光：泰特美术馆珍藏展（1-21）
+- 展出时间：2021.07.08 - 2021.11.14
+  
+### 蔡国强：远行与归来（22-32） 
+- 展出时间：2021.07.08 - 2022.03.07
+  
+### 胡安·米罗：女人·小鸟·星星（33-末尾）
+- 展出时间：2021.07.08 - 2021.11.07
 
 <div id="links"  class="links">
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_170337.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_170337.th.jpg" alt="IMG_20210808_170337.th.jpg" border="0"></a>
@@ -30,12 +36,6 @@ layout: "blueimpgallery"
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_172357.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_172357.th.jpg" alt="IMG_20210808_172357.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_172404.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_172404.th.jpg" alt="IMG_20210808_172404.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_172521.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_172521.th.jpg" alt="IMG_20210808_172521.th.jpg" border="0"></a>
-</div>
-
-### 蔡国强：远行与归来 
-2021.07.08 - 2022.03.07
-
-<div id="links"  class="links">
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_154721.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_154721.th.jpg" alt="IMG_20210808_154721.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_154905.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_154905.th.jpg" alt="IMG_20210808_154905.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_155142.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_155142.th.jpg" alt="IMG_20210808_155142.th.jpg" border="0"></a>
@@ -47,13 +47,6 @@ layout: "blueimpgallery"
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_162548.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_162548.th.jpg" alt="IMG_20210808_162548.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_162620.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_162620.th.jpg" alt="IMG_20210808_162620.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_162939.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_162939.th.jpg" alt="IMG_20210808_162939.th.jpg" border="0"></a>
-<a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_163016.jpg"><img loading="lazy" width="105" height="105"　src="https://che.jakku.top/images/2021/09/17/IMG_20210808_163016.th.jpg" alt="IMG_20210808_163016.th.jpg" border="0"></a>
-</div>
-
-### 胡安·米罗：女人·小鸟·星星
-2021.07.08 - 2021.11.07
-
-<div id="links"  class="links">
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_173707.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_173707.th.jpg" alt="IMG_20210808_173707.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_173827.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_173827.th.jpg" alt="IMG_20210808_173827.th.jpg" border="0"></a>
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_173855.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_173855.th.jpg" alt="IMG_20210808_173855.th.jpg" border="0"></a>
