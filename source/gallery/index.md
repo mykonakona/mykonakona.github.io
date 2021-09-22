@@ -3,7 +3,7 @@ layout: "blueimpgallery"
 comments: false
 ---
 
-# 展览
+# 看展览
 
 ## [20210815@上海当代艺术博物馆](./20210815@上海当代艺术博物馆)
 

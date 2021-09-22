@@ -1,7 +1,7 @@
 ---
 title: 信野15pk吐槽
 date: 2021-02-15 16:18:00
-categories: game
+categories: Game
 tags: [Koei, SLG]
 ---
 
