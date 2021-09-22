@@ -9,88 +9,8 @@
 
 
     <url>
-        <loc>http://mykonakona.github.io/2021/01/08/add-https-for-new-web-service-on-vps/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2020/11/16/douyin-auto-thumbup/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2018/05/23/hello-world/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2020/12/08/how-to-solve-the-traditional-chinese-garbled-code-problem-of-old-windows-games/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2020/03/31/hyper-v-sucks/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2020/09/04/lenovo-yoga-s740-review/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2021/02/15/nobu15pk-review/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2019/04/29/replace-the-flash-player-with-an-HTML5-player/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2021/03/30/restic-onedrive-tip/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/2020/05/27/the-way-I-build-a-static-blog/</loc>
-        <lastmod>2021-09-17T16:10:43.197Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://mykonakona.github.io/2021/06/07/a-introduction-of-eikan-wa-kimi/</loc>
-        <lastmod>2021-09-17T16:10:43.193Z</lastmod>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -98,7 +18,87 @@
 
     <url>
         <loc>http://mykonakona.github.io/2020/08/24/acme-verify-error/</loc>
-        <lastmod>2021-09-17T16:10:43.193Z</lastmod>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2021/01/08/add-https-for-new-web-service-on-vps/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2020/11/16/douyin-auto-thumbup/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2018/05/23/hello-world/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2020/12/08/how-to-solve-the-traditional-chinese-garbled-code-problem-of-old-windows-games/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2020/03/31/hyper-v-sucks/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2020/09/04/lenovo-yoga-s740-review/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2021/02/15/nobu15pk-review/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2019/04/29/replace-the-flash-player-with-an-HTML5-player/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2021/03/30/restic-onedrive-tip/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/2020/05/27/the-way-I-build-a-static-blog/</loc>
+        <lastmod>2021-09-22T07:44:31.153Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
