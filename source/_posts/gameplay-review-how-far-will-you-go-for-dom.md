@@ -8,18 +8,19 @@ tags: SLG
 发在[trow](https://trow.cc/board/showtopic=50618)上的一份算是战报一样的东西吧，也是第一次完整的打完一局Dominions5的联机，存个档防止没了。
 
 <!-- more -->
+## 正文
 
 大家好，我是本局的Caelum，我从自己的视角写了一点对howfar局回顾的流水账，以帮助大家了解整场的进程，一些细节可能有记忆上的出入，或者有描述上不妥的地方，请大家直接指出来。
 
 另外也引流一下包子（Atlantis）的详细战报，囊括了更多的细节以及规划、对抗的思路：https://trow.cc/board/showtopic=50295😋 
 
-前期：
+### 前期
 howfar局开始不久后就大事件频发，包括讨论群内被大家津津乐道的Jomo5t开荒10地的强势表现（直接引发了箱Jomo联盟），以及C'tis开荒失败并被Lemuria乘势进攻。此后没过多久就发生了箱Jomo联盟参与国Abysia的ai，一定程度上成为了后续箱Jomo进入拉锯的原因。进入中期后，Patala逐渐走出前期开荒不利的困境，但并没有刻意与他国维持良好的外交关系，因此邻国Ragha、Caelum和Lemuria建立了箱Patala联盟，希望能够从对Patala战争中获利。
 
-中期：
+### 中期
 随着时间进展，这两个包围网也走向了截然不同的结果：箱Jomo联盟在前期优势的情况下却因为一系列的阴差阳错(这里可以参见前面提到的包子的战报，有详细的描述）逐渐被Jomo扭转局面，Ulm和T'ien Ch'i都遭到了较大战损；而箱Patala联盟由于参与的Ragha、Caelum、Lemuria前期实力保存完整，使得Patala面临较大压力。虽然初期面对Patala的军队Caelum遭遇大败，但最后Lemuria拿下了Patala首都，Patala孤立无援，无力继续对抗三国，最终丢失全部地盘。Lemuria在此战中获利较多，且邻国Abysia和C'tis一个ai，一个困守一地，无法对其造成实质性威胁。在宽松的生存条件下，Lemuria通过宝石外交渡过了经济困难时期，并结合本国的刷兵优势，逐渐发育成为了游戏中局最大的boss。
 
-后期：
+### 后期
 箱Jomo联盟节节败退，T'ien Ch'i无力继续进攻，Ulm玩家ai。Jomo虽然击退强敌，但由于一直被他国针对，亟需修养生息。其他国家则限于前期相互间签订了过多nap，也陷入发展的困局。然而此时Lemuria的体量仍在不断增大，Atlantis玩家开始意识到Lemuria已经不可处理，再加上本局是60回合灭世，届时将无人能够挑战Lemuria，Lemuria的登神已经进入实际上的倒计时。
 
 于是箱Jomo联盟停战，以Atlantis为首，剩余的Jomo、T'ien Ch'i、Ragha、Caelum国家紧急加入生者联盟对抗亡者。Lemuria为应对整场游戏中最大的危机，也祭出反制，开启全球结界时光重担。前线的鸟人系国家Ragha和Caelum的实力大幅削弱，一时间生者希望全都寄托在了Atlantis的身上。
@@ -28,7 +29,7 @@ howfar局开始不久后就大事件频发，包括讨论群内被大家津津�
 
 Atlantis拿下了Lemuria的王座，但Lemuria主力尚存，随时能够反攻，因此Atlantis提出执行生者联盟初期战略构想的B计划，即将王座集中在一个玩家手中死守并等待灭世，希望通过王座点的领先获取胜利，这就涉及到更加复杂的规划。游戏进行到此，大家的共识几乎都是疲惫战胜了乐趣。双方都小心翼翼，反复推演测试，这占用了玩家们较多的时间和精力，因为稍有不慎就会满盘皆输。这种身心上的疲劳感伴随着llamaserver故障有所缓解，但大家都明白问题只是暂时被搁置了起来。并且此前有部分玩家参与了新局，精力上也开始分散，烂局的想法有所蔓延。终于Jomo向Lemuria提出在决战后一起ai，Lemuria可能是考虑到取胜需要付出的场外代价太大便同意了Jomo的提议。但由于Jomo误以为ai的当回合可以发出移动命令，导致ai后的Jomo主力在电脑的指挥下并没有如期前往约定地点与Lemuria决战。虽然Jomo失约，但Lemuria还是履行了约定ai。生者们坚持到了最后，但也随即意识到将要面临兄弟阋墙的现实。
 
-尾声：
+### 尾声
 在生者获得胜利后，T'ien Ch'i也以ai的方式退出游戏，此时参与的玩家只剩下Atlantis、Ragha和Caelum。由于时光重担依然存在，并且鸟人系国家没有驱散的方式，因此Atlantis成为这一阶段实力最强的一国。游戏正式进入灭世，horror每回合都屠杀大量玩家的法师，各国领土的unrest也因为horror事件不断增加。ai的各国由于游戏难度机制仍然保持着良好的经济能力，不断依靠火星兵侵扰玩家的领地。Caelum因为位置和前期作战积累的优势，最高时坐拥4王座点。但好景不长，Caelum家中王座不断被horror攻打，由于缺乏防守王座的能力，最终三个王座被全部拆光，王座点归零。而这时Atlantis仍然保有两个王座。在灭世情境下，为了取胜，Atlantis对Ragha及Caelum的进攻成为必然，同时Atlantis也在尝试拆除二级王座the iron throne。
 
 可以说直到此时Atlantis仍然占据较大优势，并且Atlantis受时光重担影响较小，仍有余力调度部队向各路出击。Caelum和Ragha则早已无法发挥部队飞行优势，单位不断老死病死，实际上已无法正面对抗Atlantis的军队，唯一对鸟人系国家的利好是大家都没有了神和先知，即使被Atlantis拿下王座，一时间也无法宣称。
@@ -39,7 +40,7 @@ Caelum在Ragha的帮助下终于从绝望中看到一丝胜机，但残酷的现
 
 最后的第73回合，Caelum方算上所有法师与部队约40余单位死守三级王座。而Atlantis调集的是一支近90单位ice guard携wight mage和angakok的部队，继续向Caelum的王座发起进军。这时距离Atlantis的部队到达the throne of eternal suffering仅有一格之遥，同时Atlantis召唤的bishop fish宣称了此前在Ragha境内拿下的王座the throne of high。只要拆掉Caelum手中的王座，Atlantis就可以奠定胜局。但最终灭世成为决定游戏结局的关键因素，Atlantis刚刚宣称的王座the throne of high在回合内被horror无情地拆除，Caelum最终幸运地获得了胜利。
 
-小结：
+## 小结
 这是我第一次参加Dominions5的邮件联机局，我想用三个关键词来概括：
 
 - 幸运：诚实地说本场游戏无论是知识的积累还是对机制的理解，参赛的大家水平都比我高。因此在最后如果没有Ragha站出来帮助我，又或者horror拆掉的是我防守的王座，恐怕howfar局就会是另一个结果。
