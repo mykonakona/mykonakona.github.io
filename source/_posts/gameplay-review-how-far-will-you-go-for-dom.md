@@ -1,5 +1,5 @@
 ---
-title: Howfarwillyougofordom：Dominions5联机局回顾
+title: Dominions5联机新人局回顾
 date: 2021-09-22 16:22:00
 categories: Game
 tags: SLG
