@@ -3,7 +3,7 @@ layout: "blueimpgallery"
 comments: false
 ---
 
-# 看展览、
+# 看展览
 
 ## [20211004@江宁织造博物馆](./20211004@江宁织造博物馆)
 
