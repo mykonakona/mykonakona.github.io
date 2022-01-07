@@ -9,6 +9,91 @@ tags: VPS
 
 <!-- more -->
 
+2022年1月7日更新：
+
+关于当时没有选用通配符证书的原因好像隐约回忆起来了，似乎是因为通配符证书需要手动签发，没法自动续签。具体是因为我目前使用的场景有问题还是脚本有这个问题也还没有太确定。
+
+关于下文中“che.xxx.xyz这个域名配置成我在/home/wwwroot/下布好的一个静态网页”这一描述，现在再读，感觉还是直接给出一个nginx的配置范例会比较清晰一些
+
+```
+#运行acme.sh  --issue  -d che.xxx.xyz --webroot  /home/wwwroot/XXX 命令前，注释掉80端口转发的配置
+#   server {
+#       listen 80;
+#	    server_name che.xxx.xyz;
+#	    return 301 https://$host$request_uri;	
+#    }
+
+#取消注释用于签发证书的配置    
+    server {
+        listen 80;
+	    server_name  che.xxx.xyz;
+            root  /home/wwwroot/XXX;
+	    location ^~ /.well-known/acme-challenge/ {
+            default_type "text/plain";
+        }
+    }
+```
+
+保存后运行`./nginx -s reload`令其生效，运行下方的acme.sh命令以签发证书
+
+```
+acme.sh  --issue  -d che.xxx.xyz --webroot  /home/wwwroot/XXX
+
+acme.sh --installcert -d che.xxx.xyz --keypath  /data/che.xxx.xyz.key  --fullchainpath /data/che.xxx.xyz.fc.cer --reloadcmd  "service nginx reload"
+```
+
+完成签发后，在nginx配置新增配置，并注释掉之前用于签发证书的内容
+
+```
+#新增https配置
+    server {
+        listen 443 ssl http2;
+        server_name che.xxx.xyz;
+        ssl_certificate       /data/che.xxx.xyz.fc.cer; 
+        ssl_certificate_key   /data/che.xxx.xyz.key;
+        location / {
+            proxy_pass http://127.0.0.1:1234;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }     
+      
+        location ^~ /.well-known/acme-challenge/ {
+            default_type "text/plain";
+            root  /home/wwwroot/3DCEList;
+        }
+	
+        location = /.well-known/acme-challenge/ {
+            try_files $uri =404;
+        }	
+    
+    }	
+    
+#取消注释80端口的转发，令其生效
+    server {
+        listen 80;
+        server_name che.xxx.xyz;
+        return 301 https://$host$request_uri;	
+    }
+    
+#注释掉用于签发证书的配置，以便再次使用
+#    server {
+#       listen 80;
+#	    server_name  che.xxx.xyz;
+#            root  /home/wwwroot/XXX;
+#	    location ^~ /.well-known/acme-challenge/ {
+#            default_type "text/plain";
+#        }
+#    }
+
+```
+
+再次运行`./nginx -s reload`，令配置生效。
+
+***
+
+
 先去购买域名网站的配置页面那里给这次想使用的子域名che.xxx.xyz更新一条DNS记录，DNS更新大概15到20分钟左右时间。
 
 这次加的是chevereto这个图床应用，直接用官网的docker-compose.yml改一下分配的端口号，之后通过`docker-compose up -d`进行安装。
