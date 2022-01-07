@@ -1,6 +1,6 @@
 ---
 title: 给自己VPS的新服务新增证书
-date: 2021-01-08 15:28:00
+date: 2022-01-07 19:34:00
 categories: Coding
 tags: VPS
 ---
@@ -61,7 +61,7 @@ acme.sh --installcert -d che.xxx.xyz --keypath  /data/che.xxx.xyz.key  --fullcha
       
         location ^~ /.well-known/acme-challenge/ {
             default_type "text/plain";
-            root  /home/wwwroot/3DCEList;
+            root  /home/wwwroot/XXX;
         }
 	
         location = /.well-known/acme-challenge/ {
