@@ -146,7 +146,7 @@
         <span class="column is-narrow">
             
             
-            3 分钟 读完 (约 470 字)
+            3 分钟 读完 (约 499 字)
         </span>
         
     </div>
@@ -161,6 +161,12 @@
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>执行<code>vim /etc/v2ray/config.json</code>修改v2ray配置文件的outbounds和routing部分为：</p>
 <p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">"outbounds": [</span><br><span class="line">  {</span><br><span class="line">    "protocol": "freedom"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "tag": "media-unlock",</span><br><span class="line">    "protocol": "socks",</span><br><span class="line">    "settings": {</span><br><span class="line">    "servers": [</span><br><span class="line">    {</span><br><span class="line">    "address": "127.0.0.1",</span><br><span class="line">    "port": 40000,</span><br><span class="line">    "users": []</span><br><span class="line">    }</span><br><span class="line">    ]</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">], </span><br><span class="line">"routing": {</span><br><span class="line">  "domainStrategy": "AsIs",</span><br><span class="line">  "rules": [</span><br><span class="line">    {</span><br><span class="line">    "type": "field",</span><br><span class="line">    "domain": [</span><br><span class="line">    "geosite:netflix"</span><br><span class="line">    ],</span><br><span class="line">    "outboundTag": "media-unlock"</span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><br>修改后<code>sudo systemctl restart v2ray</code>，重启v2ray使配置生效。<p></p>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这种方法解锁的机器是无法通过<code>wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf</code>的流媒体检测的，结果仍然会显示非原生IP，但实际观看时不受影响。</p>
+<p>过程中使用的所有项目：</p>
+<ul>
+<li><a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener">https://github.com/P3TERX/warp.sh</a></li>
+<li><a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener">https://github.com/fscarmen/warp</a></li>
+<li><a href="https://github.com/sjlleo/netflix-verify" target="_blank" rel="noopener">https://github.com/sjlleo/netflix-verify</a></li>
+</ul>
 </body></html>
     
     </div>
