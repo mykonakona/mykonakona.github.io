@@ -5,35 +5,39 @@ categories: Coding
 tags: VPS
 ---
 
-因为现在有方便的[一把梭脚本][1]，正常来讲新的空白机器想要解锁可以直接执行：`bash <(curl -fsSL git.io/warp.sh) d`
+首先要解释一下，如果不做解锁，就无法通过服务器在奈飞上观看breaking bad这类非自制剧。
+
+因为现在有方便的[一把梭脚本][1]，正常来讲新的空白机器想要解锁可以直接执行：
+
+`bash <(curl -fsSL git.io/warp.sh) d`
 
 <!-- more -->
+#  问题
 
-然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)，实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我上面部署了很多docker容器，因此也无法轻易地重装系统。所以采用了另一解锁方案：[WARP socks5 client分流][2]。
+然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我懒得排查，且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：[WARP socks5 client分流][2]。
 
-## 安装warp socks5 client
+另外，我在按照该解锁方案实操时，使用另一[一键WARP脚本][3]安装warp socks5 client出现了无法安装的情况。
 
-我在按照上文实操时，使用另一[一键WARP脚本][3]
+为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供hostdare用户参考：
 
-`wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`
+# 过程
+## 安装WARP socks5 client
 
-安装warp的linux client，出现了无法安装的情况。
-
-此时可以自行手动安装，也可以将之前提到的一把梭脚本带菜单参数运行
+执行：
 
 `bash <(curl -fsSL git.io/warp.sh) menu`
 
 进入菜单后，选择相关选项安装warp linux client。
+ 
+## 刷可使用IP
 
-## 刷支持IP
-
-完成上一步的安装后，再回到
+完成上一步的安装后，执行：
 
 `wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`
 
 选择选项5：“更换支持Netflix的IP”，刷到可使用的IP。
 
-## 修改配置文件
+## 修改配置文件实现分流
 
 执行`vim /etc/v2ray/config.json`修改v2ray配置文件的outbounds和routing部分为：
 
@@ -69,7 +73,11 @@ tags: VPS
     ]
   }
 ```
-修改后`sudo systemctl restart v2ray`，重启v2ray使配置生效。
+修改后执行：
+
+`sudo systemctl restart v2ray`
+
+重启v2ray使配置生效。
 
 ## 补充
 
