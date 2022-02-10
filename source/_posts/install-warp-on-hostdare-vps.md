@@ -61,5 +61,8 @@ tags: VPS
 
 这种方法解锁的机器是无法通过`wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 && chmod +x nf && clear && ./nf`的流媒体检测的，结果仍然会显示非原生IP，但实际观看时不受影响。
 
-
+过程中使用的所有项目：
+- https://github.com/P3TERX/warp.sh
+- https://github.com/fscarmen/warp
+- https://github.com/sjlleo/netflix-verify
 
