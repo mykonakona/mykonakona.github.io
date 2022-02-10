@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Hostdare服务器解锁奈飞实测 - mykonakona</title>
+<title>一次VPS解锁奈飞的实操 - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -121,7 +121,7 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Hostdare服务器解锁奈飞实测
+            一次VPS解锁奈飞的实操
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -146,7 +146,7 @@
         <span class="column is-narrow">
             
             
-            4 分钟 读完 (约 590 字)
+            4 分钟 读完 (约 619 字)
         </span>
         
     </div>
@@ -156,9 +156,9 @@
 <p>因为现在有方便的<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，正常来讲新的空白机器想要解锁可以直接执行：</p>
 <p><code>bash &lt;(curl -fsSL git.io/warp.sh) d</code></p>
 <a id="more"></a>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到<code>starting wireguard</code>时卡住，由于我懒得排查，且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：<a href="https://vpsxb.net/1069/" target="_blank" rel="noopener" title="继续解锁奈飞（七）-WARP socks5 client分流">WARP socks5 client分流</a>。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到<code>starting wireguard</code>时卡住，由于我懒得排查具体是什么原因（操作系统版本？还是服务器的一些未知原因？），且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：<a href="https://vpsxb.net/1069/" target="_blank" rel="noopener" title="继续解锁奈飞（七）-WARP socks5 client分流">WARP socks5 client分流</a>。</p>
 <p>另外，我在按照该解锁方案实操时，使用另一<a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener" title="【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络">一键WARP脚本</a>安装warp socks5 client出现了无法安装的情况。</p>
-<p>为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供hostdare用户参考：</p>
+<p>为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供Hostdare用户参考：</p>
 <h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="安装WARP-socks5-client"><a href="#安装WARP-socks5-client" class="headerlink" title="安装WARP socks5 client"></a>安装WARP socks5 client</h2><p>执行：</p>
 <p><code>bash &lt;(curl -fsSL git.io/warp.sh) menu</code></p>
 <p>进入菜单后，选择相关选项安装warp linux client。</p>
