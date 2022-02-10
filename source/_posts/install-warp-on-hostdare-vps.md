@@ -1,23 +1,37 @@
 ---
-title: Hostdare解锁奈飞实测
+title: Hostdare服务器解锁奈飞实测
 date: 2022-01-27 15:55
 categories: Coding
 tags: VPS
 ---
 
-因为现在有方便的一把梭脚本，正常来讲新的空白机器想要解锁可以直接执行：`bash <(curl -fsSL git.io/warp.sh) d`
+因为现在有方便的[一把梭脚本][1]，正常来讲新的空白机器想要解锁可以直接执行：`bash <(curl -fsSL git.io/warp.sh) d`
 
 <!-- more -->
 
-然而我的这台Hostdare(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)，实际执行一把梭脚本时会在执行到`starting wireguard`时卡住，由于我上面部署了很多docker容器，因此无法轻易地重装系统。所以参考了https://vpsxb.net/1069/ 进行解锁。但实际操作的结果会和教程有一点出入，因此这里记录了一下实际操作的过程，安装的过程基本上都围绕现在使用较多的一些脚本进行：
+然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)，实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我上面部署了很多docker容器，因此也无法轻易地重装系统。所以采用了另一解锁方案：[WARP socks5 client分流][2]。
 
-## 安装warp linux client
+## 安装warp socks5 client
 
-我在按照上文实操时，使用脚本`wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`安装warp的linux client时出现了无法安装的情况，因此我先运行了另一个脚本`bash <(curl -fsSL git.io/warp.sh) menu`，在菜单中选择相关选项安装warp linux client。
+我在按照上文实操时，使用另一[一键WARP脚本][3]
+
+`wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`
+
+安装warp的linux client，出现了无法安装的情况。
+
+此时可以自行手动安装，也可以将之前提到的一把梭脚本带菜单参数运行
+
+`bash <(curl -fsSL git.io/warp.sh) menu`
+
+进入菜单后，选择相关选项安装warp linux client。
 
 ## 刷支持IP
 
-完成上一步的安装后，使用`wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`，选择选项5：“更换支持Netflix的IP”，刷到可使用的IP。
+完成上一步的安装后，再回到
+
+`wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh`
+
+选择选项5：“更换支持Netflix的IP”，刷到可使用的IP。
 
 ## 修改配置文件
 
@@ -59,10 +73,10 @@ tags: VPS
 
 ## 补充
 
-这种方法解锁的机器是无法通过`wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 && chmod +x nf && clear && ./nf`的流媒体检测的，结果仍然会显示非原生IP，但实际观看时不受影响。
+这种方法解锁的机器在执行[流媒体检测][3]时，结果仍然会显示非原生IP，但实际观看时不受影响。
 
-过程中使用的所有项目：
-- https://github.com/P3TERX/warp.sh
-- https://github.com/fscarmen/warp
-- https://github.com/sjlleo/netflix-verify
+[1]: https://github.com/P3TERX/warp.sh "Cloudflare WARP configuration script"
+[2]: https://vpsxb.net/1069/ "继续解锁奈飞（七）-WARP socks5 client分流"
+[3]: https://github.com/fscarmen/warp "【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络"
+[3]: https://github.com/sjlleo/netflix-verify "NETFLIX-VERIFY"
 
