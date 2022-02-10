@@ -1,5 +1,5 @@
 ---
-title: Hostdare服务器解锁奈飞实测
+title: 一次VPS解锁奈飞的实操
 date: 2022-01-27 15:55
 categories: Coding
 tags: VPS
@@ -14,11 +14,11 @@ tags: VPS
 <!-- more -->
 #  问题
 
-然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我懒得排查，且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：[WARP socks5 client分流][2]。
+然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我懒得排查具体是什么原因（操作系统版本？还是服务器的一些未知原因？），且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：[WARP socks5 client分流][2]。
 
 另外，我在按照该解锁方案实操时，使用另一[一键WARP脚本][3]安装warp socks5 client出现了无法安装的情况。
 
-为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供hostdare用户参考：
+为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供Hostdare用户参考：
 
 # 过程
 ## 安装WARP socks5 client
