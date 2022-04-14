@@ -14,7 +14,7 @@ tags: Covid-19
 
 笔者在看到这张截图时的第一感受时，仅凭这样一条没有佐证的流言就认定感染会引起睾丸纤维化的后遗症是不严谨的。同时也有其他网友在网络上发表质疑，认为：睾丸纤维化的症状为局部疼痛及硬化，而精液之所以粘稠的原因在于精囊产生的粘液，精囊的位置距离睾丸又有相当距离，因此网图里的这条评论可信度较低。
 
-<img src="../images/微博评论1.jpg" width="30%" height="30%">
+<img src="/images/微博评论1.jpg" width="30%" height="30%">
 
 那么罹患新冠肺炎有可能会引起睾丸后遗症的说法究竟从何而来呢？经搜索发现，今年二月观察者网率先报道了这条消息[1][1]：
 
@@ -28,19 +28,19 @@ tags: Covid-19
 SARS-CoV-2 can cause acute testicular damage with subsequent chronic asymmetric testicular atrophy and associated hormonal changes despite a self-limiting pneumonia in hamsters. Awareness of possible hypogonadism and subfertility is important in managing convalescent COVID-19 males.
 ```
 
-看起来有了论文和实验数据的佐证，似乎睾丸后遗症的说法并非危言耸听，然而同年3月31日Nature Reviews Urology的News & Views栏目中有学者发文对这项研究成果提出疑问[3][3]，认为SARS-CoV-2引起的睾丸改变的程度、持续时间和原因尚不清楚。该发现与非严重的人类感染的相关性是值得怀疑的。
+看起来有了论文和实验数据的佐证，似乎睾丸后遗症的说法并非危言耸听，然而同年3月31日Nature Reviews Urology的News & Views栏目中,有学者发文对这项研究成果提出疑问[3][3]，认为SARS-CoV-2引起的睾丸改变的程度、持续时间和原因尚不清楚。该发现与非严重的人类感染的相关性是值得怀疑的。
 
 笔者在通读Nature Reviews Urology上的这篇文章后大致归纳如下：香港大学在研究过程中忽视了对促性腺激素机炎症指标物水平等关键指标的测量。实验中仓鼠尽管存在肺部感染，但仍显示出对睾丸缺乏影响。该研究所使用的仓鼠模型也并不反映男性的轻度或中度感染。而新冠肺炎感染相关的血管病变以及高水平的全身性炎症则更可能是急性睾丸炎症和随后的慢性损伤的原因。
 
-两种说法究竟孰是孰非，新冠肺炎的睾丸后遗症是否确有其事呢？我们（尤其是男性）究竟需不需要对这一后遗症感到恐慌？笔者认为，如果不能很好地回应Nature Reviews Urology原文提出的这些疑问点，那么港大这项最新研究成果的可信度将大打折扣，而这一结果将巩固笔者对睾丸损害是重症男性感染带来的可能次要影响之一而并非轻中症感染就能够简单引发的一种后遗症这一观点的认同。
+两种说法究竟孰是孰非，新冠肺炎的睾丸后遗症是否确有其事呢？我们（尤其是男性）究竟需不需要对这一后遗症感到恐慌？笔者认为，如果不能很好地回应Nature Reviews Urology原文提出的这些疑问点，那么港大这项最新研究成果的可信度将大打折扣，反而将进一步巩固睾丸损害是重症男性感染带来的可能次要影响之一而并非轻中症感染就能够简单引发的一种后遗症的观点。
 
 因为翻译水平有限，笔者机翻了Nature Reviews Urology上的这篇文章的内容供大家参考。笔者并非医学研究人员，对Clinical Infectious Diseases及Nature Reviews Urology两本刊物的权威性了解有限，仅仅通过简单查看其影响因子进行了比较，因此也希望有相关医学专业的朋友能够围绕这一问题发表专业的意见。
 
-![Is SARS-CoV-2-induced testicular damage in hamsters relevant](../images/Is%20SARS-CoV-2-induced%20testicular%20damage%20in%20hamsters%20relevant_www.nature.com.jpeg)
+![Is SARS-CoV-2-induced testicular damage in hamsters relevant](/images/Is%20SARS-CoV-2-induced%20testicular%20damage%20in%20hamsters%20relevant_www.nature.com.jpeg)
 
-![Nature Reviews Urology影响因子](../images/Nature%20Reviews%20Urology影响因子.png)
+![Nature Reviews Urology影响因子](/images/Nature%20Reviews%20Urology影响因子.png)
 
-![Clinical Infectious Diseases影响因子](../images/Clinical%20Infectious%20Diseases%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90.png)
+![Clinical Infectious Diseases影响因子](/images/Clinical%20Infectious%20Diseases%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90.png)
 
 
 [1]: https://www.guancha.cn/politics/2022_02_21_627039.shtml "港大研究：新冠病毒可致男性患者睾丸萎缩、生育能力下降，康复后仍受影响"
