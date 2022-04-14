@@ -30,7 +30,7 @@ tags: [TV-Series, subtitle]
 
 # 结局
 
-最后我还是回到了一开始的方案，通过[流媒体解锁](https://mykonakona.github.io/2022/01/27/install-warp-on-hostdare-vps/)让我的Netflix节点能够观看自制剧意外的剧集，尽管gf在之前那次不成功的观看过后已经打消了继续看下去的念头，但我收获了一点欣慰，至少以后她如果再想看个什么，我可以有个相对稳定可靠的选项来满足她的需求。
+最后我还是回到了一开始的方案，通过[流媒体解锁](https://mykonakona.github.io/2022/01/27/install-warp-on-hostdare-vps/)让我的Netflix节点能够观看自制剧以外的剧集，尽管gf在之前那次不成功的观看过后已经打消了继续看下去的念头，但我收获了一点欣慰，至少以后她如果再想看个什么，我可以有个相对稳定可靠的选项来满足她的需求。
 
 
 
