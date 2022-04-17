@@ -9,7 +9,7 @@ tags: Covid-19
 
 <!-- more -->
 
-<img src="/images/微博评论1.jpg" width="30%" height="30%">
+<img src="/images/微博评论1.png" width="30%" height="30%">
 
 # 背景
 
@@ -21,29 +21,33 @@ tags: Covid-19
 
 # 一次小小的调查
 
-新冠病毒是否真的会引起睾丸纤维化？或者说新冠病毒是否真的会对睾丸造成相当程度的损伤？出于好奇，我通过搜索引擎查阅了一些资料，虽然未能发现睾丸纤维化的相关结果，但却发现早在今年二月，国内的观察者网等多家媒体就曾报道过这样一条新闻：
+新冠病毒是否真的会引起睾丸纤维化？或者说新冠病毒是否真的会对睾丸造成相当程度的损伤？出于好奇，我通过搜索引擎查阅了一些资料，虽然未能发现睾丸纤维化的相关结果，但却发现早在今年二月，国内的观察者网等多家媒体就曾报道过这样一条新闻[1][1][2][2]：
 
-    综合香港电台、《星岛日报》等媒体2月20日报道，香港大学微生物学系研究发现，新冠病毒可能会造成男性患者性腺机能减退及生育能力下降，患者康复后依然受到影响。研究结果已被接纳在医学期刊《临床传染病》发表。香港大学（港大）微生物学系团队的研究发现，仓鼠即使被中量的新冠病毒 （SARS-CoV-2）感染，也会出现急性睪丸损伤，慢性睪丸萎缩和血清内的睪丸酮下降。此前，据研究记载，部分新冠肺炎患者有睪丸疼痛的情况，一项针对新冠肺炎男性死者的尸检也显示出现了睪丸炎的症状。
-    公众号：观察者网
-    新冠后遗症，港大最新研究
+```
+综合香港电台、《星岛日报》等媒体2月20日报道，香港大学微生物学系研究发现，新冠病毒可能会造成男性患者性腺机能减退及生育能力降，患者康复后依然受到影响。研究结果已被接纳在医学期刊《临床传染病》发表。香港大学（港大）微生物学系团队的研究发现，仓鼠即被中量的新冠病毒 （SARS-CoV-2）感染，也会出现急性睪丸损伤，慢性睪丸萎缩和血清内的睪丸酮下降。此前，据研究记载，部分新冠肺患者有睪丸疼痛的情况，一项针对新冠肺炎男性死者的尸检也显示出现了睪丸炎的症状。
+```
 
-![Is SARS-CoV-2-induced testicular damage in hamsters relevant?](/images/新闻1.jpg)
+![报道截图](/images/新闻1.jpg)
 
+```
+袁国勇团队在仓鼠中进行了实验，用流感病毒H1N1感染做对照，新冠病毒和流感病毒通过鼻内感染和直接睾丸感染，都会导致仓鼠患上自
+性肺炎。但即使只是通过鼻内感染新冠病毒，仓鼠的精子数量和睾酮在第4天到7天急剧下降，并出现睾丸萎缩、体积和重量减小。血清性激
+水平在感染后42至120天显著降低。睾丸中出现急性炎症、出血、曲细精管坏死和精子发生中断。从7到120天，睾丸组织的炎症、变性和坏
+持续存在，而且Omicron和Delta突变株的鼻内感染会引起类似的睾丸变化。但经鼻内或睾丸内给予流感病毒H1N1感染的仓鼠显示并未睾丸
+染或损伤。
+```
 
-    袁国勇团队在仓鼠中进行了实验，用流感病毒H1N1感染做对照，新冠病毒和流感病毒通过鼻内感染和直接睾丸感染，都会导致仓鼠患上自限性肺炎。但即使只是通过鼻内感染新冠病毒，仓鼠的精子数量和睾酮在第4天到7天急剧下降，并出现睾丸萎缩、体积和重量减小。血清性激素水平在感染后42至120天显著降低。睾丸中出现急性炎症、出血、曲细精管坏死和精子发生中断。从7到120天，睾丸组织的炎症、变性和坏死持续存在，而且Omicron和Delta突变株的鼻内感染会引起类似的睾丸变化。但经鼻内或睾丸内给予流感病毒H1N1感染的仓鼠显示并未睾丸感染或损伤。
-    生物世界，公众号：生物世界
-    香港大学袁国勇团队证实新冠病毒会导致睾丸损伤和萎缩，康复患者应关注性腺机能减退和生育率降低问题
+有了论文[3]及实验数据的支撑，尽管“日本同学”的不幸与睾丸纤维化间的关联存在疑问，但新冠病毒会对睾丸造成损伤的说法却似乎并非危言耸听。然而同年3月31日，在Nature子刊Nature Reviews Urology的News & Views栏目发表的一篇的文章对香港大学的这一研究成果提出了质疑[4]：
 
-
-有了论文及实验数据的支撑，尽管“日本同学”的不幸与睾丸纤维化间的关联存在疑问，但新冠病毒会对睾丸造成损伤的说法却似乎并非危言耸听。然而同年3月31日，在Nature子刊Nature Reviews Urology的News & Views栏目发表的一篇的文章对香港大学的这一研究成果提出了质疑：
-
-    The extent, duration and causes of alterations in the testes caused by SARS-CoV-2 are unclear. A new study has documented the effects of SARS-CoV-2 infection on the testes of a golden Syrian hamster model; however, the relevance of these findings to non-severe human infection is questionable.
-    Is SARS-CoV-2-induced testicular damage in hamsters relevant? https://www.nature.com/articles/s41585-022-00589-y
+```
+The extent, duration and causes of alterations in the testes caused by SARS-CoV-2 are unclear. A new study has
+documented the effects of SARS-CoV-2 infection on the testes of a golden Syrian hamster model; however, the
+relevance of these findings to non-severe human infection is questionable.
+```
 
 ![Is SARS-CoV-2-induced testicular damage in hamsters relevant?](/images/论文题图1.png)
 
 Nature Reviews Urology这本刊物隶属于Nature Reviews系列，这个系列主要刊发临床医学、生命科学、自然科学三大科学的综述和评述类型文章，2021年影响因子14.432，JCR分区Q2。而港大本次研究成果发表的刊物Clinical Infectious Diseases则是有着近30年办刊历史的老牌期刊，2021年影响因子9.079，JCR分区Q1。
-
 
 看起来这两本刊物都具备较高的可信度，但两篇文章的观点却相去甚远。并且由于我缺乏相关领域的知识，翻译水平也相对有限，调查到此时已感到比较吃力。在机翻的帮助下，我还是罗列了"Is SARS-CoV-2-induced testicular damage in hamsters relevant?"一文围绕港大实验的部分质疑供大家参考：
 - 在1dpi时精子明显减少（P = 0.0027），这是令人惊讶的早期现象，不能说明睾丸的影响。（仓鼠的睾丸精子通过附睾需要15天，精子生成需要40天）。在4dpi的附睾除了一些浸润外，没有受到大规模的影响。
@@ -63,5 +67,6 @@ Nature Reviews Urology这本刊物隶属于Nature Reviews系列，这个系列�
 本文成文仓促，限于个人水平，文中错误在所难免。恳请广大读者不吝赐教，予以指正，谢谢！
 
 [1]: https://www.guancha.cn/politics/2022_02_21_627039.shtml "港大研究：新冠病毒可致男性患者睾丸萎缩、生育能力下降，康复后仍受影响"
-[2]: https://doi.org/10.1093/cid/ciac142 "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infections by intranasal or testicular inoculation induces testicular damage preventable by vaccination in golden Syrian hamsters"
-[3]: https://www.nature.com/articles/s41585-022-00589-y "Is SARS-CoV-2-induced testicular damage in hamsters relevant?"
+[2]: https://www.linkresearcher.com/theses/2e7bc5d9-57b5-4c0b-b468-183e340f932f "新冠病毒或导致睾丸损伤和萎缩，康复者需关注性欲低下和生育力降低问题"
+[3]: https://doi.org/10.1093/cid/ciac142 "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infections by intranasal or testicular inoculation induces testicular damage preventable by vaccination in golden Syrian hamsters"
+[4]: https://www.nature.com/articles/s41585-022-00589-y "Is SARS-CoV-2-induced testicular damage in hamsters relevant?"
