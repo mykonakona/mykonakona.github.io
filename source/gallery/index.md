@@ -4,7 +4,7 @@ layout: "blueimpgallery"
 comments: false
 ---
 
-本博客的主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。
+本博客主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。
 
 # 使用例
 
