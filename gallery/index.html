@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>有的没的 - mykonakona</title>
+<title>相册使用说明 - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -92,7 +92,7 @@
             <a class="navbar-item "
                href="/categories">分类</a>
             
-            <a class="navbar-item is-active"
+            <a class="navbar-item "
                href="/about">关于</a>
             
         </div>
@@ -118,49 +118,24 @@
 
     <section class="section">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            有的没的
+            相册使用说明
         
     </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-04-21T02:37:51.353Z" itemprop="datePublished">4月 21 2022</time>
-        </span>        
-        
-
-        
-            <!-- 不蒜子统计 -->
-            <span id="busuanzi_container_page_pv" class="column is-narrow">
-                <span id="busuanzi_value_page_pv"></span>读过
-            </span>
-        
-
-        
-        <span class="column is-narrow">
-            
-            
-            2 分钟 读完 (约 269 字)
-        </span>
-        
-    </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>希望这次能坚持久一点。</p>
-<h2 id="更新历史"><a href="#更新历史" class="headerlink" title="更新历史"></a>更新历史</h2><ul>
-<li>2022-04-21 虽然不会有人用，还是把相册挂回来了，不过只当作一个例子。</li>
-<li>2022-04-13 在上海经历历史。</li>
-<li>2022-01-19 加个统计。</li>
-<li>2021-12-13 把相册删了，因为我的图床挂了，而且感觉相册访问起来偏慢，影响了浏览体验（虽然也并不会有人看）。</li>
-<li>2021-09-18 差不多是最累的一次更新了，让主题适配了blueimpgallery，因为感觉原来那个相册插件不怎么好看。</li>
-<li>2020-09-04 哇，电脑重装之后又得搭一遍环境，好烦。</li>
-<li>2020-08-27 字体加载有点问题，调优中……</li>
-<li>2020-05-26 调整minos配色及字体，如果你喜欢我修改的这个<a href="https://github.com/mykonakona/hexo-theme-minos" target="_blank" rel="noopener">版本</a>，欢迎fork。</li>
-<li>2020-05-25 评论服务选用<a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a>。生成并提交sitemap以完成收录。</li>
-<li>2020-05-24 完成初步搭建。主题使用<a href="https://github.com/ppoffice/hexo-theme-minos" target="_blank" rel="noopener">minos</a>，通过<a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a>完成自动化部署。</li>
-</ul>
-</body></html>
+        <html><head></head><body><p>本博客的主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。</p>
+<h1 id="使用例"><a href="#使用例" class="headerlink" title="使用例"></a>使用例</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">favicon: /images/favicon.ico</span><br><span class="line"></span><br><span class="line">menu:</span><br><span class="line">    Archives: /archives</span><br><span class="line">    Categories: /categories</span><br><span class="line">    Gallery: /gallery</span><br><span class="line">    About: /about</span><br><span class="line"></span><br><span class="line">article:</span><br><span class="line">    # Show word count and estimated reading time.</span><br><span class="line">    readtime: true</span><br><span class="line">    # Code highlight theme, please see https://highlightjs.org/static/demo/</span><br><span class="line">    highlight: atom-one-dark    </span><br><span class="line"></span><br><span class="line">logo:</span><br><span class="line">    text: mykonakona</span><br><span class="line"></span><br><span class="line">navbar_links:</span><br><span class="line">  RSS:</span><br><span class="line">    icon: fas fa-rss</span><br><span class="line">    url: https://mykonakona.github.io/atom.xml</span><br><span class="line"></span><br><span class="line">search:</span><br><span class="line">    type: insight</span><br><span class="line"></span><br><span class="line"># Other plugins and their settings.</span><br><span class="line">plugins:</span><br><span class="line">  mathjax: true</span><br><span class="line">  katex: false</span><br><span class="line">  gallery: true</span><br><span class="line">  clipboard: true</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="相册页"><a href="#相册页" class="headerlink" title="相册页"></a>相册页</h2><p>source下新建一../gallery/index.md文件，输入以下内容：</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: "blueimpgallery"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;div id="links"  class="links"&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.th.jpg" alt="IMG_20210808_174117.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.th.jpg" alt="IMG_20210808_174124.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.th.jpg" alt="IMG_20210808_174135.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.th.jpg" alt="IMG_20210808_174144.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><div id="links" class="links">
+<a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.jpg" target="_blank" rel="noopener"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.th.jpg" alt="IMG_20210808_174117.th.jpg" border="0"></a>
+<a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.jpg" target="_blank" rel="noopener"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.th.jpg" alt="IMG_20210808_174124.th.jpg" border="0"></a>
+<a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.jpg" target="_blank" rel="noopener"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.th.jpg" alt="IMG_20210808_174135.th.jpg" border="0"></a>
+<a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.jpg" target="_blank" rel="noopener"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.th.jpg" alt="IMG_20210808_174144.th.jpg" border="0"></a>
+</div></body></html>
     
     </div>
     
@@ -170,32 +145,47 @@
 
 
 
-<div class="comments">
-    <h3 class="title is-4">评论</h3>
-    
-<div id="valine-thread"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread',
-        appId: 'ntDA6wjf0rnD89w8PlMFlvnJ-MdYXbMMI',
-        appKey: 'ubI8DQfMobLrHgNNXDRQzPya',
-        notify: false,
-        verify: false,
-        avatar: '',
-        placeholder: 'Comments',
-        meta: ['nick', 'mail'],
-        visitor: true,
-        lang: ''
-    })
-</script>
 
-
+<div
+id="blueimp-gallery"
+class="blueimp-gallery"
+aria-label="image gallery"
+aria-modal="true"
+role="dialog"
+>
+<div class="slides" aria-live="polite"></div>
+<h3 class="title"></h3>
+<a
+  class="prev"
+  aria-controls="blueimp-gallery"
+  aria-label="previous slide"
+  aria-keyshortcuts="ArrowLeft"
+></a>
+<a
+  class="next"
+  aria-controls="blueimp-gallery"
+  aria-label="next slide"
+  aria-keyshortcuts="ArrowRight"
+></a>
+<a
+  class="close"
+  aria-controls="blueimp-gallery"
+  aria-label="close"
+  aria-keyshortcuts="Escape"
+></a>
+<a
+  class="play-pause"
+  aria-controls="blueimp-gallery"
+  aria-label="play slideshow"
+  aria-keyshortcuts="Space"
+  aria-pressed="false"
+  role="button"
+></a>
+<ol class="indicator"></ol>
 </div>
-
     </div>
 </section>
+
     <footer class="footer">
     <div class="container">
         <div class="columns content">
