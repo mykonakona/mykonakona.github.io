@@ -92,6 +92,9 @@
             <a class="navbar-item "
                href="/categories">分类</a>
             
+            <a class="navbar-item is-active"
+               href="/gallery">相册</a>
+            
             <a class="navbar-item "
                href="/about">关于</a>
             
@@ -126,7 +129,7 @@
     </h1>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>本博客的主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。</p>
+        <html><head></head><body><p>本博客主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。</p>
 <h1 id="使用例"><a href="#使用例" class="headerlink" title="使用例"></a>使用例</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">favicon: /images/favicon.ico</span><br><span class="line"></span><br><span class="line">menu:</span><br><span class="line">    Archives: /archives</span><br><span class="line">    Categories: /categories</span><br><span class="line">    Gallery: /gallery</span><br><span class="line">    About: /about</span><br><span class="line"></span><br><span class="line">article:</span><br><span class="line">    # Show word count and estimated reading time.</span><br><span class="line">    readtime: true</span><br><span class="line">    # Code highlight theme, please see https://highlightjs.org/static/demo/</span><br><span class="line">    highlight: atom-one-dark    </span><br><span class="line"></span><br><span class="line">logo:</span><br><span class="line">    text: mykonakona</span><br><span class="line"></span><br><span class="line">navbar_links:</span><br><span class="line">  RSS:</span><br><span class="line">    icon: fas fa-rss</span><br><span class="line">    url: https://mykonakona.github.io/atom.xml</span><br><span class="line"></span><br><span class="line">search:</span><br><span class="line">    type: insight</span><br><span class="line"></span><br><span class="line"># Other plugins and their settings.</span><br><span class="line">plugins:</span><br><span class="line">  mathjax: true</span><br><span class="line">  katex: false</span><br><span class="line">  gallery: true</span><br><span class="line">  clipboard: true</span><br></pre></td></tr></tbody></table></figure><p></p>
 <h2 id="相册页"><a href="#相册页" class="headerlink" title="相册页"></a>相册页</h2><p>source下新建一../gallery/index.md文件，输入以下内容：</p>
 <p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: "blueimpgallery"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;div id="links"  class="links"&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.th.jpg" alt="IMG_20210808_174117.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174124.th.jpg" alt="IMG_20210808_174124.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174135.th.jpg" alt="IMG_20210808_174135.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.jpg"&gt;&lt;img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174144.th.jpg" alt="IMG_20210808_174144.th.jpg" border="0"&gt;&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -198,8 +201,7 @@ role="dialog"
 
             
             
-                        
-        </div>        
+        </div>
     </div>
 </footer>
     <script src="//cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
