@@ -1,5 +1,5 @@
 ---
-title: 使用WARP脚本为Bandwagonhost VPS添加IPv4/IPv6网络
+title: 使用WARP脚本为VPS添加IPv4/IPv6网络
 date: 2022-11-14 09:07
 categories: Coding
 tags: VPS
