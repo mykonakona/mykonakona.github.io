@@ -5,7 +5,7 @@ categories: Digital
 tags: [qbittorrent, nas, docker]
 ---
 
-我在群晖通过docker安装了4.1.9版本的qbittorrent，当初选定这一版本是根据天雪的客户端支持列表来的，这个版本的UI提供的功能很简陋，所以需要使用第三放webUI替代。
+我在群晖通过docker安装了4.1.9版本的qbittorrent，当初选定这一版本是根据天雪的客户端支持列表来的，这个版本的UI提供的功能很简陋，所以需要使用第三方webUI替代。
 
 <!-- more -->
 
