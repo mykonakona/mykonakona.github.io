@@ -132,12 +132,12 @@
         <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2022/01/27/install-warp-on-hostdare-vps/" itemprop="url">一次VPS解锁奈飞的实操</a>
+            <a href="/2022/11/14/install-warp-on-hostdare-vps/" itemprop="url">使用WARP脚本为Bandwagonhost VPS添加IPv4/IPv6网络</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2022-01-27T07:55:00.000Z" itemprop="datePublished">1月 27 2022</time>
+            <time datetime="2022-11-14T01:07:00.000Z" itemprop="datePublished">11月 14 2022</time>
         </span>
         
         <span class="column is-narrow article-category">
@@ -149,17 +149,17 @@
         <span class="column is-narrow">
             
             
-            4 分钟 读完 (约 619 字)
+            5 分钟 读完 (约 747 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>首先要解释一下，如果不做解锁，就无法通过服务器在奈飞上观看breaking bad这类非自制剧。</p>
-<p>因为现在有方便的<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，正常来讲新的空白机器想要解锁可以直接执行：</p>
-<p><code>bash &lt;(curl -fsSL git.io/warp.sh) d</code></p></body></html>
+        <html><head></head><body><p>2022-11-14 09:07更新：</p>
+<p>之前安装的WARP失效了，重装VPS系统后再次运行<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，无法正常使用（应该是因为无法获取IP），因此使用了warp-go的相关脚本配置IPv4/IPv6网络:</p>
+<p><code>wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;&amp; bash warp-go.sh d</code></p></body></html>
         <p class="article-more-link">
-            <a href="/2022/01/27/install-warp-on-hostdare-vps/#more">阅读更多</a>
+            <a href="/2022/11/14/install-warp-on-hostdare-vps/#more">阅读更多</a>
         </p>
     
     </div>

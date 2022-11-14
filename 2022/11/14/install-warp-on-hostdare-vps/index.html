@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>栄冠は君に初代介绍 - mykonakona</title>
+<title>使用WARP脚本为Bandwagonhost VPS添加IPv4/IPv6网络 - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -124,82 +124,71 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            栄冠は君に初代介绍
+            使用WARP脚本为Bandwagonhost VPS添加IPv4/IPv6网络
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2021-06-07T00:44:00.000Z" itemprop="datePublished">6月 7 2021</time>
+            <time datetime="2022-11-14T01:07:00.000Z" itemprop="datePublished">11月 14 2022</time>
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Game/">Game</a>
+            <a class="article-category-link" href="/categories/Coding/">Coding</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            16 分钟 读完 (约 2338 字)
+            5 分钟 读完 (约 747 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>棒球在中国的受关注程度一直以来都非常低迷，棒球游戏在国内的受众也相当有限。提起这一题材的游戏，在笔者的认知中，可能除了几款大联盟相关的棒球游戏，挖空脑袋能想到的，也就只剩下科乐美的实况力量棒球系列了<br>但实际上，由于日本本土一直以来都具备深厚的棒球土壤，尤其在二战战败的影响下，日本民众对高中棒球的狂热更是达到前所未有的高度，因此以此为题材的游戏作品一直都层出不穷。这其中，代表作为A列车、侠客游系列的ARTDINK公司也开发过颇具特色的系列棒球模拟游戏——<code>栄冠は君に</code>。</p>
+        <html><head></head><body><p>2022-11-14 09:07更新：</p>
+<p>之前安装的WARP失效了，重装VPS系统后再次运行<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，无法正常使用（应该是因为无法获取IP），因此使用了warp-go的相关脚本配置IPv4/IPv6网络:</p>
+<p><code>wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;&amp; bash warp-go.sh d</code></p>
 <a id="more"></a>
 
-<p><img src="/images/%E6%A0%87%E9%A2%98.PNG" alt="标题"></p>
-<p>熟悉日本高中棒球的朋友可以看出，<code>栄冠は君に</code>这个名字是ARTDINK取自高中棒球全国大会的会歌<code>栄冠は君に輝く</code>，截取了会歌歌名的前半部分。这个名称一方面直观地传达了本作是一款模拟甲子园大会的作品，另一方面在游戏开局选择球队的阶段，玩家也可以通过沿用这种命名法对校名进行修改从而增强真实感。这一实现实际上是基于无法在游戏中直接使用现实里的学校名称的考量，因此游戏中学校的名录虽然都来自于现实世界，但都是以一种“山寨版”的形式加以呈现的。游戏公司不能主动地把真实的学校名称加入游戏中，但如果由玩家自己修改游戏提供的山寨版校名，那么玩家在游玩时就可以代入实际存在的学校名称。这种暧昧的策略的运用，可以说是相当“日本”的一种擦边球做法了。</p>
-<p><img src="/images/%E5%B1%B1%E5%AF%A8%E7%89%88%E6%A0%A1%E5%90%8D.PNG" alt="山寨版校名"></p>
-<p><img src="/images/%E7%8E%A9%E5%AE%B6%E7%89%88%E6%A0%A1%E5%90%8D.PNG" alt="玩家版校名"></p>
-<p>这个系列的初代于1990年发行在PC-9800，二代和三代则分别发行于1991年和1993年。后续也有零星续作登陆过PS系平台。续作的开发反映了这个系列的作品具备一定的人气。虽然市场相对小众，但也有其独到之处。本文主要对初代的玩法进行介绍，以期使读者感受到距今30年前个人家用电脑的玩家们游玩的体育模拟类游戏的风味。</p>
-<p><img src="/images/%E5%AE%98%E7%BD%91%E7%B3%BB%E5%88%97%E5%B9%B4%E8%A1%A8.png" alt="官网系列年表"></p>
-<p>初代的玩法相当简单：整个游戏的流程可以分为备战和比赛两大阶段。在备战阶段，玩家可以通过安排不同的训练指令提升棒球部员们的各项指标。备战途中，除了可以进行针对不同指标的练习外，还可以在固定的日期选择是否进行练习比赛。练习比赛有几率提升一些指标的数值，但也会增加大量疲劳，同时伴随着一些其他指标的下降。如果玩家手下的球员累计过多疲劳且不加处理的话，后续球员参赛的发挥也会受到很大影响。</p>
-<p><img src="/images/%E8%AE%AD%E7%BB%83%E6%8C%87%E4%BB%A4.PNG" alt="训练指令"></p>
-<p><img src="/images/%E8%AE%AD%E7%BB%83%E5%89%8D.PNG" alt="训练前"></p>
-<p><img src="/images/%E8%AE%AD%E7%BB%83%E5%90%8E%EF%BC%88%E4%BD%93%E5%8A%9B%E7%96%B2%E5%8A%B3%E7%AD%89%E4%B8%8A%E5%8D%87%EF%BC%89.PNG" alt="训练后（体力疲劳等上升）"></p>
-<p>备战阶段结束前，一般要确定参赛的正选和主将。正选可以从全部人选中确定，主将则只能在三年级学生里确定，被选为正选或主将的选手，自信和气力数值都会有一定上升。有意思的一点是，如果某一位置的正选没有从三年级学生中选择，而是从二年级或一年级中确定，那么该位置全部三年级学生的自信、气力会大幅下降。这也算是在强行还原东亚独有的这种前后辈关系吧。</p>
-<p><img src="/images/%E6%AD%A3%E9%80%89%E3%80%81%E4%B8%BB%E5%B0%86%E5%89%8D.PNG" alt="正选、主将前"></p>
-<p><img src="/images/%E6%AD%A3%E9%80%89%E6%95%B0%E5%80%BC%E5%8F%98%E5%8C%96.PNG" alt="正选数值变化"></p>
-<p><img src="/images/%E4%B8%BB%E5%B0%86%E6%95%B0%E5%80%BC%E5%8F%98%E5%8C%96.PNG" alt="主将数值变化"></p>
-<p>备战阶段结束后，会根据抽签结果进入到预选赛阶段，这一阶段会决定球队能否进入全国大赛。本作在比赛途中，可以下达一些诸如代打、牺牲打、打带跑、多投或少投牵制球等由教练进行临场指挥的指令，一定程度上可以对战局产生影响。如果止步于地区预选赛，游戏会直接结束。但如果玩家通过了预选赛，就可以带领球队继续参加全国大赛，登上甲子园的球场。从某种意义上来说，这才是这个游戏的正式开始。</p>
-<p><img src="/images/%E6%95%99%E7%BB%83%E6%8C%87%E4%BB%A4.PNG" alt="教练指令"></p>
-<p>游戏对全国大赛的开幕仪式也进行了相当程度的还原。从球队入场，报校名再到奏会歌……各个流程都以过场动画的形式表现了出来。在后续的比赛中玩家可以发现，无论是场地的“豪华”程度，还是对观赛观众绘制的精细程度，相比预选赛时期都高出许多。制作组通过这种对比，反映了甲子园大赛之隆重，让人切实感受到在那个年代人们对于高中棒球的狂热不减的时代氛围。</p>
-<p>从科学的眼光来看，单败淘汰制容易被太多偶然因素影响，在体现球队综合实力的这一点上，并不能算得上是一种特别合理的赛制。但当游戏中的球队历经艰辛，过五关斩六将，最终获得大赛最终的优胜的时候。相信即便是没有实际感知的玩家，也能够多多少少透过游戏体会到这种赛制，亦即甲子园的魅力所在。</p>
-<p><img src="/images/%E5%8D%95%E8%B4%A5%E6%B7%98%E6%B1%B0%E8%B5%9B%E5%88%B6.PNG" alt="单败淘汰赛制"></p>
-<p>这款游戏之所以会出现在我的视野中，是因为一个名为”Legend Pack”的炒冷饭企划，这以企划把ARTDINK旗下的两个系列以打包的形式在Steam上进行了发售，这其中就包括最开始提到的侠客游系列（Steam上的名称使用了原作的Lunatic Dawn）以及本文主要介绍的栄冠は君に系列。侠客游系列在Steam上除了可以通过这个捆绑包获取，也有单独的二代可以购买。当然，根据商店页面信息显示，实际的发行商已经不再是ARTDINK，而是另一家公司Degica。或许也正因如此，侠客游系列的二代前途道标（日文名为：ルナティックドーン 前途への道標，英文名则为：Lunatic Dawn : Passage of the Book）在商店页面的游戏截图显得非常敷衍，甚至还出现了将Windows的任务栏一同截取进游戏的介绍截图中的情况……</p>
-<p><img src="/images/%E7%A6%BB%E8%B0%B1%E5%95%86%E5%BA%97%E6%88%AA%E5%9B%BE.PNG" alt="离谱商店截图"></p>
-<p>撇开这些不谈，如果想免去一些寻找模拟器和游戏文件的麻烦或为单纯情怀补票，这个版本也是可以购买的。包内除了系列前三代的Windows复刻本体外，还收录了一些游戏的图片和音源供玩家品鉴。不过售价可能对只想浅尝辄止的玩家就不是很友好了，推荐大家在这个系列打半折时以40元的价格入手，80元的原价实在有些太高了。</p>
-<p><img src="/images/%E7%89%B9%E5%85%B8.PNG" alt="特典"></p>
-<p>有兴趣游玩这个系列初代的读者可以参考作者在B站发布的初代<a href="https://www.bilibili.com/video/BV1q54y1G7Hi" target="_blank" rel="noopener">试玩视频</a>。作者在游玩和撰写本文时，也大量参考了一名日本玩家为这个系列的初代及二代编写的详细的<a href="http://jago.la.coocan.jp/parking/eikan1/index.htm" target="_blank" rel="noopener">攻略</a>，在此表示诚挚的感谢。</p>
-<p>最后，让我们用初代的开场白结束这次回顾，也希望当年的游戏制作者们所期望传达的热情，能够穿越时空的隔阂，切实地传达给所有体验过本系列的玩家们。</p>
-<p><img src="/images/%E3%81%93%E3%81%AE%E4%BD%9C%E5%93%81%E3%82%92%E3%80%81%E5%85%A8%E5%9B%BD%E3%81%AE%E9%AB%98%E6%A0%A1%E9%87%8E%E7%90%83%E3%82%92%E6%84%9B%E3%81%99%E3%82%8B%E4%BA%BA%E3%80%85%E3%81%AB%E6%8D%A7%E3%81%90.PNG" alt="この作品を、全国の高校野球を愛する人々に捧ぐ"></p>
+<p>2022-01-27 15:55：</p>
+<p>大部分的VPS不是原生IP，在Netfilx上无法观看breaking bad这类非自制剧。</p>
+<p>并且随着使用时间的增长，很容易被Google认定为机器人，从此每次使用Google时都会跳出烦人的验证码。因此使用WARP是很有必要的。</p>
+<p>因为现在有方便的<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，正常来讲新的空白机器想要解锁可以直接执行：</p>
+<p><code>bash &lt;(curl -fsSL git.io/warp.sh) d</code></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到<code>starting wireguard</code>时卡住，由于我懒得排查具体是什么原因（操作系统版本？还是服务器的一些未知原因？），且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：<a href="https://vpsxb.net/1069/" target="_blank" rel="noopener" title="继续解锁奈飞（七）-WARP socks5 client分流">WARP socks5 client分流</a>。</p>
+<p>另外，我在按照该解锁方案实操时，使用另一<a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener" title="【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络">一键WARP脚本</a>安装warp socks5 client出现了无法安装的情况。</p>
+<p>为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供Hostdare用户参考：</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="安装WARP-socks5-client"><a href="#安装WARP-socks5-client" class="headerlink" title="安装WARP socks5 client"></a>安装WARP socks5 client</h2><p>执行：</p>
+<p><code>bash &lt;(curl -fsSL git.io/warp.sh) menu</code></p>
+<p>进入菜单后，选择相关选项安装warp linux client。</p>
+<h2 id="刷可使用IP"><a href="#刷可使用IP" class="headerlink" title="刷可使用IP"></a>刷可使用IP</h2><p>完成上一步的安装后，执行：</p>
+<p><code>wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</code></p>
+<p>选择选项5：“更换支持Netflix的IP”，刷到可使用的IP。</p>
+<h2 id="修改配置文件实现分流"><a href="#修改配置文件实现分流" class="headerlink" title="修改配置文件实现分流"></a>修改配置文件实现分流</h2><p>执行<code>vim /etc/v2ray/config.json</code>修改v2ray配置文件的outbounds和routing部分为：</p>
+<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">"outbounds": [</span><br><span class="line">  {</span><br><span class="line">    "protocol": "freedom"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "tag": "media-unlock",</span><br><span class="line">    "protocol": "socks",</span><br><span class="line">    "settings": {</span><br><span class="line">    "servers": [</span><br><span class="line">    {</span><br><span class="line">    "address": "127.0.0.1",</span><br><span class="line">    "port": 40000,</span><br><span class="line">    "users": []</span><br><span class="line">    }</span><br><span class="line">    ]</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">], </span><br><span class="line">"routing": {</span><br><span class="line">  "domainStrategy": "AsIs",</span><br><span class="line">  "rules": [</span><br><span class="line">    {</span><br><span class="line">    "type": "field",</span><br><span class="line">    "domain": [</span><br><span class="line">    "geosite:netflix"</span><br><span class="line">    ],</span><br><span class="line">    "outboundTag": "media-unlock"</span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><br>修改后执行：<p></p>
+<p><code>sudo systemctl restart v2ray</code></p>
+<p>重启v2ray使配置生效。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这种方法解锁的机器在执行<a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener" title="【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络">流媒体检测</a>时，结果仍然会显示非原生IP，但实际观看时不受影响。</p>
 </body></html>
     
     </div>
     
     <div class="columns is-variable is-1 is-multiline is-mobile">
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/ARTDINK/">#ARTDINK</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/PC-9800/">#PC-9800</a></span>
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/koushien/">#koushien</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/VPS/">#VPS</a></span>
     
     </div>
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2021/09/22/gameplay-review-how-far-will-you-go-for-dom/">Dominions5联机新人局回顾</a>
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/2021/03/30/restic-onedrive-tip/">restic使用onedrive的贴士</a>
+            <a href="/2022/04/13/is-it-true-that-syndrome-coronavirus-2-can-cause-post-testicular-fibrosis-sequelae/">新冠病毒是否真的会引起睾丸纤维化？</a>
             
         </span>
     </div>
