@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>使用WARP脚本为VPS添加IPv4/IPv6网络 - mykonakona</title>
+<title>标签: docker - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -119,111 +119,57 @@
     </div>
 </nav>
 
-    <section class="section">
+    <section class="section section-heading">
     <div class="container">
-    <article class="article content gallery" itemscope itemprop="blogPost">
+        <div class="content">
+            <h5>#docker</h5>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+    
+        <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            使用WARP脚本为VPS添加IPv4/IPv6网络
+            <a href="/2022/11/14/how-to-modify-qbittorrent-webui-on-synology-nas/" itemprop="url">docker版qbittorrent修改webUI乱码问题</a>
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2022-11-14T01:07:00.000Z" itemprop="datePublished">11月 14 2022</time>
+            <time datetime="2022-11-14T03:36:00.000Z" itemprop="datePublished">11月 14 2022</time>
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Coding/">Coding</a>
+            <a class="article-category-link" href="/categories/Digital/">Digital</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            5 分钟 读完 (约 747 字)
+            4 分钟 读完 (约 582 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>2022-11-14 09:07更新：</p>
-<p>之前安装的WARP失效了，重装VPS系统后再次运行<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，无法正常使用（应该是因为无法获取IP），因此使用了warp-go的相关脚本配置IPv4/IPv6网络:</p>
-<p><code>wget -N https://raw.githubusercontent.com/fscarmen/warp/main/warp-go.sh &amp;&amp; bash warp-go.sh d</code></p>
-<a id="more"></a>
-
-<p>2022-01-27 15:55：</p>
-<p>大部分的VPS不是原生IP，在Netfilx上无法观看breaking bad这类非自制剧。</p>
-<p>并且随着使用时间的增长，很容易被Google认定为机器人，从此每次使用Google时都会跳出烦人的验证码。因此使用WARP是很有必要的。</p>
-<p>因为现在有方便的<a href="https://github.com/P3TERX/warp.sh" target="_blank" rel="noopener" title="Cloudflare WARP configuration script">一把梭脚本</a>，正常来讲新的空白机器想要解锁可以直接执行：</p>
-<p><code>bash &lt;(curl -fsSL git.io/warp.sh) d</code></p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到<code>starting wireguard</code>时卡住，由于我懒得排查具体是什么原因（操作系统版本？还是服务器的一些未知原因？），且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：<a href="https://vpsxb.net/1069/" target="_blank" rel="noopener" title="继续解锁奈飞（七）-WARP socks5 client分流">WARP socks5 client分流</a>。</p>
-<p>另外，我在按照该解锁方案实操时，使用另一<a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener" title="【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络">一键WARP脚本</a>安装warp socks5 client出现了无法安装的情况。</p>
-<p>为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供Hostdare用户参考：</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="安装WARP-socks5-client"><a href="#安装WARP-socks5-client" class="headerlink" title="安装WARP socks5 client"></a>安装WARP socks5 client</h2><p>执行：</p>
-<p><code>bash &lt;(curl -fsSL git.io/warp.sh) menu</code></p>
-<p>进入菜单后，选择相关选项安装warp linux client。</p>
-<h2 id="刷可使用IP"><a href="#刷可使用IP" class="headerlink" title="刷可使用IP"></a>刷可使用IP</h2><p>完成上一步的安装后，执行：</p>
-<p><code>wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh &amp;&amp; bash menu.sh</code></p>
-<p>选择选项5：“更换支持Netflix的IP”，刷到可使用的IP。</p>
-<h2 id="修改配置文件实现分流"><a href="#修改配置文件实现分流" class="headerlink" title="修改配置文件实现分流"></a>修改配置文件实现分流</h2><p>执行<code>vim /etc/v2ray/config.json</code>修改v2ray配置文件的outbounds和routing部分为：</p>
-<p></p><figure class="highlight plain hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">"outbounds": [</span><br><span class="line">  {</span><br><span class="line">    "protocol": "freedom"</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    "tag": "media-unlock",</span><br><span class="line">    "protocol": "socks",</span><br><span class="line">    "settings": {</span><br><span class="line">    "servers": [</span><br><span class="line">    {</span><br><span class="line">    "address": "127.0.0.1",</span><br><span class="line">    "port": 40000,</span><br><span class="line">    "users": []</span><br><span class="line">    }</span><br><span class="line">    ]</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">], </span><br><span class="line">"routing": {</span><br><span class="line">  "domainStrategy": "AsIs",</span><br><span class="line">  "rules": [</span><br><span class="line">    {</span><br><span class="line">    "type": "field",</span><br><span class="line">    "domain": [</span><br><span class="line">    "geosite:netflix"</span><br><span class="line">    ],</span><br><span class="line">    "outboundTag": "media-unlock"</span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><br>修改后执行：<p></p>
-<p><code>sudo systemctl restart v2ray</code></p>
-<p>重启v2ray使配置生效。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>这种方法解锁的机器在执行<a href="https://github.com/fscarmen/warp" target="_blank" rel="noopener" title="【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络">流媒体检测</a>时，结果仍然会显示非原生IP，但实际观看时不受影响。</p>
-</body></html>
+        <html><head></head><body><p>我在群晖通过docker安装了4.1.9版本的qbittorrent，当初选定这一版本是根据天雪的客户端支持列表来的，这个版本的UI提供的功能很简陋，所以需要使用第三放webUI替代。</p></body></html>
+        <p class="article-more-link">
+            <a href="/2022/11/14/how-to-modify-qbittorrent-webui-on-synology-nas/#more">阅读更多</a>
+        </p>
     
     </div>
     
-    <div class="columns is-variable is-1 is-multiline is-mobile">
-    
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/VPS/">#VPS</a></span>
-    
-    </div>
-    
-    
-    <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/2022/11/14/how-to-modify-qbittorrent-webui-on-synology-nas/">docker版qbittorrent修改webUI乱码问题</a>
-            
-        </span>
-        <span class="column is-12-mobile is-half-desktop  article-nav-next">
-            
-            <a href="/2022/02/10/a-fast-and-easy-way-to-create-subtitles-for-some-TV-series/">一次失败的刷剧经历</a>
-            
-        </span>
-    </div>
     
 </article>
 
 
 
 
-<div class="comments">
-    <h3 class="title is-4">评论</h3>
     
-<div id="valine-thread"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread',
-        appId: 'ntDA6wjf0rnD89w8PlMFlvnJ-MdYXbMMI',
-        appKey: 'ubI8DQfMobLrHgNNXDRQzPya',
-        notify: false,
-        verify: false,
-        avatar: '',
-        placeholder: 'Comments',
-        meta: ['nick', 'mail'],
-        visitor: true,
-        lang: ''
-    })
-</script>
-
-
-</div>
-
+    
     </div>
 </section>
     <footer class="footer">
