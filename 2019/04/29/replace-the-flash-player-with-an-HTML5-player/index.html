@@ -141,7 +141,7 @@
         <span class="column is-narrow">
             
             
-            3 分钟 读完 (约 417 字)
+            3 分钟 读完 (约 416 字)
         </span>
         
     </div>
@@ -152,8 +152,8 @@
 
 <p>也来不及搞清楚没有源这个事情是不是又是丝芭想搞闭环，总之当时除了模拟器登口袋，好像电脑上刷直播的方法就只剩在live.48.cn上看。</p>
 <p>然后live48不出意料地还在用flash，我的火狐进去之后就是一块白板。虽然最后临时用CentBrowser刷了一下公演，但毕竟不是我的主力浏览器，刷完之后就莫名地感觉不爽……</p>
-<p>扒了扒greasefork，这方面脚本还是比较多的。找了一个用了dplayer的脚本<a href="https://greasyfork.org/zh-CN/scripts/378188-dilidili-flash-to-html5-fix" target="_blank" rel="noopener">dilidili flash to html5 fix</a>开始抄。抄的过程中就感觉：如果只考虑满足最基本的需求，基本上还在使用Flash播放器的视频站都可以采用这个思路通过加载用户脚本做h5播放器的替换。</p>
-<h2 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h2><ul>
+<p>扒了扒greasefork，这方面脚本还是比较多的。找了一个用了dplayer的脚本<a href="https://greasyfork.org/zh-CN/scripts/378188-dilidili-flash-to-html5-fix" target="_blank" rel="noopener">dilidili flash to html5 fix</a>开始抄。抄的过程中就感觉：如果只考虑满足最基本的需求，基本上还在使用Flash播放器的视频站都可以采用这个方式通过加载用户脚本做h5播放器的替换。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
 <li>在head或者body加载dplayer的类库和hls的类库。</li>
 <li>触发window.onload后，清空原播放器div下的子元素，append一个新div进去用于新播放器的使用。</li>
 <li>写一个dplayer的构造函数，配好从原页面提取的视频url、视频类型为hls等配置项即可。</li>
