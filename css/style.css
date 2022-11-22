@@ -145,7 +145,7 @@ a.tag.article-tag {
   width: .8rem; }
 
 .article blockquote {
-  color: black; }
+  background-color: #18222d; }
   .article blockquote.colorquote {
     position: relative; }
     .article blockquote.colorquote:before {
