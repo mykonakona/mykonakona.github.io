@@ -1,11 +1,11 @@
 ---
-title: IMAP和GSM alphabet
+title: 踩坑GSM alphabet
 date: 2022-11-22 17:08:00
 categories: Coding
 tags: Email
 ---
 
-比起计算机网络里不知考过多少遍的IMAP，[GSM alphabet](https://melroselabs.com/docs/reference/sms/gsm-alphabet/)这个概念恐怕很多人是第一次听说。一个邮箱协议，一个通讯标准，是什么契机把看起来没啥联系的两者联系到了一起呢？
+比起计算机网络里不知考过多少遍的IMAP，[GSM alphabet](https://melroselabs.com/docs/reference/sms/gsm-alphabet/)这个概念恐怕很多人是第一次听说。一个是邮箱协议，一个是通讯标准，是一个什么样的坑能把看起来没联系的两者联系到一起去呢？
 
 <!-- more -->
 
@@ -52,8 +52,8 @@ tags: Email
 
 # 其他
 
-在解决的过程中，我也突然想到有没可能通过安装[Foxmail](https://www.foxmail.com/)客户端来开启IMAP,得到了一个很奇怪的结果：安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色：这很好理解，因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。
+在解决的过程中，我也突然想到有没可能通过安装[Foxmail](https://www.foxmail.com/)客户端来开启IMAP，得到了一个很奇怪的结果：安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色：这很好理解，因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。
 
-但是如果用qq扫码登录，直接无需配置，便可以正常通过Foxmail客户端使用邮箱。这时候通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。
+但是如果用qq扫码登录，无需配置便可以正常通过Foxmail客户端使用邮箱。此时通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。
 
 虽然我解决了这个问题，但有种浪费生命的感觉：最基础设置还需要繁琐手段开启。我想我会考虑尽量解绑使用qq邮箱的账号，转为使用gmail。虽然国内的网络环境很可能继续恶劣下去，但这样的服务实在不值得继续使用。
