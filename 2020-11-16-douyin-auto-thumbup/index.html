@@ -149,7 +149,7 @@
         <span class="column is-narrow">
             
             
-            4 分钟 读完 (约 526 字)
+            4 分钟 读完 (约 571 字)
         </span>
         
     </div>
@@ -161,33 +161,22 @@
 <a id="more"></a>
 
 <ol>
-<li><p>下载一个安卓模拟器（本文使用夜神模拟器）并安装，完成安装后在模拟器内安装dy，登录已经关注主播的抖音账号，并进入直播页面</p>
+<li>下载一个安卓模拟器（本文使用夜神模拟器）并安装，完成安装后在模拟器内安装dy，登录已经关注主播的抖音账号，并进入直播页面</li>
+<li>通过命令行进入nox_adb.exe所在目录（命令为默认安装位置）：<code>cd "C:\Program Files (x86)\Nox\bin\"</code></li>
+<li>进入夜神模拟器的adb shell：<code>nox_adb shell</code></li>
+<li>进入shell后，准备记录输入操作到一个新建的recordtap文件内：<code>dd if=/dev/input/event5 of=/sdcard/recordtap</code>，具体是event5或其他（如event1等）可在shell中通过getevent命令查询</li>
+<li>回到模拟器的直播页面，在屏幕上重复快速点击</li>
+<li>退出adb shell（如快捷键无效，可关掉命令行窗口后重开）</li>
+<li>重新进入adb shell，直接写成一个死循环，运行命令<a href="https://www.jianshu.com/p/7c565eab821d" target="_blank" rel="noopener" title="ADB模拟Android快速点击">1</a>：<br> <code>i=1; while [ i -gt 0 ];  do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 5; done</code></li>
+<li>多开时直接执行<code>nox_adb shell</code>会报<code>error: more than one device and emulator</code><a href="https://blog.csdn.net/gaojinshan/article/details/9455193" target="_blank" rel="noopener" title="消除ADB错误“more than one device and emulator”的方法">2</a>，这时需要先nox_adb devices查看当前有设备与模拟器：<blockquote>
+<p>C:\Program Files (x86)\Nox\bin&gt;nox_adb devices<br> List of devices attached<br> 127.0.0.1:62025 device<br> 127.0.0.1:62001 device</p>
+</blockquote>
 </li>
-<li><p>通过命令行进入nox_adb.exe所在目录（命令为默认安装位置）：cd “C:\Program Files (x86)\Nox\bin"</p>
-</li>
-<li><p>进入夜神模拟器的adb shell：nox_adb shell</p>
-</li>
-<li><p>进入shell后，准备记录输入操作到一个新建的recordtap文件内：dd if=/dev/input/event5 of=/sdcard/recordtap，具体是event5或其他（如event1等）可在shell中通过getevent命令查询</p>
-</li>
-<li><p>回到模拟器的直播页面，在屏幕上重复快速点击</p>
-</li>
-<li><p>退出adb shell（如快捷键无效，可关掉命令行窗口后重开）</p>
-</li>
-<li><p>重新进入adb shell，直接写成一个死循环，运行命令：    </p>
-<p> i=1; while [ i -gt 0 ];  do dd if=/sdcard/recordtap of=/dev/input/event5;sleep 5; done</p>
-</li>
-<li><p>多开时直接执行nox_adb shell会报 error: more than one device and emulator，这时需要先nox_adb devices查看当前有设备与模拟器：</p>
-<p> C:\Program Files (x86)\Nox\bin&gt;nox_adb devices<br> List of devices attached<br> 127.0.0.1:62025 device<br> 127.0.0.1:62001 device</p>
-</li>
-<li><p>在执行adb命令时，为命令指定设备的序列号<code>nox_adb -s 127.0.0.1:62025 shell</code></p>
-</li>
+<li>在执行adb命令时，为命令指定设备的序列号<code>nox_adb -s 127.0.0.1:62025 shell</code></li>
 </ol>
 <p>说明：</p>
-<p>使用夜神安卓模拟器的ADB指令时，需要将adb改为nox_adb，如nox_adb devices对应adb devices，nox_adb shell对应adb shell。</p>
+<p>使用夜神安卓模拟器<a href="https://www.yeshen.com/faqs/ByPpRoflZ" target="_blank" rel="noopener" title="夜神安卓模拟器：安卓环境开发、测试三步搞定">3</a>的ADB指令时，需要将adb改为nox_adb，如nox_adb devices对应adb devices，nox_adb shell对应adb shell。</p>
 <p>参考：</p>
-<p><a href="https://www.jianshu.com/p/7c565eab821d" target="_blank" rel="noopener">https://www.jianshu.com/p/7c565eab821d</a></p>
-<p><a href="https://blog.csdn.net/gaojinshan/article/details/9455193" target="_blank" rel="noopener">https://blog.csdn.net/gaojinshan/article/details/9455193</a></p>
-<p><a href="https://www.yeshen.com/faqs/ByPpRoflZ" target="_blank" rel="noopener">https://www.yeshen.com/faqs/ByPpRoflZ</a></p>
 </body></html>
     
     </div>
