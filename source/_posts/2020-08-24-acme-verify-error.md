@@ -11,14 +11,13 @@ tags: VPS
 
 <!-- more -->
 
-```
+```bash
 [Mon Aug 24 00:09:56 CST 2020] yousite.xyz:Verify error:Invalid response from https://yousite.xyz/.well-known/acme-challenge/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [*.*.*.*]: 404
 ```
 
 说明acme是有在自动去更新证书的，但是到verify这一步时会通不过。查了一下，发现项目里面有一条issue：[Verify error:Invalid response #132][1]里有解答：
 
-```
-
+```text
 同样遇到这个问题，如果是nginx的话，一般是因为服务器拒绝访问，解决方法2个，都是为了获取访问权限：
 
 1.在include *.conf; 下方加入部分代码：
@@ -50,19 +49,18 @@ include *.conf;      // 加入以下代码；
         #      deny all;
         #  }
 
-
 ```
 
 我的nginx把各服务的配置单独放在了新建的`\etc\nginx\conf\conf.d\xxx.conf`，所以这里`location`部分要放到`xxx.conf`下，后续要做的就是重新加载nginx的配置：
 
-```
+```bash
 cd /etc/nginx/sbin
 ./nginx -s reload
 ```
 
 为了验证配置是否生效，这里更新了一下acme之后做了一次证书手动更新。
 
-```
+```bash
 cd ~/.acme.sh/
 acme.sh --upgrade
 acme.sh --renew  -d domain.com 

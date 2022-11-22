@@ -10,6 +10,7 @@ tags: [Virtualization, Hyper-V]
 <!-- more -->
 
 ## 起因
+
 终于对自己一直使用的旧笔记本到了忍无可忍的地步，于是今年3月份在做了各种调研后购入了新机器（Lenove S740, i5 16G版本）。装机过程中我为了偷懒，打算直接用Win10自带的Hyper-V。自己打的如意算盘是可以省得装其他虚拟机软件，也能试一试好不好用。
 
 首先，因为需要一个Win环境的虚拟机去跑一些国产流氓软件（比如长年在后台挂一个QQProtect进程的QQ），所以我考虑新建一个LTSC版本的Win10虚拟机。
@@ -20,7 +21,7 @@ tags: [Virtualization, Hyper-V]
 
 一般情况下我们装系统到新建的虚拟机，都是通过虚拟的DVD光驱加载从网上下载得到的镜像文件（ISO、DMG等）进行安装。只要在建虚拟机时勾选上使用镜像安装的选项并选好镜像，Hyper-V就会自动把DVD设备的启动顺序放在第一位（其他虚拟机软件VMWare/VirtualBox一般也是这样）。但是在实际安装最新版本的Win10 LTSC时，Hyper-V不是直接进入安装界面，而是显示提示内容如下的页面：
 
-```
+```text
 scsi dvd the boot loader failed
 ```
 
@@ -41,6 +42,7 @@ google了半天才知道这里需要在虚拟机开机的时候用最快的速�
 实在有点懒得继续再折腾。后来还试了试Win下的docker desktop，很流畅，但感觉用的人还是偏少，如果只是用来学习，应该还是基于Linux环境的讨论会比较多。
 
 ## 小结
+
 说了这么多，我最后把Hyper-V关了，去装了一个VMWare。
 
 [1]: https://developer.android.com/studio/run/emulator-acceleration#vm-windows-whpx

@@ -23,7 +23,7 @@ tags: VPS
 
 `bash <(curl -fsSL git.io/warp.sh) d`
 
-##  问题
+## 问题
 
 然而我目前使用的Hostdare服务器(年付$34.49的Premium China Optimized KVM VPS，中途换过一次IP)实际跑一把梭脚本时会在运行到`starting wireguard`时卡住，由于我懒得排查具体是什么原因（操作系统版本？还是服务器的一些未知原因？），且服务器上也部署了很多docker容器，因此也无法轻易地重装系统。所以决定干脆试试另一个解锁教程的方案：[WARP socks5 client分流][2]。
 
@@ -32,6 +32,7 @@ tags: VPS
 为了解决上述两个问题，我简单调整了该解锁方案的执行步骤：将warp socks5 client安装的步骤调整为用一把梭脚本安装，之后的步骤实际上和教程完全一样了，但还是完整地记录一下供Hostdare用户参考：
 
 ## 过程
+
 ### 安装WARP socks5 client
 
 执行：
@@ -39,7 +40,7 @@ tags: VPS
 `bash <(curl -fsSL git.io/warp.sh) menu`
 
 进入菜单后，选择相关选项安装warp linux client。
- 
+
 ### 刷可使用IP
 
 完成上一步的安装后，执行：
@@ -52,7 +53,7 @@ tags: VPS
 
 执行`vim /etc/v2ray/config.json`修改v2ray配置文件的outbounds和routing部分为：
 
-```
+```bash
   "outbounds": [
     {
       "protocol": "freedom"
@@ -84,6 +85,7 @@ tags: VPS
     ]
   }
 ```
+
 修改后执行：
 
 `sudo systemctl restart v2ray`
@@ -92,10 +94,9 @@ tags: VPS
 
 ## 补充
 
-这种方法解锁的机器在执行[流媒体检测][3]时，结果仍然会显示非原生IP，但实际观看时不受影响。
+这种方法解锁的机器在执行[流媒体检测][4]时，结果仍然会显示非原生IP，但实际观看时不受影响。
 
 [1]: https://github.com/P3TERX/warp.sh "Cloudflare WARP configuration script"
 [2]: https://vpsxb.net/1069/ "继续解锁奈飞（七）-WARP socks5 client分流"
 [3]: https://github.com/fscarmen/warp "【WGCF】连接CF WARP为服务器添加IPv4/IPv6网络"
-[3]: https://github.com/sjlleo/netflix-verify "NETFLIX-VERIFY"
-
+[4]: https://github.com/sjlleo/netflix-verify "NETFLIX-VERIFY"
