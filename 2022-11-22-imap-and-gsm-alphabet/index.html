@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>IMAP和GSM alphabet - mykonakona</title>
+<title>踩坑GSM alphabet - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -124,7 +124,7 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            IMAP和GSM alphabet
+            踩坑GSM alphabet
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -149,13 +149,13 @@
         <span class="column is-narrow">
             
             
-            8 分钟 读完 (约 1181 字)
+            8 分钟 读完 (约 1183 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>比起计算机网络里不知考过多少遍的IMAP，<a href="https://melroselabs.com/docs/reference/sms/gsm-alphabet/" target="_blank" rel="noopener">GSM alphabet</a>这个概念恐怕很多人是第一次听说。一个邮箱协议，一个通讯标准，是什么契机把看起来没啥联系的两者联系到了一起呢？</p>
+        <html><head></head><body><p>比起计算机网络里不知考过多少遍的IMAP，<a href="https://melroselabs.com/docs/reference/sms/gsm-alphabet/" target="_blank" rel="noopener">GSM alphabet</a>这个概念恐怕很多人是第一次听说。一个是邮箱协议，一个是通讯标准，是一个什么样的坑能把看起来没联系的两者联系到一起去呢？</p>
 <a id="more"></a>
 
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>事先声明，如果你是gmail用户，那基本不可能遇到以下问题。只有常用邮箱是QQ邮箱，手机又恰好刷了miui.eu（不确定其他miui版本是否有相同设置）的大冤种，才有几率踩这个坑。</p>
@@ -181,8 +181,8 @@
 <p>但手机上是没有显示+86的，那一定是有某个设置自行进行了添加。在仔细观察后我注意到了这个配置：</p>
 <p><img src="/images/2022-11-22-GSM-alphabet.jpg" alt="GSM-alphabet"></p>
 <p>关掉这一选项并重新发送短信，验证正常通过。我想原因可能是因为在miui上使用GSM-alphabet这个选项的话，会先把号码拼接上+86再做短信的发送，所以虽然发短信时手输的号码不带+86，但查询的结果显示是加上+86的。</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在解决的过程中，我也突然想到有没可能通过安装<a href="https://www.foxmail.com/" target="_blank" rel="noopener">Foxmail</a>客户端来开启IMAP,得到了一个很奇怪的结果：安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色：这很好理解，因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。</p>
-<p>但是如果用qq扫码登录，直接无需配置，便可以正常通过Foxmail客户端使用邮箱。这时候通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在解决的过程中，我也突然想到有没可能通过安装<a href="https://www.foxmail.com/" target="_blank" rel="noopener">Foxmail</a>客户端来开启IMAP，得到了一个很奇怪的结果：安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色：这很好理解，因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。</p>
+<p>但是如果用qq扫码登录，无需配置便可以正常通过Foxmail客户端使用邮箱。此时通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。</p>
 <p>虽然我解决了这个问题，但有种浪费生命的感觉：最基础设置还需要繁琐手段开启。我想我会考虑尽量解绑使用qq邮箱的账号，转为使用gmail。虽然国内的网络环境很可能继续恶劣下去，但这样的服务实在不值得继续使用。</p>
 </body></html>
     
