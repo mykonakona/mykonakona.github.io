@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>IMAP和GSM alphabet - mykonakona</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+<meta name="description" content="">
+
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery.min.css" />
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery-indicator.min.css" />
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/css/blueimp-gallery-video.min.css" />
+
+    
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+
+<script> loadCSS("https://fonts.font.im/css?family=Noto+Serif|Montserrat|Ubuntu+Mono|Material+Icons")</script>
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto+Serif|Montserrat|Ubuntu+Mono|Material+Icons" media="all">
+<noscript>
+    <link rel="stylesheet" href="//fonts.font.im/css?family=Noto+Serif|Montserrat|Ubuntu+Mono|Material+Icons"/>
+</noscript>
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="mykonakona" type="application/atom+xml">
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    mykonakona
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">归档</a>
+            
+            <a class="navbar-item "
+               href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/gallery">相册</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            <a class="navbar-item" title="RSS" href="https://mykonakona.github.io/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            IMAP和GSM alphabet
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2022-11-22T09:08:00.000Z" itemprop="datePublished">11月 22 2022</time>
+        </span>        
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Coding/">Coding</a>
+        </span>
+        
+
+        
+            <!-- 不蒜子统计 -->
+            <span id="busuanzi_container_page_pv" class="column is-narrow">
+                <span id="busuanzi_value_page_pv"></span>读过
+            </span>
+        
+
+        
+        <span class="column is-narrow">
+            
+            
+            8 分钟 读完 (约 1181 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><p>比起计算机网络里不知考过多少遍的IMAP，<a href="https://melroselabs.com/docs/reference/sms/gsm-alphabet/" target="_blank" rel="noopener">GSM alphabet</a>这个概念恐怕很多人是第一次听说。一个邮箱协议，一个通讯标准，是什么契机把看起来没啥联系的两者联系到了一起呢？</p>
+<a id="more"></a>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>事先声明，如果你是gmail用户，那基本不可能遇到以下问题。只有常用邮箱是QQ邮箱，手机又恰好刷了miui.eu（不确定其他miui版本是否有相同设置）的大冤种，才有几率踩这个坑。</p>
+<p>首先，使用第三方客户端登录qq邮箱或者163邮箱，都需要手动开启邮箱的IMAP。而开启IMAP，需要发一条指定内容的短信到指定号码进行验证，以获得腾讯或网易生成的授权码。</p>
+<p>我的163邮箱在这个环节可以正常发送、验证，但qq邮箱通过密保手机发送短信时就会弹出如下提示：</p>
+<p><img src="/images/2022-11-22-alert.PNG" alt="“您发送的短信内容有误”"></p>
+<p>核对了多遍，也没有发现内容哪里有误</p>
+<p><img src="/images/2022-11-22-message.PNG" alt="实发短信内容无误"></p>
+<h1 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h1><p>通过qq邮箱的<a href="https://open.mail.qq.com/feedback/feedbackhome#/" target="_blank" rel="noopener">反馈建议</a>提交了一个工单上去，qq对这个问题的答复是：</p>
+<blockquote>
+<p>你好，出现这种情况一般有可能：用户手机终端本身没有把这个短信成功发送出来，请检查自己的手机状态是否正常，建议： 1、致电运营商客服电话，询问是否被禁止了端口短信功能/增值业务 网关（也叫做SP开关）； 2、发送短信到备用接收号码重试； 3、发送短信时去掉+86重试发送； 4、确认是否有发送扣费记录，若扣费成功，请提供【扣费记录截图】、【发送短信手机号（密保手机号）】、【发送短信时间】给我们，若没有扣费成功，请联系运营商，感谢配合！</p>
+</blockquote>
+<ul>
+<li>第一点肯定不可能，因为我的手机刚刚还在163邮箱那边成功打开了，应该不存在这个问题；</li>
+<li>第二点，实际测试了一下，也可以正常发送接收；</li>
+<li>第三点，看手机的短信页面，是不带86的；</li>
+<li>第四点，短信查询余额，确实有扣费。</li>
+</ul>
+<p>这时变得有点像在做一道选择题，需要选出错误的选项,但所有选项看起来都是对的。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>这时候只能回过头来看选项了，感觉最大的可能还是出在+86这里。</p>
+<p>于是去电信查询详单，号码确实有问题：</p>
+<p><img src="/images/2022-11-22-detail.PNG" alt="+86"></p>
+<p>但手机上是没有显示+86的，那一定是有某个设置自行进行了添加。在仔细观察后我注意到了这个配置：</p>
+<p><img src="/images/2022-11-22-GSM-alphabet.jpg" alt="GSM-alphabet"></p>
+<p>关掉这一选项并重新发送短信，验证正常通过。我想原因可能是因为在miui上使用GSM-alphabet这个选项的话，会先把号码拼接上+86再做短信的发送，所以虽然发短信时手输的号码不带+86，但查询的结果显示是加上+86的。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>在解决的过程中，我也突然想到有没可能通过安装<a href="https://www.foxmail.com/" target="_blank" rel="noopener">Foxmail</a>客户端来开启IMAP,得到了一个很奇怪的结果：安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色：这很好理解，因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。</p>
+<p>但是如果用qq扫码登录，直接无需配置，便可以正常通过Foxmail客户端使用邮箱。这时候通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。</p>
+<p>虽然我解决了这个问题，但有种浪费生命的感觉：最基础设置还需要繁琐手段开启。我想我会考虑尽量解绑使用qq邮箱的账号，转为使用gmail。虽然国内的网络环境很可能继续恶劣下去，但这样的服务实在不值得继续使用。</p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Email/">#Email</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022-11-14-how-to-modify-qbittorrent-webui-on-synology-nas/">docker版qbittorrent修改webUI乱码问题</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread',
+        appId: 'ntDA6wjf0rnD89w8PlMFlvnJ-MdYXbMMI',
+        appKey: 'ubI8DQfMobLrHgNNXDRQzPya',
+        notify: false,
+        verify: false,
+        avatar: '',
+        placeholder: 'Comments',
+        meta: ['nick', 'mail'],
+        visitor: true,
+        lang: ''
+    })
+</script>
+
+
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2022 mykonakona&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>                       
+            </div>
+            <div class="column is-narrow has-text-centered"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            
+                        
+        </div>        
+    </div>
+</footer>
+    <script src="//cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.loli.net/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script> -->
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.loli.net/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery({
+                rowHeight : 250,
+                lastRow : 'nojustify',
+                margins : 30
+            });
+            }
+        });
+    })(jQuery);
+
+    
+</script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-helper.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-fullscreen.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-indicator.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-video.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-vimeo.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/blueimp-gallery-youtube.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.loli.net/ajax/libs/blueimp-gallery/3.3.0/js/jquery.blueimp-gallery.js"></script>
+<script>
+    document.getElementById('links').onclick = function (event) {
+      event = event || window.event
+      var target = event.target || event.srcElement
+      var link = target.src ? target.parentNode : target
+      var options = { index: link, event: event }
+      var links = this.getElementsByTagName('a')
+      blueimp.Gallery(links, options)
+    }
+  </script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
