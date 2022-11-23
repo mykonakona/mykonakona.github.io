@@ -1,5 +1,5 @@
 ---
-title: my digital life
+title: about me
 ---
 
 
