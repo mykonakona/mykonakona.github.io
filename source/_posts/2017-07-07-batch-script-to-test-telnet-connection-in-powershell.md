@@ -5,11 +5,11 @@ categories: Coding
 tags: Powershell
 ---
 
-## 背景
-
 工作时经常需要测试生产机与终端机间的网络是否打通。由于生产机器数量较多，在登录每台终端机时手动telnet测试端口是否打通的方式会消耗较多时间。在这一背景下，产生了使用脚本自动完成该部分工作的需求。
 
 <!--more-->
+
+## 背景
 
 在stackoverflow上也有人提出了类似的问题[Automate Telnet Port Testing On Windows 7 Using Batch Script](https://stackoverflow.com/questions/20583686/automate-telnet-port-testing-on-windows-7-using-batch-script)
 
