@@ -30,10 +30,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm run build
-
+      
       - name: Install Theme
         run: git clone https://github.com/mykonakona/hexo-theme-minos.git themes/minos
+
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
