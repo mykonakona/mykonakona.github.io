@@ -101,13 +101,12 @@ deploy:
   type: ''
 
 comment:
-  type: valine
-  app_id: ntDA6wjf0rnD89w8PlMFlvnJ-MdYXbMMI        # (required) LeanCloud application id
-  app_key: ubI8DQfMobLrHgNNXDRQzPya       # (required) LeanCloud application key
-  notify: false           # (optional) receive email notification
-  verify: false           # (optional) show verification code
-  placeholder: Comments   # (optional) comment box placeholder text
-        
+  type: giscus
+  repo: mykonakona/mykonakona.github.io.comment
+  repo_id: R_kgDOJB3SHg
+  catogory: Announcements
+  catogory_id: DIC_kwDOJB3SHs4CUbrY
+
 feed:
     type: atom
     path: atom.xml
