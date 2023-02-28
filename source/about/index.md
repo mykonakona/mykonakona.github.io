@@ -5,7 +5,7 @@ title: about me
 
 ## 更新历史
 
-- 2023-02-27 更新博客系统为giscus，将Travis CI替换为Github Actions。
+- 2023-02-27 更新博客系统为giscus，后知后觉地将Travis CI[替换为Github Actions][5]。
 - 2022-11-22 修复主题字体、引用显示问题，依照规范修复md文件。
 - 2022-11-14 删减了一些博文，更专注记录平时解决的一些问题。
 - 2022-04-21 新增了一个本主题下如何使用blueimpgallery的示例。
@@ -20,3 +20,4 @@ title: about me
 [2]: https://travis-ci.org/
 [3]: https://valine.js.org/
 [4]: https://github.com/mykonakona/hexo-theme-minos
+[5]: https://www.v2ex.com/t/736510

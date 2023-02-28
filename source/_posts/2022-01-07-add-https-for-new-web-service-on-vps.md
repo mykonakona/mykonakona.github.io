@@ -5,17 +5,55 @@ categories: Coding
 tags: VPS
 ---
 
-2022-11-16更新：
+2023年2月28日更新：
 
-生成个通配符证书还费这老牛劲，没啥可看的，真是丢脸啊🤦‍♂
+没记错的话若干年前acme.sh使用通配符证书还没法自动续签，所以当时是一条一条添加的，现在应该不存在这个问题了。
 
 <!-- more -->
 
-我已经忘记为啥我这个站没法生成通配符证书了，现在每加一个应用就得重新生成一遍，还是挺折腾的，很容易忘记。我还是先把这个过程记下来吧。
+证书申请参考[使用 acme.sh 配置自动续签 SSL 证书](https://u.sb/acme-sh-ssl/)，nginx配置参考[配置 Nginx 和 frps 共存 80/443 端口及泛域名支持教程](https://www.ioiox.com/archives/78.html)即可(不过第二篇有关“frpc.ini 中域名参数需使用 subdomain = xx 仅填写二级域名主机头即可，不要填写完整域名”的内容，经测试还是得写完整域名。)
+
+```bash
+server {
+    listen 80;
+    server_name *.yourdomain.com;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name *.yourdomain.com;
+
+    ssl_certificate /usr/local/nginx/conf/ssl/yourdomain.com.crt;
+    ssl_certificate_key /usr/local/nginx/conf/ssl/yourdomain.com.key;
+
+    client_max_body_size 50m; 
+    client_body_buffer_size 256k;
+    client_header_timeout 3m;
+    client_body_timeout 3m;
+    send_timeout 3m;
+    proxy_connect_timeout 300s; 
+    proxy_read_timeout 300s; 
+    proxy_send_timeout 300s;
+    proxy_buffer_size 64k; 
+    proxy_buffers 4 32k; 
+    proxy_busy_buffers_size 64k;
+    proxy_temp_file_write_size 64k; 
+    proxy_ignore_client_abort on; 
+
+    location / {
+        proxy_pass http://127.0.0.1:1234;
+        proxy_redirect off;
+        proxy_set_header Host $host:80;
+        proxy_ssl_server_name on;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
 
 2022年1月7日更新：
-
-关于当时没有选用通配符证书的原因好像隐约回忆起来了，似乎是因为通配符证书需要手动签发，没法自动续签。具体是因为我目前使用的场景有问题还是脚本有这个问题也还没有太确定。
 
 关于下文中“che.xxx.xyz这个域名配置成我在/home/wwwroot/下布好的一个静态网页”这一描述，现在再读，感觉还是直接给出一个nginx的配置范例会比较清晰一些
 

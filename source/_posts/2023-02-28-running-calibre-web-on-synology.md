@@ -28,7 +28,7 @@ usermod: invalid user ID '$(id -u)'
 
 ## 缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”
 
-在完成PUID和PGID配置后，除`\books`及`\config`外，还需要额外挂载`/tmp`和`/upload`两个文件夹。否则无法上传书籍。此处原理可参考[reddit][3]。
+在完成PUID和PGID配置后，除`/books`及`/config`外，还需要额外挂载`/tmp`和`/upload`两个文件夹。否则无法上传书籍。此处原理可参考[reddit][3]。
 
 [1]: https://www.lategege.com/?p=639
 [2]: https://zhuanlan.zhihu.com/p/544504281
