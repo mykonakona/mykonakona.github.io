@@ -111,7 +111,7 @@ comment:
   data-reactions-enabled: 1
   data-emit-metadata: 0
   data-input-position: top
-  data-theme: dark_high_contrast
+  data-theme: dark
   data-lang: zh-CN
   data-loading: lazy
   crossorigin: anonymous
