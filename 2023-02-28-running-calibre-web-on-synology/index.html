@@ -163,7 +163,7 @@
 <p></p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupmod: invalid group ID <span class="hljs-string">'$(id -g)'</span></span><br><span class="line">usermod: invalid user ID <span class="hljs-string">'$(id -u)'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>可知这种写法也会提示非法。</p>
 <p>因此个人建议还是老老实实打开群晖的ssh功能，本地连接后运行<code>id</code>命令获取实际的PUID和PGID。填写实际获取到的id后不再出现该报错提示。</p>
-<h2 id="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"><a href="#缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”" class="headerlink" title="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"></a>缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”</h2><p>在完成PUID和PGID配置后，除<code>\books</code>及<code>\config</code>外，还需要额外挂载<code>/tmp</code>和<code>/upload</code>两个文件夹。否则无法上传书籍。此处原理可参考<a href="https://www.reddit.com/r/Calibre/comments/odgkb1/error_when_uploading_via_calibreweb/" target="_blank" rel="noopener">reddit</a>。</p>
+<h2 id="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"><a href="#缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”" class="headerlink" title="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"></a>缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”</h2><p>在完成PUID和PGID配置后，除<code>/books</code>及<code>/config</code>外，还需要额外挂载<code>/tmp</code>和<code>/upload</code>两个文件夹。否则无法上传书籍。此处原理可参考<a href="https://www.reddit.com/r/Calibre/comments/odgkb1/error_when_uploading_via_calibreweb/" target="_blank" rel="noopener">reddit</a>。</p>
 </body></html>
     
     </div>
