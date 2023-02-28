@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>标签: Router - mykonakona</title>
+<title>380.70_0-X7.9版本梅林固件路由器重置指南 - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -119,20 +119,12 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5>#Router</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/" itemprop="url">380.70_0-X7.9版本梅林固件路由器重置指南</a>
+            380.70_0-X7.9版本梅林固件路由器重置指南
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -147,6 +139,11 @@
         
 
         
+            <!-- 不蒜子统计 -->
+            <span id="busuanzi_container_page_pv" class="column is-narrow">
+                <span id="busuanzi_value_page_pv"></span>读过
+            </span>
+        
 
         
         <span class="column is-narrow">
@@ -158,21 +155,72 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>家里的R7000已经服役了6年，当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停滞在了380.70_0-X7.9版本。长期的工作使得路由器经常因为莫名其妙的原因而罢工，重置也因此成了家常便饭。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/#more">阅读更多</a>
-        </p>
+        <html><head></head><body><p>家里的R7000已经服役了6年，当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停滞在了380.70_0-X7.9版本。长期的工作使得路由器经常因为莫名其妙的原因而罢工，重置也因此成了家常便饭。</p>
+<a id="more"></a>
+
+<h2 id="一些常见的故障及排障"><a href="#一些常见的故障及排障" class="headerlink" title="一些常见的故障及排障"></a>一些常见的故障及排障</h2><p>如果R7000只是2.4g和5g指示灯不再闪烁，也有可能是误触引起的（比如堆放了物件等），这时可以先长按面板右数第二个键数秒。能够正常亮灯也就不用重置。在重置之前，仍然建议读者还是耐心地使用搜索引擎解决问题。重置往往伴随着的配置的丢失，耗时费力。</p>
+<h2 id="硬重置方法"><a href="#硬重置方法" class="headerlink" title="硬重置方法"></a>硬重置方法</h2><p>在确定重置不可避免时，往往此时已经无法进入后台了，最简单的硬重置方法就是在开机状态下使用卡针按住路由器后方的reset按钮30秒左右后松开，为避免变砖可能还需要<a href="https://www.right.com.cn/forum/thread-8267551-1-1.html" target="_blank" rel="noopener" title="网件R7000捅菊花变砖">断电30秒后再插电30秒</a>，但实际操作时不严格遵循该步骤应该也是能够重置成功的。</p>
+<h2 id="设置连接名称密码"><a href="#设置连接名称密码" class="headerlink" title="设置连接名称密码"></a>设置连接名称密码</h2><p>重置后路由器连接名称会变会Netgear，因为后续要使用smart connect，所以在连接后进入的设置向导页面只需要考虑一下管理员名称和密码的设置，wifi连接名称和密码建议只需要使用默认密码（00000000）即可。</p>
+<p>向导完成后，连接wifi并访问：<code>http://router.asus.com/Main_Login.asp</code></p>
+<p>登入后可以先进入外部网络选项卡，打开smart connect开关，此时使用的wifi名称在保存应用后将不再区分2.4g和5g，而是根据smart connect rule进行切换，这部分的设置可以参考<a href="https://zhuanlan.zhihu.com/p/370147768" target="_blank" rel="noopener" title="华硕路由器Smart Connect原理解析与硬核设置指南">华硕路由器Smart Connect原理解析与硬核设置指南</a>。</p>
+<p>对于此前联系过运营商做过桥接改造的用户来说，还需要在外部网络选项卡将拨号选为PPPOE，并在PPP处填入运营商提供的用户、密码。</p>
+<h2 id="解除软件中心限制"><a href="#解除软件中心限制" class="headerlink" title="解除软件中心限制"></a>解除软件中心限制</h2><p>此时路由器已经可以正常访问网络，但如果想要科学上网，需要先根据路由器提示打开jffs的一个权限选项，再打开路由器的ssh功能，执行命令</p>
+<p></p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i <span class="hljs-string">'s/\tdetect_package/\t# detect_package/g'</span> /koolshare/scripts/ks_tar_install.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><a href="https://hq450.github.io/fancyss/" target="_blank" rel="noopener" title="fancyss - 科学上网">解除软件中心的安装限制</a>。或使用<a href="https://www.bilibili.com/read/cv9729050" target="_blank" rel="noopener" title="Koolshare 软件中心离线安装限制 解除">其他方式</a>（如安装<a href="https://t.me/s/SukkaChannel?q=fuckkoolshare.tar.gz" target="_blank" rel="noopener" title="解除 Koolshare 酷软中心 的离线安装限制的插件">fuckkoolshare.tar.gz</a>)。</p>
+<h2 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装clash</h2><p>如果还在使用ss的用户，可以尝试寻找旧版本ss并安装。目前比较流行的方式是安装merlin clash，它使用能够兼容xray的clash-meta内核，如果此前使用过clash for windows等，只需要将规则配置文件修改为能够通过校验的格式并上传即可。</p>
+<h2 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h2><p>PT需要端口转发，可参考<a href="https://cloud.tencent.com/developer/article/1624139" target="_blank" rel="noopener" title="华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录">华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录</a>进行配置。</p>
+<h2 id="配置导出"><a href="#配置导出" class="headerlink" title="配置导出"></a>配置导出</h2><p>最后为避免重复劳动，建议做一次配置及jffs的导出并备份在其他可靠位置。</p>
+</body></html>
     
     </div>
     
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Router/">#Router</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/2023-02-28-running-calibre-web-on-synology/">群晖nas搭建calibre-web勘误</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2022-11-22-imap-and-gsm-alphabet/">踩坑GSM alphabet</a>
+            
+        </span>
+    </div>
     
 </article>
 
 
 
 
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
     
-    
+<script src="https://giscus.app/client.js"
+        data-repo="mykonakona/mykonakona.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOB_QtM84CUfUd"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</div>
+
     </div>
 </section>
     <footer class="footer">

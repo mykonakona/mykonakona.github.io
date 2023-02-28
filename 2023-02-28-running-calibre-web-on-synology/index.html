@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>标签: Router - mykonakona</title>
+<title>群晖nas搭建calibre-web勘误 - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -119,25 +119,17 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5>#Router</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/" itemprop="url">380.70_0-X7.9版本梅林固件路由器重置指南</a>
+            群晖nas搭建calibre-web勘误
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
-            <time datetime="2023-01-29T02:28:00.000Z" itemprop="datePublished">1月 29 2023</time>
+            <time datetime="2023-02-28T10:56:09.000Z" itemprop="datePublished">2月 28 2023</time>
         </span>        
         
         <span class="column is-narrow article-category">
@@ -147,32 +139,82 @@
         
 
         
+            <!-- 不蒜子统计 -->
+            <span id="busuanzi_container_page_pv" class="column is-narrow">
+                <span id="busuanzi_value_page_pv"></span>读过
+            </span>
+        
 
         
         <span class="column is-narrow">
             
             
-            7 分钟 读完 (约 986 字)
+            3 分钟 读完 (约 397 字)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>家里的R7000已经服役了6年，当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停滞在了380.70_0-X7.9版本。长期的工作使得路由器经常因为莫名其妙的原因而罢工，重置也因此成了家常便饭。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/#more">阅读更多</a>
-        </p>
+        <html><head></head><body><p>目前网上有一篇较详细的名为<a href="https://www.lategege.com/?p=639" target="_blank" rel="noopener">“群晖nas搭建个人图书馆”</a>的calibre-web搭建教程。该教程的原始版本存在一些笔误并缺失一些关键问题的解决。作者似乎已经对其中的一些错误进行了修正，但考虑到搜索结果中还有存在着一些<a href="https://zhuanlan.zhihu.com/p/544504281" target="_blank" rel="noopener">原版本的内容流传</a>，这里还是不厌其烦的列出以下内容以供读者参考。</p>
+<a id="more"></a>
+
+<h2 id="GUID的笔误"><a href="#GUID的笔误" class="headerlink" title="GUID的笔误"></a>GUID的笔误</h2><p>首先，初始化容器时填写的环境变量不是PUID、GUID，而是PUID、PGID。</p>
+<h2 id="原PUID及PGID配置引起上传时报“attempt-to-write-a-readonly-database”"><a href="#原PUID及PGID配置引起上传时报“attempt-to-write-a-readonly-database”" class="headerlink" title="原PUID及PGID配置引起上传时报“attempt to write a readonly database”"></a>原PUID及PGID配置引起上传时报“attempt to write a readonly database”</h2><p>此处问题与PUID及PGID的值有关，原文设置为<code>$(id -u)</code>和<code>$(id -g)</code>，观察容器日志：</p>
+<p></p><figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupmod: invalid group ID <span class="hljs-string">'$(id -g)'</span></span><br><span class="line">usermod: invalid user ID <span class="hljs-string">'$(id -u)'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>可知这种写法也会提示非法。</p>
+<p>因此个人建议还是老老实实打开群晖的ssh功能，本地连接后运行<code>id</code>命令获取实际的PUID和PGID。填写实际获取到的id后不再出现该报错提示。</p>
+<h2 id="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"><a href="#缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”" class="headerlink" title="缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”"></a>缺少必需挂载的文件夹引起上传时报“无法保存到临时目录”</h2><p>在完成PUID和PGID配置后，除<code>\books</code>及<code>\config</code>外，还需要额外挂载<code>/tmp</code>和<code>/upload</code>两个文件夹。否则无法上传书籍。此处原理可参考<a href="https://www.reddit.com/r/Calibre/comments/odgkb1/error_when_uploading_via_calibreweb/" target="_blank" rel="noopener">reddit</a>。</p>
+</body></html>
     
     </div>
     
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/TV-Series/">#TV-Series</a></span>
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/subtitle/">#subtitle</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/">380.70_0-X7.9版本梅林固件路由器重置指南</a>
+            
+        </span>
+    </div>
     
 </article>
 
 
 
 
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
     
-    
+<script src="https://giscus.app/client.js"
+        data-repo="mykonakona/mykonakona.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOB_QtM84CUfUd"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+</div>
+
     </div>
 </section>
     <footer class="footer">
