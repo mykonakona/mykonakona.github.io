@@ -11,7 +11,7 @@ tags: VPS
 
 <!-- more -->
 
-证书申请参考[使用 acme.sh 配置自动续签 SSL 证书](https://u.sb/acme-sh-ssl/)，nginx配置参考[配置 Nginx 和 frps 共存 80/443 端口及泛域名支持教程](https://www.ioiox.com/archives/78.html)即可(不过第二篇有关“frpc.ini 中域名参数需使用 subdomain = xx 仅填写二级域名主机头即可，不要填写完整域名”的内容，经测试还是得写完整域名。)
+证书申请参考[使用 acme.sh 配置自动续签 SSL 证书](https://u.sb/acme-sh-ssl/)，nginx配置参考[配置 Nginx 和 frps 共存 80/443 端口及泛域名支持教程](https://www.ioiox.com/archives/78.html)即可(不过第二篇有关“frpc.ini 中域名参数需使用 subdomain = xx 仅填写二级域名主机头即可，不要填写完整域名”的内容，经测试还是得写完整域名。)。
 
 ```bash
 server {
