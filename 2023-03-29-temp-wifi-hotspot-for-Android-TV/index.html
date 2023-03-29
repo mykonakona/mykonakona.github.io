@@ -2,7 +2,7 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>分类: Digital - mykonakona</title>
+<title>海外版小米盒子如何安装APP - mykonakona</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -119,20 +119,12 @@
     </div>
 </nav>
 
-    <section class="section section-heading">
+    <section class="section">
     <div class="container">
-        <div class="content">
-            <h5><i class="far fa-folder"></i>Digital</h5>
-        </div>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
+    <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            <a href="/2023-03-29-temp-wifi-hotspot-for-Android-TV/" itemprop="url">海外版小米盒子如何安装APP</a>
+            海外版小米盒子如何安装APP
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -147,6 +139,11 @@
         
 
         
+            <!-- 不蒜子统计 -->
+            <span id="busuanzi_container_page_pv" class="column is-narrow">
+                <span id="busuanzi_value_page_pv"></span>读过
+            </span>
+        
 
         
         <span class="column is-narrow">
@@ -158,193 +155,78 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <html><head></head><body><p>表面上是一个安装APP的问题，但由于网络限制，内地用户是无法访问google play的，当然或许通过adb也能够直接安装，这里先不探讨这类方式，主要以如何实现满足调节的网络环境为主。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2023-03-29-temp-wifi-hotspot-for-Android-TV/#more">阅读更多</a>
-        </p>
+        <html><head></head><body><p>表面上是一个安装APP的问题，但由于网络限制，内地用户是无法访问google play的，当然或许通过adb也能够直接安装，这里先不探讨这类方式，主要以如何实现满足调节的网络环境为主。</p>
+<a id="more"></a>
+
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li>通过路由器或者旁路由</li>
+<li>通过热点</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>因为主路由或者旁路由实现的相关教程比较多了，这里介绍一下通过热点的一种<a href="https://zhuanlan.zhihu.com/p/337430556" target="_blank" rel="noopener">方式</a>：</p>
+<ol>
+<li>笔记本电脑连接能够访问互联网的wifi后开启热点</li>
+<li>打开Clash for windows（前提是配置文件配置过节点），勾选Allow LAN</li>
+<li>点击Service Mode并安装默认选项</li>
+<li>勾选TUN Mode</li>
+<li>此时控制面板的“网络与共享中心”下选择“更改适配器设置”</li>
+<li>右键出现的Clash网络图标，选择属性、共享，勾选“允许其他网络用户通过此计算机的Internet连接来连接”，然后在下拉菜单选择热点的网络名称（例如本地连接10）</li>
+<li>win+r唤出cmd，输入ipconfig，记下热点的ip地址，记下clash for windows上的port号</li>
+<li>待连接的设备连接热点后，对网络中的“代理”选项进行配置，输入上一步记录的ip和port号</li>
+</ol>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>此时电视盒应该可以正常访问google play了，第一件事就是安装一个文件管理的APP，这样后续可以通过U盘进行APP的安装。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>服务模式生效的标志为右侧的小地球图标变绿</li>
+<li>如果使用其他内核（如Clash.Meta)，会无法使用服务模式</li>
+</ul>
+</body></html>
     
     </div>
     
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/life/">#life</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/2023-02-28-running-calibre-web-on-synology/">群晖nas搭建calibre-web勘误</a>
+            
+        </span>
+    </div>
     
 </article>
 
 
 
 
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
     
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2023-02-28-running-calibre-web-on-synology/" itemprop="url">群晖nas搭建calibre-web勘误</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2023-02-28T10:56:09.000Z" itemprop="datePublished">2月 28 2023</time>
-        </span>        
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Digital/">Digital</a>
-        </span>
-        
+<script src="https://giscus.app/client.js"
+        data-repo="mykonakona/mykonakona.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOB_QtM84CUfUd"
+        data-mapping="url"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
 
-        
+</div>
 
-        
-        <span class="column is-narrow">
-            
-            
-            3 分钟 读完 (约 407 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>关于如何在NAS上搭建calibre-web实现个人书籍管理，目前比较详细的教程可参考<a href="https://www.lategege.com/?p=639" target="_blank" rel="noopener">“群晖nas搭建个人图书馆”</a>。该教程的原始版本存在笔误并缺失一些关键问题的解决。作者似乎已经对其中的一些错误进行了修正，但考虑到搜索结果中还有存在着一些<a href="https://zhuanlan.zhihu.com/p/544504281" target="_blank" rel="noopener">原版本的内容流传</a>，这里还是不厌其烦的列出以下内容以供读者参考。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2023-02-28-running-calibre-web-on-synology/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/" itemprop="url">380.70_0-X7.9版本梅林固件路由器重置指南</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2023-01-29T02:28:00.000Z" itemprop="datePublished">1月 29 2023</time>
-        </span>        
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Digital/">Digital</a>
-        </span>
-        
-
-        
-
-        
-        <span class="column is-narrow">
-            
-            
-            7 分钟 读完 (约 986 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>家里的R7000已经服役了6年，当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停滞在了380.70_0-X7.9版本。长期的工作使得路由器经常因为莫名其妙的原因而罢工，重置也因此成了家常便饭。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2023-01-29-how-to-reset-380.70_0-X7.9-merlin-router/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2022-11-14-how-to-modify-qbittorrent-webui-on-synology-nas/" itemprop="url">docker版qbittorrent修改webUI乱码问题</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2022-11-14T03:36:00.000Z" itemprop="datePublished">11月 14 2022</time>
-        </span>        
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Digital/">Digital</a>
-        </span>
-        
-
-        
-
-        
-        <span class="column is-narrow">
-            
-            
-            4 分钟 读完 (约 582 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>我在群晖通过docker安装了4.1.9版本的qbittorrent，当初选定这一版本是根据天雪的客户端支持列表来的，这个版本的UI提供的功能很简陋，所以需要使用第三方webUI替代。</p></body></html>
-        <p class="article-more-link">
-            <a href="/2022-11-14-how-to-modify-qbittorrent-webui-on-synology-nas/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-        <article class="article content gallery" itemscope itemprop="blogPost">
-    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
-        
-            <a href="/2020-09-04-lenovo-yoga-s740-review/" itemprop="url">聊聊Yoga S740</a>
-        
-    </h1>
-    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <span class="column is-narrow">
-            <time datetime="2020-09-04T14:32:00.000Z" itemprop="datePublished">9月 4 2020</time>
-        </span>        
-        
-        <span class="column is-narrow article-category">
-            <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/Digital/">Digital</a>
-        </span>
-        
-
-        
-
-        
-        <span class="column is-narrow">
-            
-            
-            10 分钟 读完 (约 1547 字)
-        </span>
-        
-    </div>
-    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
-    
-        <html><head></head><body><p>后续：相当离谱，联想售后工程师在联想内部知识库找不到的触摸板驱动，我在联想美国官网找到了，虽然当时他们非说是免驱版（包括我自己查了一些联想国内官网的说明也说触摸板是免驱，但实际上这个美国官网的触摸板驱动装完后我的触摸板就好了……）</p></body></html>
-        <p class="article-more-link">
-            <a href="/2020-09-04-lenovo-yoga-s740-review/#more">阅读更多</a>
-        </p>
-    
-    </div>
-    
-    
-</article>
-
-
-
-
-    
-    
     </div>
 </section>
     <footer class="footer">
