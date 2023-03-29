@@ -2,7 +2,7 @@
 title: 群晖nas搭建calibre-web勘误
 date: 2023-02-28 18:56:09
 categories: Digital
-tags: [TV-Series, subtitle]
+tags: [NAS, docker]
 ---
 
 关于如何在NAS上搭建calibre-web实现个人书籍管理，目前比较详细的教程可参考[“群晖nas搭建个人图书馆”][1]。该教程的原始版本存在笔误并缺失一些关键问题的解决。作者似乎已经对其中的一些错误进行了修正，但考虑到搜索结果中还有存在着一些[原版本的内容流传][2]，这里还是不厌其烦的列出以下内容以供读者参考。
