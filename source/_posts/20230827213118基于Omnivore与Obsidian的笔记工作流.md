@@ -3,7 +3,7 @@ id: 20230827213118
 title: |
   基于Omnivore与Obsidian的笔记工作流
 author: |
-  me
+  mykonakona
 tags:
  - 知识管理
  - Obsidian
