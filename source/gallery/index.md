@@ -4,13 +4,13 @@ layout: "blueimpgallery"
 comments: false
 ---
 
-本博客主题在原minos主题上进行了一些改动，因此相册的显示效果与原主题有所不同。
+本博客主题的相册显示效果与原minos主题有所不同，可通过以下配置使用。
 
-# 使用例
+## 使用例
 
-## 配置文件
+### 配置文件
 
-```
+```html
 favicon: /images/favicon.ico
 
 menu:
@@ -44,11 +44,11 @@ plugins:
   clipboard: true
 ```
 
-## 相册页
+### 相册页
 
 source下新建一../gallery/index.md文件，输入以下内容：
 
-```
+```html
 ---
 layout: "blueimpgallery"
 comments: false
@@ -62,7 +62,7 @@ comments: false
 </div>
 ```
 
-# 效果
+## 效果
 
 <div id="links"  class="links">
 <a href="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.jpg"><img loading="lazy" width="105" height="105" src="https://che.jakku.top/images/2021/09/17/IMG_20210808_174117.th.jpg" alt="IMG_20210808_174117.th.jpg" border="0"></a>
