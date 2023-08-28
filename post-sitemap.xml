@@ -9,16 +9,8 @@
 
 
     <url>
-        <loc>http://mykonakona.github.io/posts/2020-05-27-wo-da-jing-tai-bo-ke.html</loc>
-        <lastmod>2023-08-28T00:45:14.032Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://mykonakona.github.io/posts/2020-09-04-lian-xiang-yoga-s740-de-zao-xin-ti-yan.html</loc>
-        <lastmod>2023-08-28T00:45:14.032Z</lastmod>
+        <lastmod>2023-08-28T03:03:35.569Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,7 +18,7 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2022-02-10-yi-ci-shi-bai-de-shua-ju-jing-li.html</loc>
-        <lastmod>2023-08-28T00:45:14.032Z</lastmod>
+        <lastmod>2023-08-28T03:03:35.569Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -34,7 +26,15 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2022-11-22-miui-eu-yong-hu-kai-qi-qq-you-xiang-imap-bao-cuo-de-jie-jue.html</loc>
-        <lastmod>2023-08-28T00:45:14.032Z</lastmod>
+        <lastmod>2023-08-28T03:03:35.569Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/posts/2020-05-27-wo-da-jing-tai-bo-ke.html</loc>
+        <lastmod>2023-08-28T03:03:35.565Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
