@@ -15,7 +15,7 @@ timezone: 'Asia/Shanghai'
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://mykonakona.github.io
 root: /
-permalink: :category/ :year-:month-:day-:post_title.html  
+permalink: :category/:year-:month-:day.html  
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -148,9 +148,3 @@ neat_js:
     - '**/*.min.js'
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'
-
-# 中文永久链接转全拼
-# https://github.com/viko16/hexo-permalink-pinyin
-permalink_pinyin:
-  enable: true
-  separator: '-' # default: '-'
