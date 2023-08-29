@@ -1,6 +1,6 @@
 # 我的静态博客 ![example workflow](https://github.com/mykonakona/mykonakona.github.io/actions/workflows/github-actions.yml/badge.svg)
 
-Just Another Weblog -> [mykonakona.github.io](mykonakona.github.io)
+Just Another Weblog -> [mykonakona.github.io](https://mykonakona.github.io)
 
 [![Lighthouse Accessibility Badge](./source/images/test_results/lighthouse_accessibility.svg)](https://github.com/emazzotta/lighthouse-badges)
 [![Lighthouse Best Practices Badge](./source/images/test_results/lighthouse_best-practices.svg)](https://github.com/emazzotta/lighthouse-badges)
