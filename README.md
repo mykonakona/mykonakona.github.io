@@ -4,11 +4,11 @@ Just Another Weblog
 
 ![example workflow](https://github.com/github/docs/actions/workflows/github-actions.yml/badge.svg)
 
-[![Lighthouse Accessibility Badge](./images/test_results/lighthouse_accessibility.svg)](https://github.com/emazzotta/lighthouse-badges)
-[![Lighthouse Best Practices Badge](./images/test_results/lighthouse_best-practices.svg)](https://github.com/emazzotta/lighthouse-badges)
-[![Lighthouse Performance Badge](./images/test_results/lighthouse_performance.svg)](https://github.com/emazzotta/lighthouse-badges)
-[![Lighthouse PWA Badge](./images/test_results/lighthouse_pwa.svg)](https://github.com/emazzotta/lighthouse-badges)
-[![Lighthouse SEO Badge](./images/test_results/lighthouse_seo.svg)](https://github.com/emazzotta/lighthouse-badges)
+[![Lighthouse Accessibility Badge](./source/images/test_results/lighthouse_accessibility.svg)](https://github.com/emazzotta/lighthouse-badges)
+[![Lighthouse Best Practices Badge](./source/images/test_results/lighthouse_best-practices.svg)](https://github.com/emazzotta/lighthouse-badges)
+[![Lighthouse Performance Badge](./source/images/test_results/lighthouse_performance.svg)](https://github.com/emazzotta/lighthouse-badges)
+[![Lighthouse PWA Badge](./source/images/test_results/lighthouse_pwa.svg)](https://github.com/emazzotta/lighthouse-badges)
+[![Lighthouse SEO Badge](./source/images/test_results/lighthouse_seo.svg)](https://github.com/emazzotta/lighthouse-badges)
 
 - 引擎：[Hexo][1]
 - 主题：基于优秀的[minos][2]（移动端视频、搜索、RSS）修改的[深色版本][3]
