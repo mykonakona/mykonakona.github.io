@@ -1,6 +1,4 @@
-
-![example workflow](https://github.com/mykonakona/mykonakona.github.io/actions/workflows/github-actions.yml/badge.svg)
-# 我的静态博客
+# 我的静态博客 ![example workflow](https://github.com/mykonakona/mykonakona.github.io/actions/workflows/github-actions.yml/badge.svg)
 
 Just Another Weblog -> [mykonakona.github.io](mykonakona.github.io)
 
