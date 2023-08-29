@@ -2,10 +2,10 @@
 title: 关于
 ---
 
-
 ## 站点日志
 
-- 2023-08-25 挺重要的一次更新，内容基本推倒重来，只保留有一定质量的文章。调整了博客的栏目和博文的组织形式，新增了hexo-neat、hexo-permalink-pinyin两个插件，看不见的改动是通过调整把稍后读（剪藏）-笔记软件-博客的工作流捋得比较顺了，后续或许会聊聊具体的[做法][6]。
+- 2023-08-29 整体升级hexo及依赖，并添加了一个白嫖的umami，也许会抽空添加一些统计功能。
+- 2023-08-25 挺重要的一次更新，再次清理博客内容，只保留有一定质量的文章，并新增了hexo-neat插件。为与[工作流][6]统一，博客不再使用分类，而是主要通过标签对博文进行标记。
 - 2023-02-27 更新博客系统为giscus，后知后觉地将Travis CI[替换为Github Actions][5]。
 - 2022-11-22 修复主题字体、引用显示问题，依照规范修复md文件。
 - 2022-11-14 删减了一些博文，更专注记录平时解决的一些问题。
@@ -22,4 +22,4 @@ title: 关于
 [3]: https://valine.js.org/
 [4]: https://github.com/mykonakona/hexo-theme-minos
 [5]: https://www.v2ex.com/t/736510
-[6]: https://mykonakona.github.io/posts/2023-08-27-ji-yu-omnivore-yu-obsidian-de-bi-ji-gong-zuo-liu.html
+[6]: https://mykonakona.github.io/posts/2023-08-27.html
