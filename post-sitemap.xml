@@ -9,8 +9,16 @@
 
 
     <url>
+        <loc>http://mykonakona.github.io/posts/2020-05-27.html</loc>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://mykonakona.github.io/posts/2020-09-04.html</loc>
-        <lastmod>2023-08-29T08:41:31.591Z</lastmod>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -18,7 +26,7 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2022-02-10.html</loc>
-        <lastmod>2023-08-29T08:41:31.591Z</lastmod>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -26,7 +34,7 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2022-11-22.html</loc>
-        <lastmod>2023-08-29T08:41:31.591Z</lastmod>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -34,7 +42,7 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2023-08-27.html</loc>
-        <lastmod>2023-08-29T08:41:31.591Z</lastmod>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -42,15 +50,7 @@
 
     <url>
         <loc>http://mykonakona.github.io/posts/2023-08-29.html</loc>
-        <lastmod>2023-08-29T08:41:31.591Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/posts/2020-05-27.html</loc>
-        <lastmod>2023-08-29T08:41:31.587Z</lastmod>
+        <lastmod>2023-08-29T08:42:26.831Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
