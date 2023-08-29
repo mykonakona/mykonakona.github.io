@@ -2,7 +2,7 @@
 
 Just Another Weblog
 
-![example workflow](https://github.com/github/docs/actions/workflows/github-actions.yml/badge.svg)
+![example workflow](https://github.com/mykonakona/mykonakona.github.io/actions/workflows/github-actions.yml/badge.svg)
 
 [![Lighthouse Accessibility Badge](./source/images/test_results/lighthouse_accessibility.svg)](https://github.com/emazzotta/lighthouse-badges)
 [![Lighthouse Best Practices Badge](./source/images/test_results/lighthouse_best-practices.svg)](https://github.com/emazzotta/lighthouse-badges)
