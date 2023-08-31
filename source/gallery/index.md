@@ -1,5 +1,5 @@
 ---
-title: 相册使用说明
+title: 相册使用说明(删除)
 layout: "blueimpgallery"
 comments: false
 ---
