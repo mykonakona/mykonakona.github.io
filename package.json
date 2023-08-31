@@ -14,6 +14,7 @@
   "dependencies": {
     "blueimp-gallery": "^3.4.0",
     "cheerio": "^1.0.0-rc.12",
+    "dayjs": "^1.11.9",
     "hexo": "^6.3.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
