@@ -29,7 +29,9 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render: googleceee8729d9b76e32.html
+skip_render: 
+ - googleceee8729d9b76e32.html
+ - manifest.json
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -148,4 +150,3 @@ neat_js:
     - '**/*.min.js'
     - '**/jquery.fancybox.pack.js'
     - '**/index.js'
-    
