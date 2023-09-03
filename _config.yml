@@ -33,6 +33,7 @@ skip_render:
  - googleceee8729d9b76e32.html
  - manifest.json
  - sw.js
+ - noto-sans-sc-v36-chinese-simplified_latin-regular.woff2
 
 # Writing
 new_post_name: :title.md # File name of new posts
