@@ -1,10 +1,12 @@
 ---
-title: 相册使用说明(删除)
+title: 相册使用说明
 layout: "blueimpgallery"
 comments: false
 ---
 
-本博客主题的相册显示效果与原minos主题有所不同，可通过以下配置使用。
+本主题相册页支持使用blueimpGallery，为优化访问现在仅保留lightGallery。
+
+如需使用需在主题ejs文件内手动引入相关资源：
 
 ## 使用例
 
