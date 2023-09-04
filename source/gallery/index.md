@@ -46,7 +46,7 @@ plugins:
 
 ### 相册页
 
-source下新建../gallery/index.md文件，输入以下内容：
+source下新建../gallery/index.md文件，插入以下内容：
 
 ```html
 ---
