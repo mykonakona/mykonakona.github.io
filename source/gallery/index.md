@@ -4,9 +4,7 @@ layout: "blueimpgallery"
 comments: false
 ---
 
-本主题相册页支持blueimpGallery，为优化访问现仅保留lightGallery。
-
-如需使用需在主题ejs文件内手动引入相关资源。
+本主题相册页支持blueimpGallery，需在主题ejs文件内手动引入相关资源。
 
 ## 使用例
 
