@@ -77,8 +77,8 @@
     
 
 
-        $('.article-meta time').each(function () {
-            $(this).text(dayjs($(this).attr('datetime')).fromNow());
-        });
+    $('.article-meta time').each(function () {
+        $(this).text(dayjs($(this).attr('datetime')).fromNow());
+    });
     
 })(jQuery);
