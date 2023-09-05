@@ -8,7 +8,7 @@ comments: false
 
 ## 使用例
 
-### 配置文件
+### 配置
 
 ```html
 favicon: /images/favicon.ico
