@@ -1,9 +1,11 @@
 ---
 id: 20221114113600
 title: |
-  [教程]修复qBittorrent的WebUI乱码
+  修复qBittorrent的WebUI乱码
 author: |
   mykonakona
+category:
+  教程
 tags:
  - 数码
  - 群晖
