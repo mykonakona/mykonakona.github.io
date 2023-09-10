@@ -11,7 +11,16 @@
     
     <url>
         <loc>http://mykonakona.github.io/about/</loc>
-        <lastmod>2023-09-06T01:46:31.512Z</lastmod>
+        <lastmod>2023-09-10T08:03:42.234Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>http://mykonakona.github.io/categories/</loc>
+        <lastmod>2023-09-10T08:03:42.234Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -20,7 +29,7 @@
     
     <url>
         <loc>http://mykonakona.github.io/gallery/</loc>
-        <lastmod>2023-09-06T01:46:31.512Z</lastmod>
+        <lastmod>2023-09-10T08:03:42.234Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
