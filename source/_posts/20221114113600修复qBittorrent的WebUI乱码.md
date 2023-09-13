@@ -14,8 +14,7 @@ tags:
  - PT
 description: qBittorrent的WebUI一直有个乱码问题。
 date: 2022-11-14 11:36:00
-date_saved: null
-origin_url: null
+origin_url: qbittorrent-webui-mojibake
 ---
 
 qBittorrent的WebUI一直有个乱码问题。
