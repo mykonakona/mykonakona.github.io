@@ -9,80 +9,8 @@
 
 
     <url>
-        <loc>http://mykonakona.github.io/categories/memo/powershell-telnet-script/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/experience/my-static-blog/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/life/yoga-s740-review/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/pitfall/ubuntu-software-source/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/life/netflix-in-china/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/memo/r7000-memo/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://mykonakona.github.io/categories/experience/my-notebook-workflow/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://mykonakona.github.io/categories/tutorial/add-pwa-manually/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
+        <lastmod>2023-09-14T02:14:55.291Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -90,7 +18,79 @@
 
     <url>
         <loc>http://mykonakona.github.io/categories/tutorial/elegant-hexo-permalink/</loc>
-        <lastmod>2023-09-13T12:52:51.117Z</lastmod>
+        <lastmod>2023-09-14T02:14:55.291Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/memo/powershell-telnet-script/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/experience/my-static-blog/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/life/yoga-s740-review/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/pitfall/ubuntu-software-source/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/life/netflix-in-china/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/memo/r7000-memo/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://mykonakona.github.io/categories/experience/my-notebook-workflow/</loc>
+        <lastmod>2023-09-14T02:14:55.287Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
