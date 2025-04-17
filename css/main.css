@@ -2647,6 +2647,9 @@ html:has(.drawer-toggle:checked) {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.sticky {
+  position: sticky;
+}
 .z-\[1\] {
   z-index: 1;
 }
