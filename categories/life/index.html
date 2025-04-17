@@ -66,8 +66,40 @@
 <body>
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content">
-          
+        <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu bg-accent text-base-content min-h-full w-80 p-4">
+                <div class="flex flex-row items-center mx-auto">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                          <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />                                   
+                        </div>
+                    </div>
+                </div>     
+                
+                    <li class="hover:text-white transition duration-200 ease-in-out">
+                      <a class="px-4 py-2 text-xl" href="/">Home</a>
+                    </li>
+                
+                    <li class="hover:text-white transition duration-200 ease-in-out">
+                      <a class="px-4 py-2 text-xl" href="/archives/">Archives</a>
+                    </li>
+                
+                    <li class="hover:text-white transition duration-200 ease-in-out">
+                      <a class="px-4 py-2 text-xl" href="/categories/">Categories</a>
+                    </li>
+                
+                    <li class="hover:text-white transition duration-200 ease-in-out">
+                      <a class="px-4 py-2 text-xl" href="/tags/">Tags</a>
+                    </li>
+                
+                    <li class="hover:text-white transition duration-200 ease-in-out">
+                      <a class="px-4 py-2 text-xl" href="/about/">About</a>
+                    </li>
+                
+            </ul>
+        </div>
+        <div class="drawer-content">          
         <!-- Page content here -->
         <!-- Page Content-->
         <main class="min-h-[80vh] max-w-7xl mx-auto py-4 lg:p-4">
@@ -166,40 +198,7 @@
   </nav>
 </footer>
         <!-- Page Content结束-->
-        </div>
-        <div class="drawer-side">
-            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu bg-accent text-base-content min-h-full w-80 p-4">
-                <div class="flex flex-row items-center mx-auto">
-                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full">
-                          <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />                                   
-                        </div>
-                    </div>
-                </div>     
-                
-                    <li class="hover:text-white transition duration-200 ease-in-out">
-                      <a class="px-4 py-2 text-xl" href="/">Home</a>
-                    </li>
-                
-                    <li class="hover:text-white transition duration-200 ease-in-out">
-                      <a class="px-4 py-2 text-xl" href="/archives/">Archives</a>
-                    </li>
-                
-                    <li class="hover:text-white transition duration-200 ease-in-out">
-                      <a class="px-4 py-2 text-xl" href="/categories/">Categories</a>
-                    </li>
-                
-                    <li class="hover:text-white transition duration-200 ease-in-out">
-                      <a class="px-4 py-2 text-xl" href="/tags/">Tags</a>
-                    </li>
-                
-                    <li class="hover:text-white transition duration-200 ease-in-out">
-                      <a class="px-4 py-2 text-xl" href="/about/">About</a>
-                    </li>
-                
-            </ul>
-        </div>
+        </div>        
     </div>
 </body>
 </html>
