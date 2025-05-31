@@ -102,19 +102,23 @@
         <div class="drawer-content bg-base-200 flex flex-col">          
         <!-- Page content here -->
         <!-- Page Content-->
-        <main class="flex-1 min-h-[80vh] max-w-7xl py-4 lg:p-4">
+        <main class="flex-1 min-h-[80vh] mx-auto max-w-7xl py-4 lg:p-4">
             
     <div class="mx-auto px-4">
-        <article class="mx-auto max-w-7xl prose ">
-                <div class="mb-4 text-3xl font-bold">
-                    一个Powershell小脚本
+        <div class="card">
+            <div class="card-title">    
+            </div>
+            <div class="card-body">
+                <article class="mx-auto max-w-3xl prose ">
+                    <div class="mb-4 text-3xl font-bold">
+                            一个Powershell小脚本
 
-                </div>
-                <div class="text-base">
-                    2017-07-07
-                </div>
-                <div class="text-base">
-                    <p>验证网络打通之余熟悉了Powershell语法。</p>
+                        </div>
+                        <div class="text-base">
+                            2017-07-07
+                        </div>
+                        <div class="text-base">
+                            <p>验证网络打通之余熟悉了Powershell语法。</p>
 <span id="more"></span>
 
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。</p>
@@ -167,15 +171,17 @@ foreach ($i in $iplist)&#123;
 <li>将取出的ip和端口号填入System.Net.Sockets.TcpClient函数中并测试对应的ip及端口。</li>
 </ol>
      
-                </div>             
-        </article>
+                        </div>             
+                </article>
+            </div>
+        </div>
     </div>
 
 
 
              
         </main>
-        <footer class="flex-none footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4 min-h-12">
+        <footer class="flex-none footer bg-base-200 text-base-content border-t border-base-300 px-10 py-4 min-h-12">
   <aside class="grid-flow-col items-center">
     <svg class="items-center" width="24" height="24" viewBox="0 0 1024 1024" fill="fill-current" xmlns="http://www.w3.org/2000/svg">
       <rect x="256" y="670.72" width="512" height="256" rx="128" fill="#1AD1A5"/>
