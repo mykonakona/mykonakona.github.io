@@ -2692,8 +2692,8 @@ html:has(.drawer-toggle:checked) {
 .min-h-60 {
   min-height: 15rem;
 }
-.min-h-\[80vh\] {
-  min-height: 80vh;
+.min-h-\[85vh\] {
+  min-height: 85vh;
 }
 .min-h-full {
   min-height: 100%;
@@ -2928,6 +2928,11 @@ html:has(.drawer-toggle:checked) {
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 @media (min-width: 768px) {
 
@@ -2977,6 +2982,11 @@ html:has(.drawer-toggle:checked) {
 
   .lg\:p-4 {
     padding: 1rem;
+  }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
