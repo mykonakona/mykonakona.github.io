@@ -2719,9 +2719,6 @@ html:has(.drawer-toggle:checked) {
 .max-w-3xl {
   max-width: 48rem;
 }
-.max-w-4xl {
-  max-width: 56rem;
-}
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -2815,6 +2812,9 @@ html:has(.drawer-toggle:checked) {
 }
 .py-4 {
   padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.pb-4 {
   padding-bottom: 1rem;
 }
 .pt-4 {
