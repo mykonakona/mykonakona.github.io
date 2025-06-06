@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-06-06T04:05:39.356Z</updated>
+  <updated>2025-06-06T04:13:31.303Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -22,7 +22,7 @@
     <link href="http://example.com/categories/tutorial/elegant-hexo-permalink/"/>
     <id>http://example.com/categories/tutorial/elegant-hexo-permalink/</id>
     <published>2023-09-10T13:20:14.000Z</published>
-    <updated>2025-06-06T04:05:39.356Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">什么是好的永久链接？如何在Hexo内实践？</summary>
@@ -46,7 +46,7 @@
     <link href="http://example.com/categories/tutorial/add-pwa-manually/"/>
     <id>http://example.com/categories/tutorial/add-pwa-manually/</id>
     <published>2023-09-01T06:12:35.000Z</published>
-    <updated>2025-06-06T04:05:39.356Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">不要再装Hexo的那些PWA插件了。</summary>
@@ -70,7 +70,7 @@
     <link href="http://example.com/categories/experience/my-notebook-workflow/"/>
     <id>http://example.com/categories/experience/my-notebook-workflow/</id>
     <published>2023-08-27T13:31:18.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">相比网友们顺其自然的管理，我对笔记的使用更像是一种为记而记的学习。</summary>
@@ -92,7 +92,7 @@
     <link href="http://example.com/categories/memo/r7000-memo/"/>
     <id>http://example.com/categories/memo/r7000-memo/</id>
     <published>2023-01-29T02:28:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">恐怕现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。</summary>
@@ -112,7 +112,7 @@
     <link href="http://example.com/categories/pitfall/gsm-alphabet-pitfall/"/>
     <id>http://example.com/categories/pitfall/gsm-alphabet-pitfall/</id>
     <published>2022-11-22T09:08:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。</summary>
@@ -136,7 +136,7 @@
     <link href="http://example.com/categories/tutorial/qbittorrent-webui-mojibake/"/>
     <id>http://example.com/categories/tutorial/qbittorrent-webui-mojibake/</id>
     <published>2022-11-14T03:36:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">qBittorrent的WebUI一直有个乱码问题。</summary>
@@ -162,7 +162,7 @@
     <link href="http://example.com/categories/life/netflix-in-china/"/>
     <id>http://example.com/categories/life/netflix-in-china/</id>
     <published>2022-02-10T02:14:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
     <summary type="html">虽然很久不追剧了，但直到1202年的这个冬天我发现看个剧还是一件很难的事情。</summary>
@@ -184,7 +184,7 @@
     <link href="http://example.com/categories/pitfall/ubuntu-software-source/"/>
     <id>http://example.com/categories/pitfall/ubuntu-software-source/</id>
     <published>2021-03-30T02:02:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.302Z</updated>
     
     
     <summary type="html">Ubuntu LTS固然稳定，但也会出现一些意想不到的使用问题。</summary>
@@ -208,7 +208,7 @@
     <link href="http://example.com/categories/life/yoga-s740-review/"/>
     <id>http://example.com/categories/life/yoga-s740-review/</id>
     <published>2020-09-04T14:32:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.302Z</updated>
     
     
     <summary type="html">没考虑换机之前，我手上服役的机器还是一台13年购买的Dell Vostro系列……</summary>
@@ -228,7 +228,7 @@
     <link href="http://example.com/categories/experience/my-static-blog/"/>
     <id>http://example.com/categories/experience/my-static-blog/</id>
     <published>2020-05-27T13:59:00.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.302Z</updated>
     
     
     <summary type="html">做这个选择的理由是——动态博客真的贵</summary>
@@ -250,7 +250,7 @@
     <link href="http://example.com/categories/memo/powershell-telnet-script/"/>
     <id>http://example.com/categories/memo/powershell-telnet-script/</id>
     <published>2017-07-07T07:19:09.000Z</published>
-    <updated>2025-06-06T04:05:39.355Z</updated>
+    <updated>2025-06-06T04:13:31.302Z</updated>
     
     
     <summary type="html">用途主要是验证网络打通，顺便熟悉了Powershell语法。</summary>
@@ -271,7 +271,7 @@
     <link href="http://example.com/categories/uncategorized/undefined/"/>
     <id>http://example.com/categories/uncategorized/undefined/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2025-06-06T04:05:39.356Z</updated>
+    <updated>2025-06-06T04:13:31.303Z</updated>
     
     
       
