@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>mykonakona&#39;s weblog</title>
-  <icon>http://example.com/images/icons/icon-128x128.png</icon>
+  <icon>https://mykonakona.github.io/images/icons/icon-128x128.png</icon>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://mykonakona.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2025-06-06T04:13:31.303Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://mykonakona.github.io/"/>
+  <updated>2025-06-06T11:39:13.729Z</updated>
+  <id>https://mykonakona.github.io/</id>
   
   <author>
     <name>mykonakona</name>
@@ -19,259 +19,259 @@
   <entry>
     <title>好的博客永久链接
 </title>
-    <link href="http://example.com/categories/tutorial/elegant-hexo-permalink/"/>
-    <id>http://example.com/categories/tutorial/elegant-hexo-permalink/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/elegant-hexo-permalink/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/elegant-hexo-permalink/</id>
     <published>2023-09-10T13:20:14.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">什么是好的永久链接？如何在Hexo内实践？</summary>
     
     
     
-    <category term="教程" scheme="http://example.com/categories/tutorial/"/>
+    <category term="教程" scheme="https://mykonakona.github.io/categories/tutorial/"/>
     
     
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://mykonakona.github.io/tags/Hexo/"/>
     
-    <category term="SEO" scheme="http://example.com/tags/SEO/"/>
+    <category term="SEO" scheme="https://mykonakona.github.io/tags/SEO/"/>
     
-    <category term="URL" scheme="http://example.com/tags/URL/"/>
+    <category term="URL" scheme="https://mykonakona.github.io/tags/URL/"/>
     
   </entry>
   
   <entry>
     <title>Hexo手动添加PWA
 </title>
-    <link href="http://example.com/categories/tutorial/add-pwa-manually/"/>
-    <id>http://example.com/categories/tutorial/add-pwa-manually/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/add-pwa-manually/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/add-pwa-manually/</id>
     <published>2023-09-01T06:12:35.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">不要再装Hexo的那些PWA插件了。</summary>
     
     
     
-    <category term="教程" scheme="http://example.com/categories/tutorial/"/>
+    <category term="教程" scheme="https://mykonakona.github.io/categories/tutorial/"/>
     
     
-    <category term="静态博客" scheme="http://example.com/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <category term="静态博客" scheme="https://mykonakona.github.io/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://mykonakona.github.io/tags/Hexo/"/>
     
-    <category term="PWA" scheme="http://example.com/tags/PWA/"/>
+    <category term="PWA" scheme="https://mykonakona.github.io/tags/PWA/"/>
     
   </entry>
   
   <entry>
     <title>我的笔记工作流
 </title>
-    <link href="http://example.com/categories/experience/my-notebook-workflow/"/>
-    <id>http://example.com/categories/experience/my-notebook-workflow/</id>
+    <link href="https://mykonakona.github.io/categories/experience/my-notebook-workflow/"/>
+    <id>https://mykonakona.github.io/categories/experience/my-notebook-workflow/</id>
     <published>2023-08-27T13:31:18.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">相比网友们顺其自然的管理，我对笔记的使用更像是一种为记而记的学习。</summary>
     
     
     
-    <category term="分享" scheme="http://example.com/categories/experience/"/>
+    <category term="分享" scheme="https://mykonakona.github.io/categories/experience/"/>
     
     
-    <category term="知识管理" scheme="http://example.com/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/"/>
+    <category term="知识管理" scheme="https://mykonakona.github.io/tags/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/"/>
     
-    <category term="Obsidian" scheme="http://example.com/tags/Obsidian/"/>
+    <category term="Obsidian" scheme="https://mykonakona.github.io/tags/Obsidian/"/>
     
   </entry>
   
   <entry>
     <title>R7000使用备忘
 </title>
-    <link href="http://example.com/categories/memo/r7000-memo/"/>
-    <id>http://example.com/categories/memo/r7000-memo/</id>
+    <link href="https://mykonakona.github.io/categories/memo/r7000-memo/"/>
+    <id>https://mykonakona.github.io/categories/memo/r7000-memo/</id>
     <published>2023-01-29T02:28:00.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">恐怕现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。</summary>
     
     
     
-    <category term="笔记" scheme="http://example.com/categories/memo/"/>
+    <category term="笔记" scheme="https://mykonakona.github.io/categories/memo/"/>
     
     
-    <category term="路由器" scheme="http://example.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    <category term="路由器" scheme="https://mykonakona.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>GSM alphabet
 </title>
-    <link href="http://example.com/categories/pitfall/gsm-alphabet-pitfall/"/>
-    <id>http://example.com/categories/pitfall/gsm-alphabet-pitfall/</id>
+    <link href="https://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/"/>
+    <id>https://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/</id>
     <published>2022-11-22T09:08:00.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。</summary>
     
     
     
-    <category term="踩坑" scheme="http://example.com/categories/pitfall/"/>
+    <category term="踩坑" scheme="https://mykonakona.github.io/categories/pitfall/"/>
     
     
-    <category term="数码" scheme="http://example.com/tags/%E6%95%B0%E7%A0%81/"/>
+    <category term="数码" scheme="https://mykonakona.github.io/tags/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="邮箱" scheme="http://example.com/tags/%E9%82%AE%E7%AE%B1/"/>
+    <category term="邮箱" scheme="https://mykonakona.github.io/tags/%E9%82%AE%E7%AE%B1/"/>
     
-    <category term="miui" scheme="http://example.com/tags/miui/"/>
+    <category term="miui" scheme="https://mykonakona.github.io/tags/miui/"/>
     
   </entry>
   
   <entry>
     <title>修复qBittorrent的WebUI乱码
 </title>
-    <link href="http://example.com/categories/tutorial/qbittorrent-webui-mojibake/"/>
-    <id>http://example.com/categories/tutorial/qbittorrent-webui-mojibake/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/</id>
     <published>2022-11-14T03:36:00.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">qBittorrent的WebUI一直有个乱码问题。</summary>
     
     
     
-    <category term="教程" scheme="http://example.com/categories/tutorial/"/>
+    <category term="教程" scheme="https://mykonakona.github.io/categories/tutorial/"/>
     
     
-    <category term="数码" scheme="http://example.com/tags/%E6%95%B0%E7%A0%81/"/>
+    <category term="数码" scheme="https://mykonakona.github.io/tags/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="群晖" scheme="http://example.com/tags/%E7%BE%A4%E6%99%96/"/>
+    <category term="群晖" scheme="https://mykonakona.github.io/tags/%E7%BE%A4%E6%99%96/"/>
     
-    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    <category term="docker" scheme="https://mykonakona.github.io/tags/docker/"/>
     
-    <category term="PT" scheme="http://example.com/tags/PT/"/>
+    <category term="PT" scheme="https://mykonakona.github.io/tags/PT/"/>
     
   </entry>
   
   <entry>
     <title>一次失败的刷剧经历
 </title>
-    <link href="http://example.com/categories/life/netflix-in-china/"/>
-    <id>http://example.com/categories/life/netflix-in-china/</id>
+    <link href="https://mykonakona.github.io/categories/life/netflix-in-china/"/>
+    <id>https://mykonakona.github.io/categories/life/netflix-in-china/</id>
     <published>2022-02-10T02:14:00.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">虽然很久不追剧了，但直到1202年的这个冬天我发现看个剧还是一件很难的事情。</summary>
     
     
     
-    <category term="生活" scheme="http://example.com/categories/life/"/>
+    <category term="生活" scheme="https://mykonakona.github.io/categories/life/"/>
     
     
-    <category term="数码" scheme="http://example.com/tags/%E6%95%B0%E7%A0%81/"/>
+    <category term="数码" scheme="https://mykonakona.github.io/tags/%E6%95%B0%E7%A0%81/"/>
     
-    <category term="流媒体" scheme="http://example.com/tags/%E6%B5%81%E5%AA%92%E4%BD%93/"/>
+    <category term="流媒体" scheme="https://mykonakona.github.io/tags/%E6%B5%81%E5%AA%92%E4%BD%93/"/>
     
   </entry>
   
   <entry>
     <title>Ubuntu LTS软件源
 </title>
-    <link href="http://example.com/categories/pitfall/ubuntu-software-source/"/>
-    <id>http://example.com/categories/pitfall/ubuntu-software-source/</id>
+    <link href="https://mykonakona.github.io/categories/pitfall/ubuntu-software-source/"/>
+    <id>https://mykonakona.github.io/categories/pitfall/ubuntu-software-source/</id>
     <published>2021-03-30T02:02:00.000Z</published>
-    <updated>2025-06-06T04:13:31.302Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">Ubuntu LTS固然稳定，但也会出现一些意想不到的使用问题。</summary>
     
     
     
-    <category term="踩坑" scheme="http://example.com/categories/pitfall/"/>
+    <category term="踩坑" scheme="https://mykonakona.github.io/categories/pitfall/"/>
     
     
-    <category term="运维" scheme="http://example.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    <category term="运维" scheme="https://mykonakona.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="VPS" scheme="http://example.com/tags/VPS/"/>
+    <category term="VPS" scheme="https://mykonakona.github.io/tags/VPS/"/>
     
-    <category term="Ubuntu" scheme="http://example.com/tags/Ubuntu/"/>
+    <category term="Ubuntu" scheme="https://mykonakona.github.io/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>联想Yoga S740的糟心体验
 </title>
-    <link href="http://example.com/categories/life/yoga-s740-review/"/>
-    <id>http://example.com/categories/life/yoga-s740-review/</id>
+    <link href="https://mykonakona.github.io/categories/life/yoga-s740-review/"/>
+    <id>https://mykonakona.github.io/categories/life/yoga-s740-review/</id>
     <published>2020-09-04T14:32:00.000Z</published>
-    <updated>2025-06-06T04:13:31.302Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">没考虑换机之前，我手上服役的机器还是一台13年购买的Dell Vostro系列……</summary>
     
     
     
-    <category term="生活" scheme="http://example.com/categories/life/"/>
+    <category term="生活" scheme="https://mykonakona.github.io/categories/life/"/>
     
     
-    <category term="笔电" scheme="http://example.com/tags/%E7%AC%94%E7%94%B5/"/>
+    <category term="笔电" scheme="https://mykonakona.github.io/tags/%E7%AC%94%E7%94%B5/"/>
     
   </entry>
   
   <entry>
     <title>我搭静态博客
 </title>
-    <link href="http://example.com/categories/experience/my-static-blog/"/>
-    <id>http://example.com/categories/experience/my-static-blog/</id>
+    <link href="https://mykonakona.github.io/categories/experience/my-static-blog/"/>
+    <id>https://mykonakona.github.io/categories/experience/my-static-blog/</id>
     <published>2020-05-27T13:59:00.000Z</published>
-    <updated>2025-06-06T04:13:31.302Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">做这个选择的理由是——动态博客真的贵</summary>
     
     
     
-    <category term="分享" scheme="http://example.com/categories/experience/"/>
+    <category term="分享" scheme="https://mykonakona.github.io/categories/experience/"/>
     
     
-    <category term="静态博客" scheme="http://example.com/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <category term="静态博客" scheme="https://mykonakona.github.io/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
     
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://mykonakona.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>一个Powershell小脚本
 </title>
-    <link href="http://example.com/categories/memo/powershell-telnet-script/"/>
-    <id>http://example.com/categories/memo/powershell-telnet-script/</id>
+    <link href="https://mykonakona.github.io/categories/memo/powershell-telnet-script/"/>
+    <id>https://mykonakona.github.io/categories/memo/powershell-telnet-script/</id>
     <published>2017-07-07T07:19:09.000Z</published>
-    <updated>2025-06-06T04:13:31.302Z</updated>
+    <updated>2025-06-06T11:39:13.729Z</updated>
     
     
     <summary type="html">用途主要是验证网络打通，顺便熟悉了Powershell语法。</summary>
     
     
     
-    <category term="笔记" scheme="http://example.com/categories/memo/"/>
+    <category term="笔记" scheme="https://mykonakona.github.io/categories/memo/"/>
     
     
-    <category term="运维" scheme="http://example.com/tags/%E8%BF%90%E7%BB%B4/"/>
+    <category term="运维" scheme="https://mykonakona.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
-    <category term="Powershell" scheme="http://example.com/tags/Powershell/"/>
+    <category term="Powershell" scheme="https://mykonakona.github.io/tags/Powershell/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/categories/uncategorized/undefined/"/>
-    <id>http://example.com/categories/uncategorized/undefined/</id>
+    <link href="https://mykonakona.github.io/categories/uncategorized/undefined/"/>
+    <id>https://mykonakona.github.io/categories/uncategorized/undefined/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2025-06-06T04:13:31.303Z</updated>
+    <updated>2025-06-06T11:39:13.730Z</updated>
     
     
       
