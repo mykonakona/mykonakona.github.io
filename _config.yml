@@ -7,7 +7,7 @@ title: mykonakona's weblog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: mykonakona
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -111,3 +111,17 @@ theme: simple-daisy
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: /images/icons/icon-128x128.png
+  autodiscovery: true
+  template:
