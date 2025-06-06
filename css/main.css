@@ -2743,9 +2743,6 @@ html:has(.drawer-toggle:checked) {
 .items-center {
   align-items: center;
 }
-.justify-start {
-  justify-content: flex-start;
-}
 .justify-end {
   justify-content: flex-end;
 }
