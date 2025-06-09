@@ -8,6 +8,7 @@
  
 <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 <link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
     <!-- 响应式导航栏 -->
@@ -75,7 +76,7 @@
                 <div class="mx-auto">
                     <div class="avatar pb-4">
                       <div class="w-36 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />     
+                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-284x284.png" />     
                       </div>
                     </div>
                 </div>
@@ -162,14 +163,14 @@
 </ul>
 <p>由于主题是一个独立分支，因此在自动部署时，一般会把<code>source</code>下的themes文件夹加入到这个分支的<code>.gitignore</code>里去，避免发生一些可能的修改冲突。</p>
 <p>使用时，则通过在.travis.yml添加<code>git clone</code>命令引入主题并渲染，例如：</p>
-<pre><code class="bash">before_script:
-  - npm install -g hexo-cli 
-  - mkdir themes
-  - git clone https://github.com/username/hexo-theme-themename.git themes/themename
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">before_script:
+  - <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli 
+  - <span class="token function">mkdir</span> themes
+  - <span class="token function">git</span> clone https://github.com/username/hexo-theme-themename.git themes/themename
 
 script: 
-  - hexo generate
-</code></pre>
+  - hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="评论服务选型"><a href="#评论服务选型" class="headerlink" title="评论服务选型"></a>评论服务选型</h2><p>对动态博客来说几乎属于标配的评论功能，在静态博客上就得通过各种奇奇怪怪的方案去实现，并且往往还并不完美。我目前使用的主题minos支持的几种评论服务，就各自存在一些缺点：</p>
 <h3 id="disqus"><a href="#disqus" class="headerlink" title="disqus"></a>disqus</h3><p>国内网络环境下的访问实在是太慢了，非常影响浏览体验。</p>
 <ul>

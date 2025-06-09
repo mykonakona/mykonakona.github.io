@@ -8,6 +8,7 @@
  
 <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 <link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
     <!-- 响应式导航栏 -->
@@ -75,7 +76,7 @@
                 <div class="mx-auto">
                     <div class="avatar pb-4">
                       <div class="w-36 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />     
+                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-284x284.png" />     
                       </div>
                     </div>
                 </div>
@@ -144,46 +145,46 @@
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。</p>
 <p>类似问题可见：</p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20583686/automate-telnet-port-testing-on-windows-7-using-batch-script">Automate Telnet Port Testing On Windows 7 Using Batch Script</a></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre><code class="powershell">#powershell ExecutionPolicy Bypass
-#powershell -File ./telnet.ps1
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">#powershell ExecutionPolicy Bypass</span>
+<span class="token comment">#powershell -File ./telnet.ps1</span>
 
-$iplist = Get-Content C:\iplist.txt
-$regH = &quot;\b\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\b&quot;
-$regP = &quot;\s(?&lt;alp&gt;\d&#123;1,5&#125;)&quot;
-$remoteHost = &quot;&quot;
-$Port = &quot;&quot;
-foreach ($i in $iplist)&#123;
-    if($i -match $regH)&#123;
-        $remoteHost = $Matches[0];
-        #write-host &quot;$remoteHost&quot;;
-    &#125;
-    if($i -match $regP)&#123;
-        $Port = $Matches.alp;
-        #write-host &quot;$remotePort&quot;;
-    &#125;
+<span class="token variable">$iplist</span> = <span class="token function">Get-Content</span> C:\iplist<span class="token punctuation">.</span>txt
+<span class="token variable">$regH</span> = <span class="token string">"\b\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\b"</span>
+<span class="token variable">$regP</span> = <span class="token string">"\s(?&lt;alp>\d&#123;1,5&#125;)"</span>
+<span class="token variable">$remoteHost</span> = <span class="token string">""</span>
+<span class="token variable">$Port</span> = <span class="token string">""</span>
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$i</span> in <span class="token variable">$iplist</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regH</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token variable">$remoteHost</span> = <span class="token variable">$Matches</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">#write-host "$remoteHost";</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regP</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token variable">$Port</span> = <span class="token variable">$Matches</span><span class="token punctuation">.</span>alp<span class="token punctuation">;</span>
+        <span class="token comment">#write-host "$remotePort";</span>
+    <span class="token punctuation">&#125;</span>
 
-    try &#123;
-        $socket = new-object System.Net.Sockets.TcpClient($remoteHost, $port)
-    &#125; catch [Exception] &#123;
-        write-host $remoteHost&quot;:&quot;$port &quot;Unconnected`n&quot;
-       #write-host $_.Exception.GetType().FullName
-       #write-host $_.Exception.Message
-        continue
-    &#125;
-    write-host $remoteHost&quot;:&quot;$port &quot;Connected`n&quot;
-&#125;
-</code></pre>
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+        <span class="token variable">$socket</span> = <span class="token function">new-object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">(</span><span class="token variable">$remoteHost</span><span class="token punctuation">,</span> <span class="token variable">$port</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token namespace">[Exception]</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Unconnected`n"</span>
+       <span class="token comment">#write-host $_.Exception.GetType().FullName</span>
+       <span class="token comment">#write-host $_.Exception.Message</span>
+        <span class="token keyword">continue</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Connected`n"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>其中不同于一般正则的地方的是<code>?&lt;alp&gt;</code>的添加，这部分较通俗的解释可见：<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/bluelilyabc/article/details/17119819">PowerShell中正则表达式的运用</a></p>
 <h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>执行该脚本前，将准备好的iplist.txt放到指定路径下（文中指定的路径为C:\iplist.txt），内容大致如下：</p>
-<pre><code class="text">127.0.0.1 8080
-127.0.0.1 80
-</code></pre>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">127.0.0.1 8080
+127.0.0.1 80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p>再回到powershell下输入以下命令以获得执行权限。</p>
-<pre><code class="bash">powershell ExecutionPolicy Bypass
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell ExecutionPolicy Bypass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>获得权限后，输入如下指令执行该脚本文件。</p>
-<pre><code class="bash">powershell -File ./telnet.ps1
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell <span class="token parameter variable">-File</span> ./telnet.ps1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>该脚本主要包括三部分工作：</p>
 <ol>
 <li>读入准备好的iplist.txt文件；</li>

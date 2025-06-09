@@ -8,6 +8,7 @@
  
 <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 <link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
     <!-- 响应式导航栏 -->
@@ -75,7 +76,7 @@
                 <div class="mx-auto">
                     <div class="avatar pb-4">
                       <div class="w-36 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />     
+                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-284x284.png" />     
                       </div>
                     </div>
                 </div>
@@ -155,8 +156,8 @@
 <p>此时使用的wifi名称在保存应用后将不再区分2.4g和5g，而是根据smart connect rule进行切换，这部分的设置可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/370147768" title="华硕路由器Smart Connect原理解析与硬核设置指南">华硕路由器Smart Connect原理解析与硬核设置指南</a>。</p>
 <p>对于联系过运营商做过桥接改造的用户来说，还需要在外部网络选项卡将拨号选为PPPOE，并在PPP处填入运营商提供的用户、密码。</p>
 <h2 id="解除软件中心限制"><a href="#解除软件中心限制" class="headerlink" title="解除软件中心限制"></a>解除软件中心限制</h2><p>可以正常访问网络后，先根据路由器提示打开jffs权限选项，再打开路由器的ssh功能，执行命令<a target="_blank" rel="noopener" href="https://hq450.github.io/fancyss/" title="fancyss - 科学上网">解除软件中心的安装限制</a>：</p>
-<pre><code class="bash">sed -i &#39;s/\tdetect_package/\t# detect_package/g&#39; /koolshare/scripts/ks_tar_install.sh
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/\tdetect_package/\t# detect_package/g'</span> /koolshare/scripts/ks_tar_install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>或使用<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9729050" title="Koolshare 软件中心离线安装限制 解除">其他方式</a>（如安装<a target="_blank" rel="noopener" href="https://t.me/s/SukkaChannel?q=fuckkoolshare.tar.gz" title="解除 Koolshare 酷软中心 的离线安装限制的插件">fuckkoolshare.tar.gz</a>)。</p>
 <h2 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装clash</h2><p>还在使用ss的用户，可以尝试寻找旧版本ss并安装。</p>
 <p>clash用户安装merlin clash即可，它使用能够兼容xray的clash-meta内核。需要将规则配置文件修改为能够通过校验的格式并上传。</p>

@@ -8,6 +8,7 @@
  
 <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 <link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
     <!-- 响应式导航栏 -->
@@ -75,7 +76,7 @@
                 <div class="mx-auto">
                     <div class="avatar pb-4">
                       <div class="w-36 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-512x512.png" />     
+                        <img alt="Tailwind CSS Navbar component" src="/images/icons/icon-284x284.png" />     
                       </div>
                     </div>
                 </div>
@@ -147,79 +148,71 @@
 </ul>
 <h3 id="新增manifest-json"><a href="#新增manifest-json" class="headerlink" title="新增manifest.json"></a>新增manifest.json</h3><ul>
 <li><p>在hexo的source目录下添加一个manifest.json，内容类似：</p>
-<pre><code class="json">   &#123;
-
-    &quot;name&quot;: &quot;mykonakona&quot;,
-    &quot;short_name&quot;: &quot;mykonakona&quot;,
-    &quot;theme_color&quot;: &quot;#222f3e&quot;,
-    &quot;background_color&quot;: &quot;#18222d&quot;,
-    &quot;display&quot;: &quot;standalone&quot;,
-    &quot;scope&quot;: &quot;/&quot;,
-    &quot;start_url&quot;: &quot;/&quot;,
-    &quot;icons&quot;: [
-        &#123;
-         &quot;src&quot;: &quot;/images/icons/icon-48x48.png&quot;,
-         &quot;sizes&quot;: &quot;48x48&quot;,
-         &quot;type&quot;: &quot;image/png&quot;,
-         &quot;purpose&quot;: &quot;any maskable&quot;
-         &#125;,
-        ...
-         &#123;
-         &quot;src&quot;: &quot;/images/icons/icon-512x512.png&quot;,
-         &quot;sizes&quot;: &quot;512x512&quot;,
-         &quot;type&quot;: &quot;image/png&quot;,
-         &quot;purpose&quot;: &quot;any maskable&quot;
-         &#125;
-     ]
-
-   &#125;
-</code></pre>
-</li>
+ <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+   
+       <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"mykonakona"</span><span class="token punctuation">,</span>
+       <span class="token property">"short_name"</span><span class="token operator">:</span> <span class="token string">"mykonakona"</span><span class="token punctuation">,</span>
+       <span class="token property">"theme_color"</span><span class="token operator">:</span> <span class="token string">"#222f3e"</span><span class="token punctuation">,</span>
+       <span class="token property">"background_color"</span><span class="token operator">:</span> <span class="token string">"#18222d"</span><span class="token punctuation">,</span>
+       <span class="token property">"display"</span><span class="token operator">:</span> <span class="token string">"standalone"</span><span class="token punctuation">,</span>
+       <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>
+       <span class="token property">"start_url"</span><span class="token operator">:</span> <span class="token string">"/"</span><span class="token punctuation">,</span>
+       <span class="token property">"icons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+           <span class="token punctuation">&#123;</span>
+            <span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-48x48.png"</span><span class="token punctuation">,</span>
+            <span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"48x48"</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span>
+            <span class="token property">"purpose"</span><span class="token operator">:</span> <span class="token string">"any maskable"</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+           ...
+            <span class="token punctuation">&#123;</span>
+            <span class="token property">"src"</span><span class="token operator">:</span> <span class="token string">"/images/icons/icon-512x512.png"</span><span class="token punctuation">,</span>
+            <span class="token property">"sizes"</span><span class="token operator">:</span> <span class="token string">"512x512"</span><span class="token punctuation">,</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"image/png"</span><span class="token punctuation">,</span>
+            <span class="token property">"purpose"</span><span class="token operator">:</span> <span class="token string">"any maskable"</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">]</span>
+   
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p>图标与json也可以通过类似<a target="_blank" rel="noopener" href="https://tools.crawlink.com/tools/pwa-icon-generator">PWA Application Icon Generator Free Online Tool</a>的在线工具生成。</p>
 <h3 id="修改标签"><a href="#修改标签" class="headerlink" title="修改&lt;head&gt;标签"></a>修改&lt;head&gt;标签</h3><ul>
 <li><p>修改所用hexo主题的模板文件，在head.ejs添加：</p>
-<pre><code class="html">&lt;meta name=&quot;theme-color&quot; content=&quot;#222f3e&quot;/&gt;
-&lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot;&gt;
-</code></pre>
+ <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>theme-color<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#222f3e<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>manifest<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/manifest.json<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p> 这里<code>theme-color</code>的<code>content</code>值与manifest.json内的值相同。</p>
 </li>
 </ul>
 <h2 id="准备Service-Worker"><a href="#准备Service-Worker" class="headerlink" title="准备Service Worker"></a>准备Service Worker</h2><h3 id="新增service-worker-js"><a href="#新增service-worker-js" class="headerlink" title="新增service-worker.js"></a>新增service-worker.js</h3><ul>
 <li><p>在hexo的source目录下新建一个sw.js文件（需要将正则处的mykonakona.github.io替换为自己的网址）：</p>
-<pre><code class="javascript">importScripts(&#39;https://cdnjs.cloudflare.com/ajax/libs/workbox-sw/7.0.0/workbox-sw.js&#39;);
+ <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">importScripts</span><span class="token punctuation">(</span><span class="token string">'https://cdnjs.cloudflare.com/ajax/libs/workbox-sw/7.0.0/workbox-sw.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-if (workbox) &#123;
+<span class="token keyword">if</span> <span class="token punctuation">(</span>workbox<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-    workbox.precaching.precache([&#39;/&#39;, &#39;/index.html&#39;]);
-    
-    workbox.routing.registerRoute(new RegExp(&#39;^https?://mykonakona.github.io/?$&#39;), new workbox.strategies.NetworkFirst());
-    
-    workbox.routing.registerRoute(new RegExp(&#39;.*.html&#39;), new workbox.strategies.NetworkFirst());
-    
-    workbox.routing.registerRoute(new RegExp(&#39;.*.(?:js|css|jpg|png|gif)&#39;), new workbox.strategies.StaleWhileRevalidate());
-&#125;
-</code></pre>
-</li>
+    workbox<span class="token punctuation">.</span>precaching<span class="token punctuation">.</span><span class="token function">precache</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token string">'/index.html'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    workbox<span class="token punctuation">.</span>routing<span class="token punctuation">.</span><span class="token function">registerRoute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'^https?://mykonakona.github.io/?$'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">workbox<span class="token punctuation">.</span>strategies<span class="token punctuation">.</span>NetworkFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    workbox<span class="token punctuation">.</span>routing<span class="token punctuation">.</span><span class="token function">registerRoute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'.*.html'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">workbox<span class="token punctuation">.</span>strategies<span class="token punctuation">.</span>NetworkFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    workbox<span class="token punctuation">.</span>routing<span class="token punctuation">.</span><span class="token function">registerRoute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token string">'.*.(?:js|css|jpg|png|gif)'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">workbox<span class="token punctuation">.</span>strategies<span class="token punctuation">.</span>StaleWhileRevalidate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <p>NetworkFirst()与StaleWhileRevalidate()的使用，可参考<a target="_blank" rel="noopener" href="https://github.com/GoogleChrome/workbox">workbox</a>的相关文档与教程。</p>
 <h3 id="注册service-worker"><a href="#注册service-worker" class="headerlink" title="注册service-worker"></a>注册service-worker</h3><ul>
 <li><p>修改所用hexo主题的模板文件，在footer后的style.ejs添加注册service-worker的代码段：</p>
-<pre><code class="html">&lt;script&gt;
-    if (navigator.serviceWorker) &#123;
-    navigator.serviceWorker.register(&#39;/sw.js&#39;);
-   &#125;
-&lt;/script&gt;
-</code></pre>
-</li>
+ <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'/sw.js'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="设置不渲染"><a href="#设置不渲染" class="headerlink" title="设置不渲染"></a>设置不渲染</h3><ul>
 <li><p>在hexo的_config.yml里，设置不渲染manifiest.json及sw.js：</p>
-<pre><code class="yml">skip_render:
- - manifest.json
- - sw.js
-</code></pre>
-</li>
+ <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">skip_render</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> manifest.json
+ <span class="token punctuation">-</span> sw.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>PWA其实用处不大，添加这个主要是为了跑Lighthouse分。过程中意识到Hexo确实用的人越来越少了：很多插件缺乏维护，照搬文档还不如手工添加。</p>
 <p>硬着头皮补课，网上的sw.js例子调试时报错频频。发现是因为最新的workbox-sw.js里，函数命名从<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB">小驼峰式</a>改成了大驼峰式。比如旧版本例子里的networkFist()如今都变成了NetworkFirst()。看来谷歌也要面对项目管理问题……</p>
