@@ -1,15 +1,15 @@
 ---
 title: 留神GSM alphabet
+author: mykonakona
+category: 
+ - 踩坑
+tags: 
+ - 数码
+ - miui
 date: 2022-11-22 17:08:00
 updated: 2022-11-22 17:08:00
-category: 
-    - 踩坑
-tags: 
-    - 数码
-    - miui
-slug: gsm-alphabet-pitfall
-authors: mykonakona
-summary: 邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。
+origin_url: gsm-alphabet-pitfall
+description: 邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。
 ---
 
 这东西并不危险，但可能会影响邮箱验证。

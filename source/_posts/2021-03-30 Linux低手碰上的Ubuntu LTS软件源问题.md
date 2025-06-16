@@ -1,19 +1,19 @@
 ---
 title: Linux低手碰上的Ubuntu LTS软件源问题
+author: mykonakona
+category: 
+ - 踩坑
+tags: 
+ - 运维
+ - Linux
+ - Ubuntu
 date: 2021-03-30 10:02:00
 updated: 2021-03-30 10:02:00
-category: 
-    - 踩坑
-tags: 
-    - 运维
-    - Linux
-    - Ubuntu
-slug: lts-software-source
-authors: mykonakona
-summary: 原来Ubuntu LTS和Ubuntu同一条命令安装的版本号可以是不同的，用惯了Windows今天还是第一次发现这个问题。
+origin_url: lts-software-source
+description: 用惯了Windows，今天还是第一次发现这个问题。
 ---
 
-原来Ubuntu LTS和Ubuntu同一条命令安装的版本号可以是不同的，用惯了Windows今天还是第一次发现这个问题。
+用惯了Windows，今天还是第一次发现这个问题。
 
 <!-- more -->
 
