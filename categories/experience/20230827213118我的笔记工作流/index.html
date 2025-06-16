@@ -188,17 +188,17 @@ origin_url: &#123;&#123;&#123;originalUrl&#125;&#125;&#125;<span aria-hidden="tr
 
 <p>而在Obsidian里，所有的笔记新建我们都通过Obsidian的<code>创建时间戳笔记</code>来发起。时间戳笔记的格式均遵循以下模板：</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml">id: 
-title: |
-  title
-author: |
-  me
-tags:
- - tag
-description: 
-date_published: 
-date_saved: null
-origin_url: null</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">id</span><span class="token punctuation">:</span> 
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+  title</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+  me</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> tag
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 
+<span class="token key atrule">date_published</span><span class="token punctuation">:</span> 
+<span class="token key atrule">date_saved</span><span class="token punctuation">:</span> <span class="token null important">null</span>
+<span class="token key atrule">origin_url</span><span class="token punctuation">:</span> <span class="token null important">null</span></span>
 <span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>同时，对Obsidian中时间戳笔记和Omnivore插件进行配置，统一新建笔记的命名规则为<code>yyyyMMDDHHmmss</code>。</p>

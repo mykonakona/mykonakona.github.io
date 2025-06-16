@@ -132,38 +132,63 @@
     <div class="card-body w-full mx-auto">
       <article class="prose max-w-5xl pb-4">
         <div class="mb-4 text-3xl font-bold">
-          R7000使用备忘
-
+          可批量telent的Powershell小脚本
         </div>
         <div class="text-base">
-          2023-01-29
+          2017-07-07
         </div>
         <div class="text-base">
-          <p>家里的R7000已经服役了6年……</p>
+          <p>最近写了一个Powershell小脚本，主要用于验证网络打通，顺便熟悉Powershell语法。</p>
 <span id="more"></span>
 
-<p>当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停在了380.70_0-X7.9版本。</p>
-<p>恐怕现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。</p>
-<h2 id="硬重置"><a href="#硬重置" class="headerlink" title="硬重置"></a>硬重置</h2><p>最简单的硬重置方法是：</p>
-<ul>
-<li>在开机状态下使用卡针按住路由器后方的reset按钮30秒左右后松开。</li>
-</ul>
-<p>为避免变砖可能还需要<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8267551-1-1.html" title="网件R7000捅菊花变砖">断电30秒后再插电30秒</a>。然而实际操作时没严格遵循该步骤，当时无事发生。</p>
-<h2 id="设置连接名称密码"><a href="#设置连接名称密码" class="headerlink" title="设置连接名称密码"></a>设置连接名称密码</h2><p>重置后，路由器连接名称会变会Netgear。后续会使用smart connect，因此进入向导页面后只需要临时设置一下管理员名称和密码（建议只需使用默认密码00000000即可）。</p>
-<p>向导完成后，连接wifi并访问：</p>
-<p><a target="_blank" rel="noopener" href="http://router.asus.com/Main_Login.asp">http://router.asus.com/Main_Login.asp</a></p>
-<p>登入后，可以先进入外部网络选项卡，打开smart connect开关。</p>
-<p>此时使用的wifi名称在保存应用后将不再区分2.4g和5g，而是根据smart connect rule进行切换，这部分的设置可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/370147768" title="华硕路由器Smart Connect原理解析与硬核设置指南">华硕路由器Smart Connect原理解析与硬核设置指南</a>。</p>
-<p>对于联系过运营商做过桥接改造的用户来说，还需要在外部网络选项卡将拨号选为PPPOE，并在PPP处填入运营商提供的用户、密码。</p>
-<h2 id="解除软件中心限制"><a href="#解除软件中心限制" class="headerlink" title="解除软件中心限制"></a>解除软件中心限制</h2><p>可以正常访问网络后，先根据路由器提示打开jffs权限选项，再打开路由器的ssh功能，执行命令<a target="_blank" rel="noopener" href="https://hq450.github.io/fancyss/" title="fancyss - 科学上网">解除软件中心的安装限制</a>：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/\tdetect_package/\t# detect_package/g'</span> /koolshare/scripts/ks_tar_install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。类似问题可见：</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20583686/automate-telnet-port-testing-on-windows-7-using-batch-script">Automate Telnet Port Testing On Windows 7 Using Batch Script</a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">#powershell ExecutionPolicy Bypass</span>
+<span class="token comment">#powershell -File ./telnet.ps1</span>
 
-<p>或使用<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9729050" title="Koolshare 软件中心离线安装限制 解除">其他方式</a>（如安装<a target="_blank" rel="noopener" href="https://t.me/s/SukkaChannel?q=fuckkoolshare.tar.gz" title="解除 Koolshare 酷软中心 的离线安装限制的插件">fuckkoolshare.tar.gz</a>)。</p>
-<h2 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装clash</h2><p>还在使用ss的用户，可以尝试寻找旧版本ss并安装。</p>
-<p>clash用户安装merlin clash即可，它使用能够兼容xray的clash-meta内核。需要将规则配置文件修改为能够通过校验的格式并上传。</p>
-<h2 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h2><p>PT端口转发可参考<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1624139" title="华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录">华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录</a>。</p>
-<h2 id="配置导出"><a href="#配置导出" class="headerlink" title="配置导出"></a>配置导出</h2><p>最后为避免重复劳动，建议做一次配置及jffs的导出并备份。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>2.4G和5G指示灯不再闪烁可能是误触引起的（比如堆放了物件等），这时可以先长按面板右数第二个键数秒。</p>
+<span class="token variable">$iplist</span> = <span class="token function">Get-Content</span> C:\iplist<span class="token punctuation">.</span>txt
+<span class="token variable">$regH</span> = <span class="token string">"\b\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\b"</span>
+<span class="token variable">$regP</span> = <span class="token string">"\s(?&lt;alp>\d&#123;1,5&#125;)"</span>
+<span class="token variable">$remoteHost</span> = <span class="token string">""</span>
+<span class="token variable">$Port</span> = <span class="token string">""</span>
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$i</span> in <span class="token variable">$iplist</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regH</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token variable">$remoteHost</span> = <span class="token variable">$Matches</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">#write-host "$remoteHost";</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regP</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token variable">$Port</span> = <span class="token variable">$Matches</span><span class="token punctuation">.</span>alp<span class="token punctuation">;</span>
+        <span class="token comment">#write-host "$remotePort";</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+        <span class="token variable">$socket</span> = <span class="token function">new-object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">(</span><span class="token variable">$remoteHost</span><span class="token punctuation">,</span> <span class="token variable">$port</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token namespace">[Exception]</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Unconnected`n"</span>
+       <span class="token comment">#write-host $_.Exception.GetType().FullName</span>
+       <span class="token comment">#write-host $_.Exception.Message</span>
+        <span class="token keyword">continue</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Connected`n"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>其中不同于一般正则的地方的是<code>?&lt;alp&gt;</code>的添加，这部分较通俗的解释可见：<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/bluelilyabc/article/details/17119819">PowerShell中正则表达式的运用</a></p>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>执行该脚本前，将准备好的iplist.txt放到指定路径下（文中指定的路径为C:\iplist.txt），内容大致如下：</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">127.0.0.1 8080
+127.0.0.1 80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>再回到powershell下输入以下命令以获得执行权限。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell ExecutionPolicy Bypass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>获得权限后，输入如下指令执行该脚本文件。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell <span class="token parameter variable">-File</span> ./telnet.ps1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>该脚本主要包括三部分工作：</p>
+<ol>
+<li>读入准备好的iplist.txt文件；</li>
+<li>使用正则逐行取出需要测试的ip及端口号；</li>
+<li>将取出的ip和端口号填入System.Net.Sockets.TcpClient函数中并测试对应的ip及端口。</li>
+</ol>
 
         </div>
       </article>

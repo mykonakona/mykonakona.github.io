@@ -132,49 +132,54 @@
     <div class="card-body w-full mx-auto">
       <article class="prose max-w-5xl pb-4">
         <div class="mb-4 text-3xl font-bold">
-          Ubuntu LTS软件源
-
+          联想Yoga S740真实使用体验
         </div>
         <div class="text-base">
-          2021-03-30
+          2020-09-04
         </div>
         <div class="text-base">
-          <p>来自Ubuntu LTS的小意外。</p>
+          <p>终于打算更换13年购买的Dell Vostro。</p>
 <span id="more"></span>
 
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>为了备份VPS上的docker挂载数据到OneDrive，赶忙安装了restic。restic既有加密又有快照恢复，真是太棒啦！</p>
-<p>但执行到<code>restic -r rclone:onedrive:backupfolder init</code>时，突然提示：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Fatal: create repository at rclone:onedrive:backupfolder failed: invalid backend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>一条简单的命令居然也会报错，这崩得也太快了，还没开始就结束？</p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>如果这里的backend是invalid的，说明rclone连接有问题。</p>
-<p>但实测命令<code>rclone lsd: onedrive</code>，能够正常显示目录结构。连接是有效的。</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>restic论坛里提到过类似问题：<a target="_blank" rel="noopener" href="https://forum.restic.net/t/restic-with-rclone/2373/13">restic-with-rclone</a>。</p>
-<p>简单总结：根据源码分析，出现这个错误的原因是restic版本过时。备份到OneDrive需要使用rclone，但restic在0.9.0版本里才加入rclone支持。</p>
-<p>被安装低版本的原因在于VPS安装的Ubuntu LTS系统，在运行<code>apt-get install resitc</code>后，安装的restic版本号是0.8.3。</p>
-<p>本质其实是一个系统运维问题。</p>
-<p>对普通用户而言，单台服务器跑跑小程序、代码，没必要追求生产环境的稳定，反而应当尽量与自己的开发、测试环境保持一致，以便于复现、还原异常与报错。</p>
-<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p>要想对各类发行版一视同仁地安装restic的最新版本，自己编译是比较稳妥的方案：</p>
-<h3 id="安装go环境"><a href="#安装go环境" class="headerlink" title="安装go环境"></a>安装go环境</h3><ul>
-<li><p>根据go主页的<a target="_blank" rel="noopener" href="https://golang.org/doc/install">Download and install</a>安装go环境。</p>
-</li>
-<li><p>下载官方包：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://github.com/restic/restic/releases/download/v0.12.0/restic-0.12.0.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>解压后执行<code>make</code>编译。</p>
-</li>
-<li><p>配置定时任务</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>这台古董的硬盘、风扇甚至于键盘C面和D壳都已经被我换了个遍，可能就还剩屏幕没有动过。以为修修补补还可以坚持一段时间，但机器开始出现漏电问题，终于让我萌生了换机想法。</p>
+<p>决定购机之后，我开始分析自己的需求，大体有以下几点：</p>
 <ul>
-<li><p>crontab</p>
+<li>能做中度的视频剪辑和渲染</li>
+<li>可以玩得动文明6或者欧陆风云4</li>
+<li>内存16G，便于开虚拟机；硬盘512G起步</li>
+<li>屏幕大小在14寸以内，厚度小于2cm</li>
+<li>可以180度开合</li>
+<li>接口不能太简陋，得基本够用</li>
+<li>较长的续航</li>
+<li>不要太贵（笑</li>
+<li>……</li>
+</ul>
+<p>中度的视频剪辑和游戏都对CPU有一定要求，不能太菜了，不然每次还得开远程连家里的电脑做剪辑，太麻烦。</p>
+<p>内存16G是为了能多开几个虚拟机。14寸以内也基本限定只能在轻薄本里挑。180度开合算是我个人一个喜好吧，我觉得这样摊开之后插显示器比较方便。</p>
+<p>当时只是在脑海里粗略地列了一下，但基本是冲着这个方向去选机的。其实现在想想十分后悔，应该直接换Macbook Pro，本来Win系列本也已经用到有点吐了，但最后还是没有走出这一步，果然还是穷。</p>
+<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>在各种奇奇怪怪的要求的引导下走进我视野的就是这台S740了。各种测评都有提到它的各种优点：</p>
 <ul>
-<li>可以先把<code>RESTIC_PASSWORD=&quot;here is your password&quot;</code>加到<del>&#x2F;.bashrc或者</del>&#x2F;etc&#x2F;profile里</li>
-<li>之后<code>crontab -e</code>添加任务配置：</li>
+<li>3733Mhz的板载LPDDR4X内存，算是当前市面上笔记本所使用的最高频内存了</li>
+<li>一块DC调光、72%NTSC、400nits的屏幕，素质相当好，并且这块屏是LTPS的低功耗屏，搭配62Wh的大容量电池，续航表现很不错</li>
+<li>使用10代CPU，性能释放表现好</li>
+<li>满血雷电3接口，WiFi6无线网卡</li>
 </ul>
-</li>
-</ul>
-<p><code>0 4 * * * . ~/.bashrc; /home/user/restic-0.12.0/restic       -r rclone:onedrivedb:Backup backup /home/usdata; /      home/user/restic-0.12.0/restic forget -q --prune       --keep-hourly 24 --keep-daily 7</code></p>
-</li>
-</ul>
+<p>那么实际上这台机器有没有各种测评说的这么好呢。从我自己的实际使用感受来看，这些优点是基本属实的。但这不意味着这台机器没有缺点了，事实上这台机器的缺点还不少：</p>
+<p>首先，很不能让人忍受一点的就是这台机器的C面非常的尖锐，握持起来很不舒服。</p>
+<p>其次，机器的键盘手感并没有一些测评里吹的那么好，虽然不算特别差，但击键的时候有时会出现卡键的情况。</p>
+<p>另外这台机器的接口布局也不很合理，右边单独放了一个孤零零的USB，左边把电源口，雷电3接口，USB口和耳机口一股脑儿放在一起，使用时很拥挤。只配一个Type-C接口也显得很小气，多配一个把电源口砍掉不好么。</p>
+<p>没有指纹解锁也是让人很费解的，我个人并不喜欢面部解锁，但因为这个原因也不得不用。</p>
+<h2 id="售后"><a href="#售后" class="headerlink" title="售后"></a>售后</h2><p>在7月份左右的时候，掉盘了。虽然这台机器的SSD表现其实还是挺不错的，但这么快就掉盘实在是出乎我的意料。</p>
+<p>没办法，只能联系联想上门维修。其实就是想着找它们免费换块盘。</p>
+<p>等来了工程师上门，换完硬盘重装了系统，发现触摸板又不工作了……一般这种情况我们都会想着去找驱动装上，结果联想自己的官网上找不到相关的驱动。</p>
+<p>这位联想工程师联系了自己的同事，说这款机器触摸板是免驱的，装上系统就能使用。结果他自己带来的系统又怎么装都不行……最后这位小哥问我之前的一次重装时用的是什么镜像，说要不你自己重装试试。弄得我也无语了……</p>
+<p>后来的解决方案是把我的机器拿回了维修站，重装了一次出厂系统。触摸板的问题总算解决了。</p>
+<p>感受就是联想内部管理挺混乱，虽然看起来他们自己有做移动端的知识库系统，但对自己新推的新机型的支持明显滞后。</p>
+<p>包括一开始这位工程师想用PE进去机器看一看硬盘情况，结果发现自己的PE在这台机器上无法使用，换了好几套才进去，也给人感觉对新机型不熟悉。这次售后算是解决了问题，但体验还是很糟糕的。包括这台机器本身也给人一种不安定感。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>现在我也还在坚持用这台机器，因为这些缺点的存在，抵消了我对它优点的好感。用起来总是觉得不怎么舒服。</p>
+<p>并且因为触摸板的缘故，只能继续用工作站重装的Win10家庭版，实在是痛苦，最大的感悟可能就是：下次换机我不会再想着省钱了。</p>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>相当离谱，联想售后工程师在联想内部知识库找不到的触摸板驱动，我在联想美国官网找到了。</p>
+<p>虽然当时他们非说是免驱版（包括我自己查了一些联想国内官网的说明也说触摸板是免驱，但实际上这个美国官网的触摸板驱动装完后我的触摸板就好了……）</p>
 
         </div>
       </article>
