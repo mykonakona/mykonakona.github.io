@@ -1,21 +1,19 @@
 ---
-id: 20210330100200
-title: |
-  Ubuntu LTS软件源
-author: |
-  mykonakona
-category:
-  踩坑
-tags:
- - 运维
- - VPS
- - Ubuntu
-description: Ubuntu LTS固然稳定，但也会出现一些意想不到的使用问题。
+title: Linux低手碰上的Ubuntu LTS软件源问题
 date: 2021-03-30 10:02:00
-origin_url: ubuntu-software-source
+updated: 2021-03-30 10:02:00
+category: 
+    - 踩坑
+tags: 
+    - 运维
+    - Linux
+    - Ubuntu
+slug: lts-software-source
+authors: mykonakona
+summary: 原来Ubuntu LTS和Ubuntu同一条命令安装的版本号可以是不同的，用惯了Windows今天还是第一次发现这个问题。
 ---
 
-来自Ubuntu LTS的小意外。
+原来Ubuntu LTS和Ubuntu同一条命令安装的版本号可以是不同的，用惯了Windows今天还是第一次发现这个问题。
 
 <!-- more -->
 
@@ -44,8 +42,6 @@ restic论坛里提到过类似问题：[restic-with-rclone][1]。
 简单总结：根据源码分析，出现这个错误的原因是restic版本过时。备份到OneDrive需要使用rclone，但restic在0.9.0版本里才加入rclone支持。
 
 被安装低版本的原因在于VPS安装的Ubuntu LTS系统，在运行`apt-get install resitc`后，安装的restic版本号是0.8.3。
-
-本质其实是一个系统运维问题。
 
 对普通用户而言，单台服务器跑跑小程序、代码，没必要追求生产环境的稳定，反而应当尽量与自己的开发、测试环境保持一致，以便于复现、还原异常与报错。
 

@@ -1,28 +1,25 @@
 ---
-id: 20170707151909
-title: |
-  一个Powershell小脚本
-author: |
-  mykonakona
-category:
-  笔记
-tags:
- - 运维
- - Powershell
-description: 用途主要是验证网络打通，顺便熟悉了Powershell语法。
+title: 可批量telent的Powershell小脚本
 date: 2017-07-07 15:19:09
-origin_url: powershell-telnet-script
+updated: 2017-07-07 15:19:09
+category: 
+    - 教程
+tags: 
+    - 运维
+    - Windows
+    - Powershell
+slug: powershell-telnet-script
+authors: mykonakona
+summary: 用于验证网络打通，顺便熟悉Powershell语法。
 ---
 
-验证网络打通之余熟悉了Powershell语法。
+最近写了一个Powershell小脚本，主要用于验证网络打通，顺便熟悉Powershell语法。
 
 <!--more-->
 
 ## 背景
 
-Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。
-
-类似问题可见：
+Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。类似问题可见：
 
 [Automate Telnet Port Testing On Windows 7 Using Batch Script][1]
 

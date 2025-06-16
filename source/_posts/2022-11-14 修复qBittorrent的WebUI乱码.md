@@ -1,19 +1,15 @@
 ---
-id: 20221114113600
-title: |
-  修复qBittorrent的WebUI乱码
-author: |
-  mykonakona
-category:
-  教程
-tags:
- - 数码
- - 群晖
- - docker
- - PT
-description: qBittorrent的WebUI一直有个乱码问题。
+title: 修复qBittorrent的WebUI乱码
 date: 2022-11-14 11:36:00
-origin_url: qbittorrent-webui-mojibake
+updated: 2022-11-14 11:36:00
+category: 
+    - 教程
+tags: 
+    - PT
+    - 群晖
+slug: qbittorrent-webui-mojibake
+authors: mykonakona
+summary: qBittorrent的WebUI一直有个乱码问题。
 ---
 
 qBittorrent的WebUI一直有个乱码问题。
