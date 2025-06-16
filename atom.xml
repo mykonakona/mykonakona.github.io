@@ -18,13 +18,13 @@
   
   <entry>
     <title>Hexo链接的SEO优化</title>
-    <link href="https://mykonakona.github.io/categories/tutorial/2023-09-10%20Hexo%E9%93%BE%E6%8E%A5%E7%9A%84SEO%E4%BC%98%E5%8C%96/"/>
-    <id>https://mykonakona.github.io/categories/tutorial/2023-09-10%20Hexo%E9%93%BE%E6%8E%A5%E7%9A%84SEO%E4%BC%98%E5%8C%96/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/elegant-hexo-permalink/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/elegant-hexo-permalink/</id>
     <published>2023-09-10T13:20:14.000Z</published>
     <updated>2023-09-10T13:20:14.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;什么是好的永久链接？如何在Hexo内实践？&lt;/p&gt;</summary>
+    <summary type="html">什么是好的永久链接？如何在Hexo内实践？</summary>
     
     
     
@@ -39,13 +39,13 @@
   
   <entry>
     <title>Hexo手动添加PWA</title>
-    <link href="https://mykonakona.github.io/categories/tutorial/2023-09-01%20Hexo%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0PWA/"/>
-    <id>https://mykonakona.github.io/categories/tutorial/2023-09-01%20Hexo%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0PWA/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/add-pwa-manually/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/add-pwa-manually/</id>
     <published>2023-09-01T06:12:35.000Z</published>
     <updated>2023-09-01T06:12:35.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;不要再装那些Hexo的PWA插件了。&lt;/p&gt;</summary>
+    <summary type="html">不要再装Hexo的那些PWA插件了。</summary>
     
     
     
@@ -61,15 +61,14 @@
   </entry>
   
   <entry>
-    <title>我的笔记工作流
-</title>
-    <link href="https://mykonakona.github.io/categories/experience/20230827213118%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
-    <id>https://mykonakona.github.io/categories/experience/20230827213118%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%E5%B7%A5%E4%BD%9C%E6%B5%81/</id>
+    <title>我的笔记工作流</title>
+    <link href="https://mykonakona.github.io/categories/experience/my-notebook-workflow/"/>
+    <id>https://mykonakona.github.io/categories/experience/my-notebook-workflow/</id>
     <published>2023-08-27T13:31:18.000Z</published>
-    <updated>2025-06-16T13:39:52.202Z</updated>
+    <updated>2023-08-27T13:31:18.000Z</updated>
     
     
-    <summary type="html">相比网友们顺其自然的管理，我对笔记的使用更像是一种为记而记的学习。</summary>
+    <summary type="html">从为记而记到顺其自然。</summary>
     
     
     
@@ -84,13 +83,13 @@
   
   <entry>
     <title>R7000使用备忘</title>
-    <link href="https://mykonakona.github.io/categories/memo/2023-01-29%20R7000%E4%BD%BF%E7%94%A8%E5%A4%87%E5%BF%98/"/>
-    <id>https://mykonakona.github.io/categories/memo/2023-01-29%20R7000%E4%BD%BF%E7%94%A8%E5%A4%87%E5%BF%98/</id>
+    <link href="https://mykonakona.github.io/categories/memo/r7000-memo/"/>
+    <id>https://mykonakona.github.io/categories/memo/r7000-memo/</id>
     <published>2023-01-29T02:28:00.000Z</published>
     <updated>2023-01-29T02:28:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;家里的R7000已经服役了6年。&lt;/p&gt;</summary>
+    <summary type="html">现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。</summary>
     
     
     
@@ -105,13 +104,13 @@
   
   <entry>
     <title>留神GSM alphabet</title>
-    <link href="https://mykonakona.github.io/categories/pitfall/2022-11-22%20%E7%95%99%E7%A5%9EGSM%20alphabet/"/>
-    <id>https://mykonakona.github.io/categories/pitfall/2022-11-22%20%E7%95%99%E7%A5%9EGSM%20alphabet/</id>
+    <link href="https://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/"/>
+    <id>https://mykonakona.github.io/categories/pitfall/gsm-alphabet-pitfall/</id>
     <published>2022-11-22T09:08:00.000Z</published>
     <updated>2022-11-22T09:08:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;这东西并不危险，但可能会影响邮箱验证。&lt;/p&gt;</summary>
+    <summary type="html">邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。</summary>
     
     
     
@@ -126,13 +125,13 @@
   
   <entry>
     <title>修复qBittorrent的WebUI乱码</title>
-    <link href="https://mykonakona.github.io/categories/tutorial/2022-11-14%20%E4%BF%AE%E5%A4%8DqBittorrent%E7%9A%84WebUI%E4%B9%B1%E7%A0%81/"/>
-    <id>https://mykonakona.github.io/categories/tutorial/2022-11-14%20%E4%BF%AE%E5%A4%8DqBittorrent%E7%9A%84WebUI%E4%B9%B1%E7%A0%81/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/qbittorrent-webui-mojibake/</id>
     <published>2022-11-14T03:36:00.000Z</published>
     <updated>2022-11-14T03:36:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;qBittorrent的WebUI一直有个乱码问题。&lt;/p&gt;</summary>
+    <summary type="html">qBittorrent的WebUI一直有个乱码问题。</summary>
     
     
     
@@ -147,13 +146,13 @@
   
   <entry>
     <title>一次失败的刷剧经历</title>
-    <link href="https://mykonakona.github.io/categories/life/2022-02-10%20%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E5%88%B7%E5%89%A7%E7%BB%8F%E5%8E%86/"/>
-    <id>https://mykonakona.github.io/categories/life/2022-02-10%20%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E5%88%B7%E5%89%A7%E7%BB%8F%E5%8E%86/</id>
+    <link href="https://mykonakona.github.io/categories/life/netflix-in-china/"/>
+    <id>https://mykonakona.github.io/categories/life/netflix-in-china/</id>
     <published>2022-02-10T02:14:00.000Z</published>
     <updated>2022-02-10T02:14:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;国内刷剧太难啦……&lt;/p&gt;</summary>
+    <summary type="html">直到1202年的这个冬天，刷剧还是一件很难的事情。</summary>
     
     
     
@@ -170,13 +169,13 @@
   
   <entry>
     <title>Linux低手碰上的Ubuntu LTS软件源问题</title>
-    <link href="https://mykonakona.github.io/categories/pitfall/2021-03-30%20Linux%E4%BD%8E%E6%89%8B%E7%A2%B0%E4%B8%8A%E7%9A%84Ubuntu%20LTS%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%97%AE%E9%A2%98/"/>
-    <id>https://mykonakona.github.io/categories/pitfall/2021-03-30%20Linux%E4%BD%8E%E6%89%8B%E7%A2%B0%E4%B8%8A%E7%9A%84Ubuntu%20LTS%E8%BD%AF%E4%BB%B6%E6%BA%90%E9%97%AE%E9%A2%98/</id>
+    <link href="https://mykonakona.github.io/categories/pitfall/lts-software-source/"/>
+    <id>https://mykonakona.github.io/categories/pitfall/lts-software-source/</id>
     <published>2021-03-30T02:02:00.000Z</published>
     <updated>2021-03-30T02:02:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;原来Ubuntu LTS和Ubuntu同一条命令安装的版本号可以是不同的，用惯了Windows今天还是第一次发现这个问题。&lt;/p&gt;</summary>
+    <summary type="html">用惯了Windows，今天还是第一次发现这个问题。</summary>
     
     
     
@@ -193,13 +192,13 @@
   
   <entry>
     <title>联想Yoga S740真实使用体验</title>
-    <link href="https://mykonakona.github.io/categories/life/2020-09-04%20%E8%81%94%E6%83%B3Yoga%20S740%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/"/>
-    <id>https://mykonakona.github.io/categories/life/2020-09-04%20%E8%81%94%E6%83%B3Yoga%20S740%E7%9C%9F%E5%AE%9E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/</id>
+    <link href="https://mykonakona.github.io/categories/life/yoga-s740-review/"/>
+    <id>https://mykonakona.github.io/categories/life/yoga-s740-review/</id>
     <published>2020-09-04T14:32:00.000Z</published>
     <updated>2020-09-04T14:32:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;终于打算更换13年购买的Dell Vostro。&lt;/p&gt;</summary>
+    <summary type="html">再见了Dell Vostro……</summary>
     
     
     
@@ -214,13 +213,13 @@
   
   <entry>
     <title>我搭静态博客</title>
-    <link href="https://mykonakona.github.io/categories/experience/2020-05-27%20%E6%88%91%E6%90%AD%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://mykonakona.github.io/categories/experience/2020-05-27%20%E6%88%91%E6%90%AD%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://mykonakona.github.io/categories/experience/my-static-blog/"/>
+    <id>https://mykonakona.github.io/categories/experience/my-static-blog/</id>
     <published>2020-05-27T13:59:00.000Z</published>
     <updated>2020-05-27T13:59:00.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;为什么选择静态博客？&lt;/p&gt;</summary>
+    <summary type="html">选择静态博客的理由是：动态博客真的贵。</summary>
     
     
     
@@ -235,13 +234,13 @@
   
   <entry>
     <title>可批量telent的Powershell小脚本</title>
-    <link href="https://mykonakona.github.io/categories/tutorial/2017-07-07%20%E5%8F%AF%E6%89%B9%E9%87%8Ftelent%E7%9A%84Powershell%E5%B0%8F%E8%84%9A%E6%9C%AC/"/>
-    <id>https://mykonakona.github.io/categories/tutorial/2017-07-07%20%E5%8F%AF%E6%89%B9%E9%87%8Ftelent%E7%9A%84Powershell%E5%B0%8F%E8%84%9A%E6%9C%AC/</id>
+    <link href="https://mykonakona.github.io/categories/tutorial/powershell-telnet-script/"/>
+    <id>https://mykonakona.github.io/categories/tutorial/powershell-telnet-script/</id>
     <published>2017-07-07T07:19:09.000Z</published>
     <updated>2017-07-07T07:19:09.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;最近写了一个Powershell小脚本，主要用于验证网络打通，顺便熟悉Powershell语法。&lt;/p&gt;</summary>
+    <summary type="html">用于验证网络打通，顺便熟悉Powershell语法。</summary>
     
     
     
@@ -258,10 +257,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://mykonakona.github.io/categories/uncategorized/hello-world/"/>
-    <id>https://mykonakona.github.io/categories/uncategorized/hello-world/</id>
+    <link href="https://mykonakona.github.io/categories/uncategorized/undefined/"/>
+    <id>https://mykonakona.github.io/categories/uncategorized/undefined/</id>
     <published>2015-12-31T16:00:00.000Z</published>
-    <updated>2025-06-16T13:39:52.202Z</updated>
+    <updated>2025-06-16T14:48:44.330Z</updated>
     
     
       

@@ -132,63 +132,47 @@
     <div class="card-body w-full mx-auto">
       <article class="prose max-w-5xl pb-4">
         <div class="mb-4 text-3xl font-bold">
-          可批量telent的Powershell小脚本
+          Linux低手碰上的Ubuntu LTS软件源问题
         </div>
         <div class="text-base">
-          2017-07-07
+          2021-03-30
         </div>
         <div class="text-base">
-          <p>最近写了一个Powershell小脚本，主要用于验证网络打通，顺便熟悉Powershell语法。</p>
+          <p>用惯了Windows，今天还是第一次发现这个问题。</p>
 <span id="more"></span>
 
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Win环境下可以通过Powershell便捷地进行一些批量操作，如telnet一系列的对端机器。类似问题可见：</p>
-<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/20583686/automate-telnet-port-testing-on-windows-7-using-batch-script">Automate Telnet Port Testing On Windows 7 Using Batch Script</a></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">#powershell ExecutionPolicy Bypass</span>
-<span class="token comment">#powershell -File ./telnet.ps1</span>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>为了备份VPS上的docker挂载数据到OneDrive，赶忙安装了restic。restic既有加密又有快照恢复，真是太棒啦！</p>
+<p>但执行到<code>restic -r rclone:onedrive:backupfolder init</code>时，突然提示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Fatal: create repository at rclone:onedrive:backupfolder failed: invalid backend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token variable">$iplist</span> = <span class="token function">Get-Content</span> C:\iplist<span class="token punctuation">.</span>txt
-<span class="token variable">$regH</span> = <span class="token string">"\b\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\.\d&#123;1,3&#125;\b"</span>
-<span class="token variable">$regP</span> = <span class="token string">"\s(?&lt;alp>\d&#123;1,5&#125;)"</span>
-<span class="token variable">$remoteHost</span> = <span class="token string">""</span>
-<span class="token variable">$Port</span> = <span class="token string">""</span>
-<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$i</span> in <span class="token variable">$iplist</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regH</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token variable">$remoteHost</span> = <span class="token variable">$Matches</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token comment">#write-host "$remoteHost";</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">-match</span> <span class="token variable">$regP</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
-        <span class="token variable">$Port</span> = <span class="token variable">$Matches</span><span class="token punctuation">.</span>alp<span class="token punctuation">;</span>
-        <span class="token comment">#write-host "$remotePort";</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
-        <span class="token variable">$socket</span> = <span class="token function">new-object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Sockets<span class="token punctuation">.</span>TcpClient<span class="token punctuation">(</span><span class="token variable">$remoteHost</span><span class="token punctuation">,</span> <span class="token variable">$port</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token namespace">[Exception]</span> <span class="token punctuation">&#123;</span>
-        <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Unconnected`n"</span>
-       <span class="token comment">#write-host $_.Exception.GetType().FullName</span>
-       <span class="token comment">#write-host $_.Exception.Message</span>
-        <span class="token keyword">continue</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token function">write-host</span> <span class="token variable">$remoteHost</span><span class="token string">":"</span><span class="token variable">$port</span> <span class="token string">"Connected`n"</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>其中不同于一般正则的地方的是<code>?&lt;alp&gt;</code>的添加，这部分较通俗的解释可见：<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/bluelilyabc/article/details/17119819">PowerShell中正则表达式的运用</a></p>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p>执行该脚本前，将准备好的iplist.txt放到指定路径下（文中指定的路径为C:\iplist.txt），内容大致如下：</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">127.0.0.1 8080
-127.0.0.1 80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>再回到powershell下输入以下命令以获得执行权限。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell ExecutionPolicy Bypass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>获得权限后，输入如下指令执行该脚本文件。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">powershell <span class="token parameter variable">-File</span> ./telnet.ps1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>该脚本主要包括三部分工作：</p>
-<ol>
-<li>读入准备好的iplist.txt文件；</li>
-<li>使用正则逐行取出需要测试的ip及端口号；</li>
-<li>将取出的ip和端口号填入System.Net.Sockets.TcpClient函数中并测试对应的ip及端口。</li>
-</ol>
+<p>一条简单的命令居然也会报错，这崩得也太快了，还没开始就结束？</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>如果这里的backend是invalid的，说明rclone连接有问题。</p>
+<p>但实测命令<code>rclone lsd: onedrive</code>，能够正常显示目录结构。连接是有效的。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>restic论坛里提到过类似问题：<a target="_blank" rel="noopener" href="https://forum.restic.net/t/restic-with-rclone/2373/13">restic-with-rclone</a>。</p>
+<p>简单总结：根据源码分析，出现这个错误的原因是restic版本过时。备份到OneDrive需要使用rclone，但restic在0.9.0版本里才加入rclone支持。</p>
+<p>被安装低版本的原因在于VPS安装的Ubuntu LTS系统，在运行<code>apt-get install resitc</code>后，安装的restic版本号是0.8.3。</p>
+<p>对普通用户而言，单台服务器跑跑小程序、代码，没必要追求生产环境的稳定，反而应当尽量与自己的开发、测试环境保持一致，以便于复现、还原异常与报错。</p>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p>要想对各类发行版一视同仁地安装restic的最新版本，自己编译是比较稳妥的方案：</p>
+<h3 id="安装go环境"><a href="#安装go环境" class="headerlink" title="安装go环境"></a>安装go环境</h3><ul>
+<li><p>根据go主页的<a target="_blank" rel="noopener" href="https://golang.org/doc/install">Download and install</a>安装go环境。</p>
+</li>
+<li><p>下载官方包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://github.com/restic/restic/releases/download/v0.12.0/restic-0.12.0.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>解压后执行<code>make</code>编译。</p>
+</li>
+<li><p>配置定时任务</p>
+<ul>
+<li><p>crontab</p>
+<ul>
+<li>可以先把<code>RESTIC_PASSWORD=&quot;here is your password&quot;</code>加到<del>&#x2F;.bashrc或者</del>&#x2F;etc&#x2F;profile里</li>
+<li>之后<code>crontab -e</code>添加任务配置：</li>
+</ul>
+</li>
+</ul>
+<p><code>0 4 * * * . ~/.bashrc; /home/user/restic-0.12.0/restic       -r rclone:onedrivedb:Backup backup /home/usdata; /      home/user/restic-0.12.0/restic forget -q --prune       --keep-hourly 24 --keep-daily 7</code></p>
+</li>
+</ul>
 
         </div>
       </article>
