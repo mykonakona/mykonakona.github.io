@@ -1,8 +1,7 @@
 ---
 title: 修复qBittorrent的WebUI乱码
 author: mykonakona
-category: 
- - 教程
+category: 教程
 tags: 
  - PT
  - 群晖

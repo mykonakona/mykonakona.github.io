@@ -1,8 +1,7 @@
 ---
-title: Linux低手碰上的Ubuntu LTS软件源问题
+title: Ubuntu LTS软件版本问题
 author: mykonakona
-category: 
- - 踩坑
+category: 踩坑
 tags: 
  - 运维
  - Linux

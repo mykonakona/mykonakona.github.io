@@ -1,8 +1,7 @@
 ---
-title: 可批量telent的Powershell小脚本
+title: 可批量telent的简单Powershell脚本
 author: mykonakona
-category: 
- - 教程
+category: 教程
 tags: 
  - 运维
  - Windows

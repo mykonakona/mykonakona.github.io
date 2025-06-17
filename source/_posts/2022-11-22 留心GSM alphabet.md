@@ -1,8 +1,7 @@
 ---
-title: 留神GSM alphabet
+title: 留心GSM alphabet
 author: mykonakona
-category: 
- - 踩坑
+category: 踩坑
 tags: 
  - 数码
  - miui
