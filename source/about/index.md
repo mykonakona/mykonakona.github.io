@@ -2,8 +2,14 @@
 title: 关于
 ---
 
+订阅请戳：[Atom](https://mykonakona.github.io/atom.xml)
+
 ## 站点日志
 
+- 2025-12-21
+  - 新写了一个主题[simple-daisy](https://github.com/mykonakona/simple-daisy)。
+  - 因为坑得时间太长，以至于[daisyUI](https://daisyui.com/)已经是5.0版本，而本主题还在用4.0。
+  - 到今天为止总算看起来还过得去了，可喜可贺可喜可贺。
 - 2024-04-15
   - 为修复firefox下页面闪烁的严重bug下掉了本地搜索、评论功能，始终无法彻底解决，或许将会是使用minos的最后一个版本。
 - 2023-09-01

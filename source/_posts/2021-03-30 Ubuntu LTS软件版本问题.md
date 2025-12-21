@@ -4,7 +4,6 @@ author: mykonakona
 category: 踩坑
 tags: 
  - 运维
- - Linux
  - Ubuntu
 date: 2021-03-30 10:02:00
 updated: 2021-03-30 10:02:00

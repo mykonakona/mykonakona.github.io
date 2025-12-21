@@ -4,7 +4,6 @@ author: mykonakona
 category: 教程
 tags: 
  - 运维
- - Windows
  - Powershell
 date: 2017-07-07 15:19:09
 updated: 2017-07-07 15:19:09
