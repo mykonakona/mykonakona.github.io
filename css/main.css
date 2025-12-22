@@ -3175,10 +3175,6 @@ body, button, input, select, textarea {
 
 @media (min-width: 1024px) {
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:hidden {
     display: none;
   }
@@ -3190,5 +3186,12 @@ body, button, input, select, textarea {
   .lg\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1536px) {
+
+  .\32xl\:block {
+    display: block;
   }
 }
