@@ -1,10 +1,29 @@
+# OS files
 .DS_Store
 Thumbs.db
-db.json
-*.log
+
+# Dependencies and local caches
 node_modules/
-public/
-.deploy*/
-_multiconfig.yml
-themes/
-.local/
+/.npm/
+/.cache/
+/.local/
+*.log
+
+# Hexo generated files
+/db.json
+/public/
+/.deploy*/
+/_multiconfig.yml
+
+# The theme is maintained in its own repository and cloned by CI.
+/themes/
+
+# Local environment files (keep the example available for version control)
+.env
+.env.*
+!.env.example
+
+# Editor temporary files
+*.swp
+*.swo
+*~
