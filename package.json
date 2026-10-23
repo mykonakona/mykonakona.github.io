@@ -12,7 +12,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
-    "daisyui": "^4.10.1",
+    "daisyui": "5.7.46",
     "hexo": "^7.1.1",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -24,13 +24,12 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
-    "postcss-import": "^16.1.0",
     "postcss-load-config": "^5.0.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.12",
-    "autoprefixer": "^10.4.19",
+    "@tailwindcss/postcss": "4.3.3",
+    "@tailwindcss/typography": "0.5.20",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "4.3.3"
   }
 }

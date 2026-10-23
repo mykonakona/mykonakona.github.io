@@ -74,10 +74,10 @@ index_generator:
 default_category: uncategorized 
 category_map:
   教程: tutorial
-  分享: experience
-  踩坑: pitfall
+  分享: sharing
+  踩坑: gotcha
   生活: life
-  笔记: memo
+  笔记: note
 tag_map:
 
 # Metadata elements
