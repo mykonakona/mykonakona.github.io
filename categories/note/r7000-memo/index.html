@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html data-theme="" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R7000使用备忘 - mykonakona&#39;s weblog</title>
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+<link rel="canonical" href="https://mykonakona.github.io/categories/note/r7000-memo/">
+<meta name="description" content="现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R7000使用备忘 - mykonakona&#39;s weblog">
+<meta property="og:url" content="https://mykonakona.github.io/categories/note/r7000-memo/">
+<meta property="og:site_name" content="mykonakona&#39;s weblog">
+<meta property="og:description" content="现在还在用这台机器的人已经不多了，记录一下一些日常的维护与配置以备查阅。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-29T02:28:00.000Z">
+<meta property="article:modified_time" content="2023-01-29T02:28:00.000Z">
+<meta property="article:author" content="mykonakona">
+<meta property="article:tag" content="数码">
+<meta property="article:tag" content="路由器">
+<meta name="twitter:card" content="summary">
+<script>
+  try {
+    var savedTheme = localStorage.getItem('simple-daisy-theme');
+    var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+    document.documentElement.dataset.theme =
+      savedTheme === 'corporate' || savedTheme === 'black' ? savedTheme : preferredTheme;
+  } catch (error) {
+    console.warn('Unable to restore the saved color theme.', error);
+    document.documentElement.dataset.theme =
+      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+  }
+</script>
+
+<link rel="stylesheet" href="/css/main.css">
+ 
+<link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
+</head>
+<body>
+    <header class="site-header sticky top-0 z-40 bg-base-200 lg:hidden">
+  <nav class="navbar gap-3 px-4" aria-label="手机导航">
+    <a class="btn btn-ghost btn-square size-11 shrink-0" href="/about/" aria-label="关于 mykonakona">
+      <img class="rounded-full" src="/images/icons/icon-152x152.png" alt="" width="36" height="36" />
+    </a>
+    <a class="min-w-0 flex-1 truncate text-center text-lg font-medium" href="/">mykonakona</a>
+    <details class="mobile-menu dropdown dropdown-end group shrink-0">
+      <summary class="btn btn-ghost btn-square size-11 text-2xl" aria-label="打开导航菜单">
+        <span class="lucide-icon group-open:hidden" style="--lucide-mask: url('/images/lucide/menu.svg')" aria-hidden="true"></span>
+        <span class="lucide-icon hidden group-open:inline-block" style="--lucide-mask: url('/images/lucide/x.svg')" aria-hidden="true"></span>
+      </summary>
+      <div class="mobile-menu-panel dropdown-content mt-2 w-56 max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain bg-base-200 rounded-box p-2 shadow-lg">
+        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+        <div class="flex justify-center pt-3">
+          <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+        </div>
+      </div>
+    </details>
+  </nav>
+</header>
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+            <div class="flex min-h-dvh w-80 flex-col gap-2 bg-base-300 px-8 pt-8 pb-6 text-base-content xl:pt-16">
+                <div class="mx-auto">
+                    <div class="avatar pb-1">
+                      <div class="w-36 rounded-full">
+                        <img alt="mykonakona 的头像" src="/images/icons/icon-284x284.png" width="144" height="144" />
+                      </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-xl font-normal mx-auto">
+                        mykonakona
+                    </div>
+                    <div class="text-base font-light mx-auto">
+                        Just Another Weblog
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-2" aria-label="个人链接">
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://github.com/mykonakona"
+                          aria-label="GitHub"
+                          title="GitHub"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/github.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://x.com/mykonakona"
+                          aria-label="Twitter"
+                          title="Twitter"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/twitter.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
+                          aria-label="Bilibili"
+                          title="Bilibili"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/clapperboard.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          href="/atom.xml"
+                          aria-label="RSS"
+                          title="RSS"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/rss.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                    </div>
+                    
+                    <nav class="mt-2" aria-label="主导航">
+                        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+                    </nav>
+                </div>
+                <div class="mt-auto flex justify-center pt-6">
+                    <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="drawer-content bg-base-200 flex flex-col">          
+        <!-- Page content here -->
+        <!-- Page Content-->
+        <main class="flex-1 min-h-[85vh] w-full px-0 py-0 md:px-4 md:py-4">
+            
+
+
+<div class="mx-auto px-4 py-3 sm:p-4 2xl:grid 2xl:max-w-[max(80rem,calc(10vw+68rem))] 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-8">
+  <div class="card mx-auto w-full min-w-0 bg-base-100 max-w-[max(64rem,calc(10vw+52rem))]">
+    <div class="card-body w-full min-w-0 mx-auto px-8 py-5 sm:p-8">
+      <article class="prose min-w-0 max-w-none pb-4 text-base prose-h2:mt-0 prose-h2:mb-2 md:text-lg">
+        <h1 class="mt-0 mb-4 text-2xl font-bold leading-snug wrap-anywhere sm:text-3xl">R7000使用备忘</h1>
+
+        <div class="not-prose mb-5 text-sm text-base-content/65 flex flex-wrap items-center gap-x-4 gap-y-2 wrap-anywhere">
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/user-round.svg')" aria-hidden="true"></span>
+            <span>作者：mykonakona</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
+            <time datetime="2023-01-29T10:28:00+08:00">2023-01-29<span class="hidden sm:inline"> 10:28</span></time>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/clock-3.svg')" aria-hidden="true"></span>
+            <span>约 2 分钟阅读</span>
+          </div>
+        </div>
+
+        <div class="post-content min-w-0 wrap-anywhere text-base md:text-lg">
+          <p>家里的R7000已经服役了6年。</p>
+<span id="more"></span>
+
+<p>当时费很大劲刷好的梅林，固件号也伴随koolshare的各种骚操作停在了380.70_0-X7.9版本。现在还在用这台机器的人恐怕已经不多了，记录一下一些日常的维护与配置以备查阅。</p>
+<h2 id="硬重置"><a href="#硬重置" class="headerlink" title="硬重置"></a>硬重置</h2><p>最简单的方法是：</p>
+<ul>
+<li>在开机状态下使用卡针按住路由器后方的reset按钮30秒左右后松开。</li>
+</ul>
+<p>为避免变砖可能还需要<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8267551-1-1.html" title="网件R7000捅菊花变砖">断电30秒后再插电30秒</a>。然而实际操作时没严格遵循该步骤，无事发生。</p>
+<h2 id="设置连接名称密码"><a href="#设置连接名称密码" class="headerlink" title="设置连接名称密码"></a>设置连接名称密码</h2><p>重置后，路由器连接名称会变会Netgear。后续会使用smart connect，因此进入向导页面后只需要临时设置一下管理员名称和密码（建议只需使用默认密码00000000即可）。</p>
+<p>向导完成后，连接wifi并访问：</p>
+<p><a target="_blank" rel="noopener" href="http://router.asus.com/Main_Login.asp">http://router.asus.com/Main_Login.asp</a></p>
+<p>登入后，可以先进入外部网络选项卡，打开smart connect开关。</p>
+<p>此时使用的wifi名称在保存应用后将不再区分2.4g和5g，而是根据smart connect rule进行切换，这部分的设置可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/370147768" title="华硕路由器Smart Connect原理解析与硬核设置指南">华硕路由器Smart Connect原理解析与硬核设置指南</a>。</p>
+<p>对于联系过运营商做过桥接改造的用户来说，还需要在外部网络选项卡将拨号选为PPPOE，并在PPP处填入运营商提供的用户、密码。</p>
+<h2 id="解除软件中心限制"><a href="#解除软件中心限制" class="headerlink" title="解除软件中心限制"></a>解除软件中心限制</h2><p>可以正常访问网络后，先根据路由器提示打开jffs权限选项，再打开路由器的ssh功能，执行命令<a target="_blank" rel="noopener" href="https://hq450.github.io/fancyss/" title="fancyss - 科学上网">解除软件中心的安装限制</a>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/\tdetect_package/\t# detect_package/g'</span> /koolshare/scripts/ks_tar_install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>或使用<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv9729050" title="Koolshare 软件中心离线安装限制 解除">其他方式</a>（如安装<a target="_blank" rel="noopener" href="https://t.me/s/SukkaChannel?q=fuckkoolshare.tar.gz" title="解除 Koolshare 酷软中心 的离线安装限制的插件">fuckkoolshare.tar.gz</a>)。</p>
+<h2 id="安装clash"><a href="#安装clash" class="headerlink" title="安装clash"></a>安装clash</h2><p>还在使用ss的用户，可以尝试寻找旧版本ss并安装。</p>
+<p>clash用户安装merlin clash即可，它使用能够兼容xray的clash-meta内核。需要将规则配置文件修改为能够通过校验的格式并上传。</p>
+<h2 id="端口转发"><a href="#端口转发" class="headerlink" title="端口转发"></a>端口转发</h2><p>PT端口转发可参考<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1624139" title="华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录">华硕Merlin梅林路由Synology群晖不能外网访问的踩坑记录</a>。</p>
+<h2 id="配置导出"><a href="#配置导出" class="headerlink" title="配置导出"></a>配置导出</h2><p>最后为避免重复劳动，建议做一次配置及jffs的导出并备份。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>2.4G和5G指示灯不再闪烁可能是误触引起的（有次杂物压到面板按钮时出现了这个情况），这时可以先长按面板右数第二个键，数秒可以恢复。</p>
+
+        </div>
+      </article>
+
+      
+        
+
+<div class="giscus" data-giscus
+    data-repo="mykonakona/mykonakona.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOB_QtM84CUfUd"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    >
+</div>
+
+
+      
+    </div>
+  </div>
+
+  
+  <aside class="hidden min-w-0 2xl:sticky 2xl:top-24 2xl:block">
+    <div class="max-h-[calc(100vh-7rem)] overflow-auto pr-1">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-sm font-semibold opacity-80">目录</span>
+        <div class="divider m-0 flex-1"></div>
+      </div>
+
+      <nav class="post-toc-nav" aria-label="文章目录">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E7%A1%AC%E9%87%8D%E7%BD%AE"><span class="toc-text">硬重置</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%AE%BE%E7%BD%AE%E8%BF%9E%E6%8E%A5%E5%90%8D%E7%A7%B0%E5%AF%86%E7%A0%81"><span class="toc-text">设置连接名称密码</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%A7%A3%E9%99%A4%E8%BD%AF%E4%BB%B6%E4%B8%AD%E5%BF%83%E9%99%90%E5%88%B6"><span class="toc-text">解除软件中心限制</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%AE%89%E8%A3%85clash"><span class="toc-text">安装clash</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-text">端口转发</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E9%85%8D%E7%BD%AE%E5%AF%BC%E5%87%BA"><span class="toc-text">配置导出</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol>
+      </nav>
+
+    </div>
+  </aside>
+  
+</div>
+
+
+             
+        </main>
+        <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
+  <aside class="grid-flow-col items-center">
+    <img class="items-center" width="24" height="24" src="/images/site-logo.svg" alt="" aria-hidden="true"/>
+    <p>
+      Copyright © 2016 - All right reserved
+      <br />
+      Powered by daisyUI
+    </p>
+  </aside>
+</footer>
+
+        <!-- Page Content结束-->
+        </div>        
+    </div>
+    <script src="/js/theme-controls.js"></script>
+</body>
+</html>

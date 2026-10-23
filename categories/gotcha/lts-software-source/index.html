@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html data-theme="" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ubuntu LTS软件版本问题 - mykonakona&#39;s weblog</title>
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+<link rel="canonical" href="https://mykonakona.github.io/categories/gotcha/lts-software-source/">
+<meta name="description" content="用惯了Windows，今天还是第一次发现这个问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu LTS软件版本问题 - mykonakona&#39;s weblog">
+<meta property="og:url" content="https://mykonakona.github.io/categories/gotcha/lts-software-source/">
+<meta property="og:site_name" content="mykonakona&#39;s weblog">
+<meta property="og:description" content="用惯了Windows，今天还是第一次发现这个问题。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-30T02:02:00.000Z">
+<meta property="article:modified_time" content="2021-03-30T02:02:00.000Z">
+<meta property="article:author" content="mykonakona">
+<meta property="article:tag" content="运维">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+<script>
+  try {
+    var savedTheme = localStorage.getItem('simple-daisy-theme');
+    var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+    document.documentElement.dataset.theme =
+      savedTheme === 'corporate' || savedTheme === 'black' ? savedTheme : preferredTheme;
+  } catch (error) {
+    console.warn('Unable to restore the saved color theme.', error);
+    document.documentElement.dataset.theme =
+      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+  }
+</script>
+
+<link rel="stylesheet" href="/css/main.css">
+ 
+<link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
+</head>
+<body>
+    <header class="site-header sticky top-0 z-40 bg-base-200 lg:hidden">
+  <nav class="navbar gap-3 px-4" aria-label="手机导航">
+    <a class="btn btn-ghost btn-square size-11 shrink-0" href="/about/" aria-label="关于 mykonakona">
+      <img class="rounded-full" src="/images/icons/icon-152x152.png" alt="" width="36" height="36" />
+    </a>
+    <a class="min-w-0 flex-1 truncate text-center text-lg font-medium" href="/">mykonakona</a>
+    <details class="mobile-menu dropdown dropdown-end group shrink-0">
+      <summary class="btn btn-ghost btn-square size-11 text-2xl" aria-label="打开导航菜单">
+        <span class="lucide-icon group-open:hidden" style="--lucide-mask: url('/images/lucide/menu.svg')" aria-hidden="true"></span>
+        <span class="lucide-icon hidden group-open:inline-block" style="--lucide-mask: url('/images/lucide/x.svg')" aria-hidden="true"></span>
+      </summary>
+      <div class="mobile-menu-panel dropdown-content mt-2 w-56 max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain bg-base-200 rounded-box p-2 shadow-lg">
+        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+        <div class="flex justify-center pt-3">
+          <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+        </div>
+      </div>
+    </details>
+  </nav>
+</header>
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+            <div class="flex min-h-dvh w-80 flex-col gap-2 bg-base-300 px-8 pt-8 pb-6 text-base-content xl:pt-16">
+                <div class="mx-auto">
+                    <div class="avatar pb-1">
+                      <div class="w-36 rounded-full">
+                        <img alt="mykonakona 的头像" src="/images/icons/icon-284x284.png" width="144" height="144" />
+                      </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-xl font-normal mx-auto">
+                        mykonakona
+                    </div>
+                    <div class="text-base font-light mx-auto">
+                        Just Another Weblog
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-2" aria-label="个人链接">
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://github.com/mykonakona"
+                          aria-label="GitHub"
+                          title="GitHub"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/github.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://x.com/mykonakona"
+                          aria-label="Twitter"
+                          title="Twitter"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/twitter.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
+                          aria-label="Bilibili"
+                          title="Bilibili"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/clapperboard.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          href="/atom.xml"
+                          aria-label="RSS"
+                          title="RSS"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/rss.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                    </div>
+                    
+                    <nav class="mt-2" aria-label="主导航">
+                        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+                    </nav>
+                </div>
+                <div class="mt-auto flex justify-center pt-6">
+                    <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="drawer-content bg-base-200 flex flex-col">          
+        <!-- Page content here -->
+        <!-- Page Content-->
+        <main class="flex-1 min-h-[85vh] w-full px-0 py-0 md:px-4 md:py-4">
+            
+
+
+<div class="mx-auto px-4 py-3 sm:p-4 2xl:grid 2xl:max-w-[max(80rem,calc(10vw+68rem))] 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-8">
+  <div class="card mx-auto w-full min-w-0 bg-base-100 max-w-[max(64rem,calc(10vw+52rem))]">
+    <div class="card-body w-full min-w-0 mx-auto px-8 py-5 sm:p-8">
+      <article class="prose min-w-0 max-w-none pb-4 text-base prose-h2:mt-0 prose-h2:mb-2 md:text-lg">
+        <h1 class="mt-0 mb-4 text-2xl font-bold leading-snug wrap-anywhere sm:text-3xl">Ubuntu LTS软件版本问题</h1>
+
+        <div class="not-prose mb-5 text-sm text-base-content/65 flex flex-wrap items-center gap-x-4 gap-y-2 wrap-anywhere">
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/user-round.svg')" aria-hidden="true"></span>
+            <span>作者：mykonakona</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
+            <time datetime="2021-03-30T10:02:00+08:00">2021-03-30<span class="hidden sm:inline"> 10:02</span></time>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/clock-3.svg')" aria-hidden="true"></span>
+            <span>约 2 分钟阅读</span>
+          </div>
+        </div>
+
+        <div class="post-content min-w-0 wrap-anywhere text-base md:text-lg">
+          <p>用惯了Windows，今天还是第一次发现这个问题。</p>
+<span id="more"></span>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>为了备份VPS上的docker挂载数据到OneDrive，赶忙安装了restic。restic既有加密又有快照恢复，真是太棒啦！</p>
+<p>但执行到<code>restic -r rclone:onedrive:backupfolder init</code>时，突然提示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Fatal: create repository at rclone:onedrive:backupfolder failed: invalid backend<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>一条简单的命令居然也会报错，这崩得也太快了，还没开始就结束？</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>如果这里的backend是invalid的，说明rclone连接有问题。</p>
+<p>但实测命令<code>rclone lsd: onedrive</code>，能够正常显示目录结构。连接是有效的。</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>restic论坛里提到过类似问题：<a target="_blank" rel="noopener" href="https://forum.restic.net/t/restic-with-rclone/2373/13">restic-with-rclone</a>。</p>
+<p>简单总结：根据源码分析，出现这个错误的原因是restic版本过时。备份到OneDrive需要使用rclone，但restic在0.9.0版本里才加入rclone支持。</p>
+<p>被安装低版本的原因在于VPS安装的Ubuntu LTS系统，在运行<code>apt-get install resitc</code>后，安装的restic版本号是0.8.3。</p>
+<p>对普通用户而言，单台服务器跑跑小程序、代码，没必要追求生产环境的稳定，反而应当尽量与自己的开发、测试环境保持一致，以便于复现、还原异常与报错。</p>
+<h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p>要想对各类发行版一视同仁地安装restic的最新版本，自己编译是比较稳妥的方案：</p>
+<h3 id="安装go环境"><a href="#安装go环境" class="headerlink" title="安装go环境"></a>安装go环境</h3><ul>
+<li><p>根据go主页的<a target="_blank" rel="noopener" href="https://golang.org/doc/install">Download and install</a>安装go环境。</p>
+</li>
+<li><p>下载官方包：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://github.com/restic/restic/releases/download/v0.12.0/restic-0.12.0.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>解压后执行<code>make</code>编译。</p>
+</li>
+<li><p>配置定时任务</p>
+<ul>
+<li><p>crontab</p>
+<ul>
+<li>可以先把<code>RESTIC_PASSWORD=&quot;here is your password&quot;</code>加到<del>&#x2F;.bashrc或者</del>&#x2F;etc&#x2F;profile里</li>
+<li>之后<code>crontab -e</code>添加任务配置：</li>
+</ul>
+</li>
+</ul>
+<p><code>0 4 * * * . ~/.bashrc; /home/user/restic-0.12.0/restic       -r rclone:onedrivedb:Backup backup /home/usdata; /      home/user/restic-0.12.0/restic forget -q --prune       --keep-hourly 24 --keep-daily 7</code></p>
+</li>
+</ul>
+
+        </div>
+      </article>
+
+      
+        
+
+<div class="giscus" data-giscus
+    data-repo="mykonakona/mykonakona.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOB_QtM84CUfUd"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    >
+</div>
+
+
+      
+    </div>
+  </div>
+
+  
+  <aside class="hidden min-w-0 2xl:sticky 2xl:top-24 2xl:block">
+    <div class="max-h-[calc(100vh-7rem)] overflow-auto pr-1">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-sm font-semibold opacity-80">目录</span>
+        <div class="divider m-0 flex-1"></div>
+      </div>
+
+      <nav class="post-toc-nav" aria-label="文章目录">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%8E%9F%E5%9B%A0"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E4%BF%AE%E5%A4%8D"><span class="toc-text">修复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%AE%89%E8%A3%85go%E7%8E%AF%E5%A2%83"><span class="toc-text">安装go环境</span></a></li></ol></li></ol>
+      </nav>
+
+    </div>
+  </aside>
+  
+</div>
+
+
+             
+        </main>
+        <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
+  <aside class="grid-flow-col items-center">
+    <img class="items-center" width="24" height="24" src="/images/site-logo.svg" alt="" aria-hidden="true"/>
+    <p>
+      Copyright © 2016 - All right reserved
+      <br />
+      Powered by daisyUI
+    </p>
+  </aside>
+</footer>
+
+        <!-- Page Content结束-->
+        </div>        
+    </div>
+    <script src="/js/theme-controls.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html data-theme="" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>留心GSM alphabet - mykonakona&#39;s weblog</title>
+<link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+<link rel="canonical" href="https://mykonakona.github.io/categories/gotcha/gsm-alphabet-pitfall/">
+<meta name="description" content="邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="留心GSM alphabet - mykonakona&#39;s weblog">
+<meta property="og:url" content="https://mykonakona.github.io/categories/gotcha/gsm-alphabet-pitfall/">
+<meta property="og:site_name" content="mykonakona&#39;s weblog">
+<meta property="og:description" content="邮箱的IMAP验证通不过？看看手机里有没有个叫GSM alphabet的选项。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mykonakona.github.io/images/2022-11-22-alert.PNG">
+<meta property="og:image" content="https://mykonakona.github.io/images/2022-11-22-message.PNG">
+<meta property="og:image" content="https://mykonakona.github.io/images/2022-11-22-detail.PNG">
+<meta property="og:image" content="https://mykonakona.github.io/images/2022-11-22-GSM-alphabet.jpg">
+<meta property="article:published_time" content="2022-11-22T09:08:00.000Z">
+<meta property="article:modified_time" content="2022-11-22T09:08:00.000Z">
+<meta property="article:author" content="mykonakona">
+<meta property="article:tag" content="数码">
+<meta property="article:tag" content="miui">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mykonakona.github.io/images/2022-11-22-alert.PNG">
+<script>
+  try {
+    var savedTheme = localStorage.getItem('simple-daisy-theme');
+    var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+    document.documentElement.dataset.theme =
+      savedTheme === 'corporate' || savedTheme === 'black' ? savedTheme : preferredTheme;
+  } catch (error) {
+    console.warn('Unable to restore the saved color theme.', error);
+    document.documentElement.dataset.theme =
+      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
+  }
+</script>
+
+<link rel="stylesheet" href="/css/main.css">
+ 
+<link rel="preload" href="https://webfonts-seven.vercel.app/noto-sans-sc-v36-chinese-simplified_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-okaidia.min.css"/>
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
+</head>
+<body>
+    <header class="site-header sticky top-0 z-40 bg-base-200 lg:hidden">
+  <nav class="navbar gap-3 px-4" aria-label="手机导航">
+    <a class="btn btn-ghost btn-square size-11 shrink-0" href="/about/" aria-label="关于 mykonakona">
+      <img class="rounded-full" src="/images/icons/icon-152x152.png" alt="" width="36" height="36" />
+    </a>
+    <a class="min-w-0 flex-1 truncate text-center text-lg font-medium" href="/">mykonakona</a>
+    <details class="mobile-menu dropdown dropdown-end group shrink-0">
+      <summary class="btn btn-ghost btn-square size-11 text-2xl" aria-label="打开导航菜单">
+        <span class="lucide-icon group-open:hidden" style="--lucide-mask: url('/images/lucide/menu.svg')" aria-hidden="true"></span>
+        <span class="lucide-icon hidden group-open:inline-block" style="--lucide-mask: url('/images/lucide/x.svg')" aria-hidden="true"></span>
+      </summary>
+      <div class="mobile-menu-panel dropdown-content mt-2 w-56 max-w-[calc(100vw-2rem)] overflow-y-auto overscroll-contain bg-base-200 rounded-box p-2 shadow-lg">
+        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+        <div class="flex justify-center pt-3">
+          <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+        </div>
+      </div>
+    </details>
+  </nav>
+</header>
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-side">
+            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+            <div class="flex min-h-dvh w-80 flex-col gap-2 bg-base-300 px-8 pt-8 pb-6 text-base-content xl:pt-16">
+                <div class="mx-auto">
+                    <div class="avatar pb-1">
+                      <div class="w-36 rounded-full">
+                        <img alt="mykonakona 的头像" src="/images/icons/icon-284x284.png" width="144" height="144" />
+                      </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-xl font-normal mx-auto">
+                        mykonakona
+                    </div>
+                    <div class="text-base font-light mx-auto">
+                        Just Another Weblog
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-center gap-2" aria-label="个人链接">
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://github.com/mykonakona"
+                          aria-label="GitHub"
+                          title="GitHub"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/github.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://x.com/mykonakona"
+                          aria-label="Twitter"
+                          title="Twitter"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/twitter.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
+                          aria-label="Bilibili"
+                          title="Bilibili"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/clapperboard.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                        <a
+                          class="btn btn-ghost btn-circle"
+                          href="/atom.xml"
+                          aria-label="RSS"
+                          title="RSS"
+                        >
+                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/rss.svg')" aria-hidden="true"></span>
+                        </a>
+                        
+                    </div>
+                    
+                    <nav class="mt-2" aria-label="主导航">
+                        <ul class="menu menu-lg w-full gap-1.5 p-0">
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+  </li>
+  
+  <li>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+  </li>
+  
+</ul>
+
+                    </nav>
+                </div>
+                <div class="mt-auto flex justify-center pt-6">
+                    <div class="join" role="group" aria-label="外观模式">
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+    </button>
+    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
+      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+    </button>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="drawer-content bg-base-200 flex flex-col">          
+        <!-- Page content here -->
+        <!-- Page Content-->
+        <main class="flex-1 min-h-[85vh] w-full px-0 py-0 md:px-4 md:py-4">
+            
+
+
+<div class="mx-auto px-4 py-3 sm:p-4 2xl:grid 2xl:max-w-[max(80rem,calc(10vw+68rem))] 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-8">
+  <div class="card mx-auto w-full min-w-0 bg-base-100 max-w-[max(64rem,calc(10vw+52rem))]">
+    <div class="card-body w-full min-w-0 mx-auto px-8 py-5 sm:p-8">
+      <article class="prose min-w-0 max-w-none pb-4 text-base prose-h2:mt-0 prose-h2:mb-2 md:text-lg">
+        <h1 class="mt-0 mb-4 text-2xl font-bold leading-snug wrap-anywhere sm:text-3xl">留心GSM alphabet</h1>
+
+        <div class="not-prose mb-5 text-sm text-base-content/65 flex flex-wrap items-center gap-x-4 gap-y-2 wrap-anywhere">
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/user-round.svg')" aria-hidden="true"></span>
+            <span>作者：mykonakona</span>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
+            <time datetime="2022-11-22T17:08:00+08:00">2022-11-22<span class="hidden sm:inline"> 17:08</span></time>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/clock-3.svg')" aria-hidden="true"></span>
+            <span>约 3 分钟阅读</span>
+          </div>
+        </div>
+
+        <div class="post-content min-w-0 wrap-anywhere text-base md:text-lg">
+          <p>这东西并不危险，但可能会影响邮箱验证。</p>
+<span id="more"></span>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>手机上使用Outlook接管QQ邮箱或者163邮箱，需要开启邮箱的IMAP。</p>
+<p>国内这些邮箱的IMAP开启，需要以类似二次验证的方式，在页面填写短信收到的授权码进行校验。</p>
+<p>163邮箱在这个环节可以正常发送、验证，但QQ邮箱通过密保手机发送短信时就会弹出如下提示：</p>
+<p><img src="/images/2022-11-22-alert.PNG" alt="“您发送的短信内容有误”"></p>
+<p>核对了多遍，也没有发现内容哪里有误</p>
+<p><img src="/images/2022-11-22-message.PNG" alt="实发短信内容无误"></p>
+<h2 id="疑惑"><a href="#疑惑" class="headerlink" title="疑惑"></a>疑惑</h2><p>通过QQ邮箱的<a target="_blank" rel="noopener" href="https://open.mail.qq.com/feedback/feedbackhome#/">反馈建议</a>提交了一个工单上去，QQ对这个问题的答复是：</p>
+<blockquote>
+<p>你好，出现这种情况一般有可能：用户手机终端本身没有把这个短信成功发送出来，请检查自己的手机状态是否正常，建议： 1、致电运营商客服电话，询问是否被禁止了端口短信功能&#x2F;增值业务 网关（也叫做SP开关）； 2、发送短信到备用接收号码重试； 3、发送短信时去掉+86重试发送； 4、确认是否有发送扣费记录，若扣费成功，请提供【扣费记录截图】、【发送短信手机号（密保手机号）】、【发送短信时间】给我们，若没有扣费成功，请联系运营商，感谢配合！</p>
+</blockquote>
+<ul>
+<li>第一点，肯定不可能，因为我的手机刚刚还在163邮箱那边成功打开了，应该不存在这个问题；</li>
+<li>第二点，实际测试了一下，也可以正常发送接收；</li>
+<li>第三点，看手机的短信页面，是不带86的；</li>
+<li>第四点，短信查询余额，确实有扣费。</li>
+</ul>
+<p>这时变得有点像在做一道选择题，所有选项看起来都是对的。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>最大的可能还是出在+86这里，于是去电信查询详单，号码确实有问题：</p>
+<p><img src="/images/2022-11-22-detail.PNG" alt="+86"></p>
+<p>但手机上是没有显示+86的，那一定是哪里自行进行了添加。在仔细观察后我注意到了手机上的这个配置：</p>
+<p><img src="/images/2022-11-22-GSM-alphabet.jpg" alt="GSM-alphabet"></p>
+<p>关掉这一选项并重新发送短信，验证正常通过。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>或许在miui.eu上使用<a target="_blank" rel="noopener" href="https://melroselabs.com/docs/reference/sms/gsm-alphabet/">GSM alphabet</a>这个选项的话，会对号码编码后再做短信的发送，所以虽然发短信时手输的号码不带+86，但查询的结果显示是加上+86的。</p>
+<p>解决了这个小问题后又有点失落：如果腾讯像网易那样好好测试一下，是不是这个时间可以干别的去了。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>中途突然想到，有没可能通过安装<a target="_blank" rel="noopener" href="https://www.foxmail.com/">Foxmail</a>客户端来开启IMAP，得到了一个很奇怪的结果：</p>
+<ul>
+<li>安装完成后进入默认的登录选项，会要求手动配置IMAP，这时输入框是无法填写的灰色。</li>
+</ul>
+<p>这很好理解：因为邮箱设置里IMAP也是没有开启的状态，不给登录也很正常。</p>
+<p>但如果用QQ扫码登录，无需配置便可以正常通过Foxmail客户端使用邮箱。此时通过网页端查看，邮箱的IMAP设置依然是关闭的（但不知什么原因exchange设置好像给打开了）。</p>
+
+        </div>
+      </article>
+
+      
+        
+
+<div class="giscus" data-giscus
+    data-repo="mykonakona/mykonakona.github.io"
+    data-repo-id="MDEwOlJlcG9zaXRvcnkxMzM0NDI4Njc="
+    data-category="Announcements"
+    data-category-id="DIC_kwDOB_QtM84CUfUd"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    >
+</div>
+
+
+      
+    </div>
+  </div>
+
+  
+  <aside class="hidden min-w-0 2xl:sticky 2xl:top-24 2xl:block">
+    <div class="max-h-[calc(100vh-7rem)] overflow-auto pr-1">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-sm font-semibold opacity-80">目录</span>
+        <div class="divider m-0 flex-1"></div>
+      </div>
+
+      <nav class="post-toc-nav" aria-label="文章目录">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E7%96%91%E6%83%91"><span class="toc-text">疑惑</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol>
+      </nav>
+
+    </div>
+  </aside>
+  
+</div>
+
+
+             
+        </main>
+        <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
+  <aside class="grid-flow-col items-center">
+    <img class="items-center" width="24" height="24" src="/images/site-logo.svg" alt="" aria-hidden="true"/>
+    <p>
+      Copyright © 2016 - All right reserved
+      <br />
+      Powered by daisyUI
+    </p>
+  </aside>
+</footer>
+
+        <!-- Page Content结束-->
+        </div>        
+    </div>
+    <script src="/js/theme-controls.js"></script>
+</body>
+</html>
