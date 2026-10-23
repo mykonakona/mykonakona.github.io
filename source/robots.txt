@@ -1,13 +1,14 @@
 User-agent: *
+
+# Public content and rendering assets remain crawlable.
+# /categories/ also contains article URLs; do not block the whole directory.
 Allow: /
-Allow: /home/
-Allow: /about/
-Allow: /archives/
+
+# Tag listings repeat links already available through categories and archives.
 Disallow: /tags/
-Disallow: /js/
-Disallow: /css/
-Disallow: /fonts/
-Disallow: /vendors/
-Disallow: /fancybox/
+
+# Legacy theme documentation and the default Hexo example post.
+Disallow: /gallery/
+Disallow: /categories/uncategorized/undefined/
 
 Sitemap: https://mykonakona.github.io/sitemap.xml

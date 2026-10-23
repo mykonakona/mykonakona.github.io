@@ -30,6 +30,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'googleceee8729d9b76e32.html'
+  - 'manifest.json'
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -113,6 +115,11 @@ theme: simple-daisy
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+sitemap:
+  path: sitemap.xml
+  tags: false
+  categories: true
 
 feed:
   enable: true

@@ -2,6 +2,7 @@
 title: 相册使用说明
 layout: "blueimpgallery"
 comments: false
+sitemap: false
 ---
 
 本主题相册页支持blueimpGallery，需在ejs文件内手动引入相关资源。
