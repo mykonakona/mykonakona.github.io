@@ -2791,14 +2791,12 @@
     .lg\:hidden {
       display: none;
     }
+    .lg\:pt-16 {
+      padding-top: calc(var(--spacing) * 16);
+    }
     .lg\:text-3xl {
       font-size: var(--text-3xl);
       line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-  }
-  @media (width >= 80rem) {
-    .xl\:pt-16 {
-      padding-top: calc(var(--spacing) * 16);
     }
   }
   @media (width >= 96rem) {
@@ -2858,6 +2856,15 @@
 }
 .mobile-menu-panel {
   max-height: calc(100dvh - 6rem - env(safe-area-inset-top));
+}
+@media (max-height: 44rem) {
+  .site-sidebar {
+    gap: 0.25rem;
+    padding-bottom: 1rem;
+  }
+  .site-sidebar-appearance {
+    padding-top: 0.25rem;
+  }
 }
 .post-toc-nav ol {
   list-style: none;
