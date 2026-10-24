@@ -2791,6 +2791,12 @@
     .lg\:hidden {
       display: none;
     }
+    .lg\:w-80 {
+      width: calc(var(--spacing) * 80);
+    }
+    .lg\:w-full {
+      width: 100%;
+    }
     .lg\:pt-16 {
       padding-top: calc(var(--spacing) * 16);
     }
@@ -2856,6 +2862,12 @@
 }
 .mobile-menu-panel {
   max-height: calc(100dvh - 6rem - env(safe-area-inset-top));
+}
+.drawer-side {
+  scrollbar-width: none;
+}
+.drawer-side::-webkit-scrollbar {
+  display: none;
 }
 @media (max-height: 44rem) {
   .site-sidebar {
