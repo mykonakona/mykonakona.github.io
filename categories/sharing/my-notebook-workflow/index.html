@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="" lang="zh-CN">
+<html class="[scrollbar-gutter:stable]" data-theme="" lang="zh-CN">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,23 @@
 <meta property="article:tag" content="Obsidian">
 <meta name="twitter:card" content="summary">
 <script>
-  try {
-    var savedTheme = localStorage.getItem('simple-daisy-theme');
-    var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
-    document.documentElement.dataset.theme =
-      savedTheme === 'corporate' || savedTheme === 'black' ? savedTheme : preferredTheme;
-  } catch (error) {
-    console.warn('Unable to restore the saved color theme.', error);
-    document.documentElement.dataset.theme =
-      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
-  }
+  (() => {
+    const appearance = window.simpleDaisyAppearance = {"light":"corporate","dark":"black"};
+    const preferredMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    let savedMode;
+    try {
+      savedMode = localStorage.getItem('simple-daisy-theme');
+    } catch (error) {
+      console.warn('Unable to restore the saved color theme.', error);
+    }
+    // Migrate previously saved theme names to a light/dark preference.
+    if (savedMode !== 'light' && savedMode !== 'dark') {
+      if (savedMode === appearance.light) savedMode = 'light';
+      else if (savedMode === appearance.dark) savedMode = 'dark';
+    }
+    const mode = savedMode === 'light' || savedMode === 'dark' ? savedMode : preferredMode;
+    document.documentElement.dataset.theme = appearance[mode];
+  })();
 </script>
 
 <link rel="stylesheet" href="/css/main.css">
@@ -40,7 +47,7 @@
 
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
-<body>
+<body class="site-layout bg-base-200 text-base-content">
     <header class="site-header sticky top-0 z-40 bg-base-200 lg:hidden">
   <nav class="navbar gap-3 px-4" aria-label="手机导航">
     <a class="btn btn-ghost btn-square size-11 shrink-0" href="/about/" aria-label="关于 mykonakona">
@@ -56,35 +63,35 @@
         <ul class="menu menu-lg w-full gap-1.5 p-0">
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/">Home</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/about/">About</a>
   </li>
   
 </ul>
 
         <div class="flex justify-center pt-3">
           <div class="join" role="group" aria-label="外观模式">
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
-    </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="light" aria-label="浅色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="dark" aria-label="深色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+  </button>
 </div>
 
         </div>
@@ -93,30 +100,27 @@
   </nav>
 </header>
 
-    <div class="drawer bg-base-300 lg:drawer-open">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-side lg:w-80">
-            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-            <div class="site-sidebar flex min-h-dvh w-80 flex-col gap-2 bg-base-300 px-8 pt-8 pb-6 text-base-content lg:w-full lg:pt-16">
-                <div class="mx-auto">
+    <div class="mx-auto min-h-[calc(100svh-4rem)] w-full max-w-[89rem] lg:grid lg:min-h-screen lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <aside class="hidden min-w-0 bg-base-300 lg:block" aria-label="作者与导航">
+            <div class="flex flex-col gap-2 px-8 pt-16 pb-6 lg:sticky lg:top-0 lg:max-h-dvh">
+              <div class="flex min-h-0 flex-col gap-2 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div class="mx-auto shrink-0">
                     <div class="avatar pb-1">
                       <div class="w-36 rounded-full">
                         <img alt="mykonakona 的头像" src="/images/icons/icon-284x284.png" width="144" height="144" />
                       </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-1">
-                    <div class="text-xl font-normal mx-auto">
-                        mykonakona
-                    </div>
-                    <div class="text-base font-light mx-auto">
-                        Just Another Weblog
-                    </div>
+                <div class="flex min-w-0 shrink-0 flex-col gap-1">
+                    <a class="text-center text-xl font-normal wrap-anywhere" href="/">mykonakona</a>
                     
-                    <div class="flex flex-wrap justify-center gap-2" aria-label="个人链接">
+                    <p class="text-center text-base font-light leading-normal text-base-content/70 wrap-anywhere">Just Another Weblog</p>
+                    
+                    
+                    <div class="mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto overscroll-x-contain [scrollbar-width:thin]" aria-label="个人链接">
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://github.com/mykonakona"
                           aria-label="GitHub"
                           title="GitHub"
@@ -125,7 +129,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://x.com/mykonakona"
                           aria-label="Twitter"
                           title="Twitter"
@@ -134,7 +138,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
                           aria-label="Bilibili"
                           title="Bilibili"
@@ -143,7 +147,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           href="/atom.xml"
                           aria-label="RSS"
                           title="RSS"
@@ -157,54 +161,53 @@
                         <ul class="menu menu-lg w-full gap-1.5 p-0">
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/">Home</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/">Home</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/categories/" aria-current="page">Categories</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/about/">About</a>
   </li>
   
 </ul>
 
                     </nav>
                 </div>
-                <div class="site-sidebar-appearance mt-auto flex justify-center pt-6">
+              </div>
+                <div class="flex shrink-0 justify-center pt-3">
                     <div class="join" role="group" aria-label="外观模式">
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
-    </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="light" aria-label="浅色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="dark" aria-label="深色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+  </button>
 </div>
 
                 </div>
             </div>
-        </div>
-        <div class="drawer-content bg-base-200 flex flex-col">          
-        <!-- Page content here -->
-        <!-- Page Content-->
-        <main class="flex-1 min-h-[85vh] w-full px-0 py-0 md:px-4 md:py-4">
-            
+        </aside>
+        <div class="mx-auto flex min-h-[calc(100svh-4rem)] w-full min-w-0 flex-col lg:min-h-screen lg:max-w-[69rem]">
+            <main class="min-w-0 w-full flex-1 px-4 py-5 sm:p-6 lg:p-8">
+                <div class="mx-auto w-full min-w-0 max-w-[52rem] lg:max-w-none">
+                    
 
-
-<div class="mx-auto px-4 py-3 sm:p-4 2xl:grid 2xl:max-w-[max(80rem,calc(10vw+68rem))] 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-8">
-  <div class="card mx-auto w-full min-w-0 bg-base-100 max-w-[max(64rem,calc(10vw+52rem))]">
-    <div class="card-body w-full min-w-0 mx-auto px-8 py-5 sm:p-8">
-      <article class="prose min-w-0 max-w-none pb-4 text-base prose-h2:mt-0 prose-h2:mb-2 md:text-lg">
-        <h1 class="mt-0 mb-4 text-2xl font-bold leading-snug wrap-anywhere sm:text-3xl">我的笔记工作流</h1>
+<div class="w-full min-w-0 2xl:grid 2xl:grid-cols-[minmax(0,1fr)_16rem] 2xl:items-start 2xl:gap-8">
+  <div class="card mx-auto w-full min-w-0 bg-base-100">
+    <div class="card-body w-full min-w-0 mx-auto p-8">
+      <article class="prose min-w-0 max-w-none pb-4 text-base prose-h2:mt-0 prose-h2:mb-2">
+        <h1 class="mt-0 mb-4 text-xl font-semibold leading-normal wrap-anywhere">我的笔记工作流</h1>
 
         <div class="not-prose mb-5 text-sm text-base-content/65 flex flex-wrap items-center gap-x-4 gap-y-2 wrap-anywhere">
           <div class="flex items-center gap-2">
@@ -223,7 +226,7 @@
           </div>
         </div>
 
-        <div class="post-content min-w-0 wrap-anywhere text-base md:text-lg">
+        <div class="post-content min-w-0 wrap-anywhere text-base">
           <p>玩笔记软件算是赶时髦。</p>
 <span id="more"></span>
 
@@ -326,28 +329,26 @@ origin_url: null</span>
       
     </div>
   </div>
-
   
-  <aside class="hidden min-w-0 2xl:sticky 2xl:top-24 2xl:block">
-    <div class="max-h-[calc(100vh-7rem)] overflow-auto pr-1">
-      <div class="flex items-center gap-2 mb-3">
+  <aside class="post-toc hidden min-w-0 2xl:sticky 2xl:top-24 2xl:block">
+    <div class="max-h-[calc(100dvh-7rem)] overflow-auto pr-1">
+      <div class="mb-3 flex items-center gap-2">
         <span class="text-sm font-semibold opacity-80">目录</span>
         <div class="divider m-0 flex-1"></div>
       </div>
-
       <nav class="post-toc-nav" aria-label="文章目录">
         <ol class="toc"><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E6%A0%B8%E5%BF%83%E9%93%BE%E6%9D%A1"><span class="toc-text">核心链条</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E7%94%A8%E5%93%AA%E6%AC%BE%E7%AC%94%E8%AE%B0%E8%BD%AF%E4%BB%B6%EF%BC%9F"><span class="toc-text">用哪款笔记软件？</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E7%A8%8D%E5%90%8E%E8%AF%BB%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-text">稍后读怎么用？</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%B7%A7%E7%94%A8Front-Matter"><span class="toc-text">巧用Front Matter</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E9%9A%8F%E6%89%8B%E8%AE%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">随手记的问题</span></a></li><li class="toc-item toc-level-2"><a class="btn btn-ghost h-auto min-h-11 w-full justify-start whitespace-normal p-2 text-left text-sm font-normal wrap-anywhere" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol>
       </nav>
-
     </div>
   </aside>
   
 </div>
 
 
-             
-        </main>
-        <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
+
+                </div>
+            </main>
+            <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
   <aside class="grid-flow-col items-center">
     <img class="items-center" width="24" height="24" src="/images/site-logo.svg" alt="" aria-hidden="true"/>
     <p>
@@ -358,8 +359,7 @@ origin_url: null</span>
   </aside>
 </footer>
 
-        <!-- Page Content结束-->
-        </div>        
+        </div>
     </div>
     <script src="/js/theme-controls.js"></script>
 </body>

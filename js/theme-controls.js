@@ -1,20 +1,24 @@
 (() => {
   const root = document.documentElement;
+  const appearance = window.simpleDaisyAppearance;
   const themeToggles = document.querySelectorAll('[data-theme-choice]');
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
   const storageKey = 'simple-daisy-theme';
-  const isTheme = (theme) => theme === 'corporate' || theme === 'black';
+  const isMode = (mode) => mode === 'light' || mode === 'dark';
+  const normalizeMode = (value) => isMode(value) ? value
+    : value === appearance.light ? 'light' : value === appearance.dark ? 'dark' : null;
+  const preferredMode = () => systemTheme.matches ? 'dark' : 'light';
   const commentHosts = document.querySelectorAll('[data-giscus]');
   const observedFrames = new WeakSet();
-  let savedTheme;
+  let savedMode;
 
   try {
-    savedTheme = localStorage.getItem(storageKey);
+    savedMode = normalizeMode(localStorage.getItem(storageKey));
   } catch (error) {
     console.warn('Unable to read the saved color theme.', error);
   }
 
-  const commentTheme = () => root.dataset.theme === 'black' ? 'dark' : 'light';
+  const commentTheme = () => getComputedStyle(root).colorScheme === 'dark' ? 'dark' : 'light';
 
   const syncComments = () => {
     commentHosts.forEach((host) => {
@@ -31,10 +35,10 @@
     });
   };
 
-  const applyTheme = (theme) => {
-    root.dataset.theme = theme;
+  const applyMode = (mode) => {
+    root.dataset.theme = appearance[mode];
     themeToggles.forEach((button) => {
-      const selected = button.dataset.themeChoice === theme;
+      const selected = button.dataset.themeChoice === mode;
       button.setAttribute('aria-pressed', String(selected));
       button.classList.toggle('btn-active', selected);
     });
@@ -43,28 +47,28 @@
 
   themeToggles.forEach((button) => {
     button.addEventListener('click', () => {
-      const nextTheme = button.dataset.themeChoice;
-      if (!isTheme(nextTheme)) return;
-      savedTheme = nextTheme;
-      applyTheme(nextTheme);
+      const nextMode = button.dataset.themeChoice;
+      if (!isMode(nextMode)) return;
+      savedMode = nextMode;
+      applyMode(nextMode);
 
       try {
-        localStorage.setItem(storageKey, nextTheme);
+        localStorage.setItem(storageKey, nextMode);
       } catch (error) {
         console.warn('Unable to save the selected color theme.', error);
       }
     });
   });
 
-  applyTheme(isTheme(savedTheme) ? savedTheme : systemTheme.matches ? 'black' : 'corporate');
+  applyMode(savedMode || preferredMode());
 
   systemTheme.addEventListener('change', (event) => {
-    if (!isTheme(savedTheme)) applyTheme(event.matches ? 'black' : 'corporate');
+    if (!savedMode) applyMode(event.matches ? 'dark' : 'light');
   });
   window.addEventListener('storage', (event) => {
     if (event.key !== storageKey && event.key !== null) return;
-    savedTheme = event.newValue;
-    applyTheme(isTheme(savedTheme) ? savedTheme : systemTheme.matches ? 'black' : 'corporate');
+    savedMode = normalizeMode(event.newValue);
+    applyMode(savedMode || preferredMode());
   });
 
   commentHosts.forEach((host) => {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="" lang="zh-CN">
+<html class="[scrollbar-gutter:stable]" data-theme="" lang="zh-CN">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +17,23 @@
 <meta property="article:author" content="mykonakona">
 <meta name="twitter:card" content="summary">
 <script>
-  try {
-    var savedTheme = localStorage.getItem('simple-daisy-theme');
-    var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
-    document.documentElement.dataset.theme =
-      savedTheme === 'corporate' || savedTheme === 'black' ? savedTheme : preferredTheme;
-  } catch (error) {
-    console.warn('Unable to restore the saved color theme.', error);
-    document.documentElement.dataset.theme =
-      window.matchMedia('(prefers-color-scheme: dark)').matches ? 'black' : 'corporate';
-  }
+  (() => {
+    const appearance = window.simpleDaisyAppearance = {"light":"corporate","dark":"black"};
+    const preferredMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    let savedMode;
+    try {
+      savedMode = localStorage.getItem('simple-daisy-theme');
+    } catch (error) {
+      console.warn('Unable to restore the saved color theme.', error);
+    }
+    // Migrate previously saved theme names to a light/dark preference.
+    if (savedMode !== 'light' && savedMode !== 'dark') {
+      if (savedMode === appearance.light) savedMode = 'light';
+      else if (savedMode === appearance.dark) savedMode = 'dark';
+    }
+    const mode = savedMode === 'light' || savedMode === 'dark' ? savedMode : preferredMode;
+    document.documentElement.dataset.theme = appearance[mode];
+  })();
 </script>
 
 <link rel="stylesheet" href="/css/main.css">
@@ -36,7 +43,7 @@
 
 <meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="mykonakona's weblog" type="application/atom+xml">
 </head>
-<body>
+<body class="site-layout bg-base-200 text-base-content">
     <header class="site-header sticky top-0 z-40 bg-base-200 lg:hidden">
   <nav class="navbar gap-3 px-4" aria-label="手机导航">
     <a class="btn btn-ghost btn-square size-11 shrink-0" href="/about/" aria-label="关于 mykonakona">
@@ -52,35 +59,35 @@
         <ul class="menu menu-lg w-full gap-1.5 p-0">
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/" aria-current="page">Home</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/" aria-current="page">Home</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/">Categories</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/categories/">Categories</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/about/">About</a>
   </li>
   
 </ul>
 
         <div class="flex justify-center pt-3">
           <div class="join" role="group" aria-label="外观模式">
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
-    </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="light" aria-label="浅色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="dark" aria-label="深色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+  </button>
 </div>
 
         </div>
@@ -89,30 +96,27 @@
   </nav>
 </header>
 
-    <div class="drawer bg-base-300 lg:drawer-open">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-side lg:w-80">
-            <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-            <div class="site-sidebar flex min-h-dvh w-80 flex-col gap-2 bg-base-300 px-8 pt-8 pb-6 text-base-content lg:w-full lg:pt-16">
-                <div class="mx-auto">
+    <div class="mx-auto min-h-[calc(100svh-4rem)] w-full max-w-[89rem] lg:grid lg:min-h-screen lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <aside class="hidden min-w-0 bg-base-300 lg:block" aria-label="作者与导航">
+            <div class="flex flex-col gap-2 px-8 pt-16 pb-6 lg:sticky lg:top-0 lg:max-h-dvh">
+              <div class="flex min-h-0 flex-col gap-2 overflow-y-auto overscroll-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div class="mx-auto shrink-0">
                     <div class="avatar pb-1">
                       <div class="w-36 rounded-full">
                         <img alt="mykonakona 的头像" src="/images/icons/icon-284x284.png" width="144" height="144" />
                       </div>
                     </div>
                 </div>
-                <div class="flex flex-col gap-1">
-                    <div class="text-xl font-normal mx-auto">
-                        mykonakona
-                    </div>
-                    <div class="text-base font-light mx-auto">
-                        Just Another Weblog
-                    </div>
+                <div class="flex min-w-0 shrink-0 flex-col gap-1">
+                    <a class="text-center text-xl font-normal wrap-anywhere" href="/">mykonakona</a>
                     
-                    <div class="flex flex-wrap justify-center gap-2" aria-label="个人链接">
+                    <p class="text-center text-base font-light leading-normal text-base-content/70 wrap-anywhere">Just Another Weblog</p>
+                    
+                    
+                    <div class="mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto overscroll-x-contain [scrollbar-width:thin]" aria-label="个人链接">
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://github.com/mykonakona"
                           aria-label="GitHub"
                           title="GitHub"
@@ -121,7 +125,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://x.com/mykonakona"
                           aria-label="Twitter"
                           title="Twitter"
@@ -130,7 +134,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
                           aria-label="Bilibili"
                           title="Bilibili"
@@ -139,7 +143,7 @@
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle"
+                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
                           href="/atom.xml"
                           aria-label="RSS"
                           title="RSS"
@@ -153,267 +157,268 @@
                         <ul class="menu menu-lg w-full gap-1.5 p-0">
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/" aria-current="page">Home</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/" aria-current="page">Home</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/archives/">Archives</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/categories/">Categories</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/categories/">Categories</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/tags/">Tags</a>
   </li>
   
   <li>
-    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-base-content/10 aria-[current=page]:text-base-content aria-[current=page]:shadow-none" href="/about/">About</a>
+    <a class="min-h-11 whitespace-normal wrap-anywhere aria-[current=page]:bg-primary aria-[current=page]:text-primary-content aria-[current=page]:shadow-none" href="/about/">About</a>
   </li>
   
 </ul>
 
                     </nav>
                 </div>
-                <div class="site-sidebar-appearance mt-auto flex justify-center pt-6">
+              </div>
+                <div class="flex shrink-0 justify-center pt-3">
                     <div class="join" role="group" aria-label="外观模式">
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="corporate" aria-label="浅色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
-    </button>
-    <button type="button" class="join-item btn btn-ghost size-11 p-0 text-lg" data-theme-choice="black" aria-label="深色模式" aria-pressed="false">
-      <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
-    </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="light" aria-label="浅色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/sun.svg')" aria-hidden="true"></span>
+  </button>
+  <button type="button" class="join-item btn btn-ghost size-11 min-h-11 shrink-0 p-0 text-xl" data-theme-choice="dark" aria-label="深色模式" aria-pressed="false">
+    <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/moon.svg')" aria-hidden="true"></span>
+  </button>
 </div>
 
                 </div>
             </div>
-        </div>
-        <div class="drawer-content bg-base-200 flex flex-col">          
-        <!-- Page content here -->
-        <!-- Page Content-->
-        <main class="flex-1 min-h-[85vh] w-full px-0 py-0 md:px-4 md:py-4">
-            <div class="not-prose grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 m-3 sm:m-4">
-	
+        </aside>
+        <div class="mx-auto flex min-h-[calc(100svh-4rem)] w-full min-w-0 flex-col lg:min-h-screen lg:max-w-[69rem]">
+            <main class="min-w-0 w-full flex-1 px-4 py-5 sm:p-6 lg:p-8">
+                <div class="mx-auto w-full min-w-0 max-w-[52rem] lg:max-w-none">
+                    <div class="@container w-full min-w-0">
+	<div class="not-prose grid grid-cols-1 gap-4 sm:gap-6 @[36rem]:grid-cols-2">
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/sharing/portopia-cn-localization/" itemprop="url">港口镇连续杀人事件汉化历程</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>最近心血来潮，把FC上《港口镇连续杀人事件》的汉化做完了。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2026-10-23T11:03:18+08:00">
         2026-10-23
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Localization/" rel="tag">Localization</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Portopia/" rel="tag">Portopia</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/ChatGPT/" rel="tag">ChatGPT</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Localization/" rel="tag">Localization</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Portopia/" rel="tag">Portopia</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/tutorial/elegant-hexo-permalink/" itemprop="url">Hexo链接的SEO优化</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>什么是好的永久链接？如何在Hexo内实践？</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2023-09-10T21:20:14+08:00">
         2023-09-10
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Hexo/" rel="tag">Hexo</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/SEO/" rel="tag">SEO</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Hexo/" rel="tag">Hexo</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/SEO/" rel="tag">SEO</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/tutorial/add-pwa-manually/" itemprop="url">Hexo手动添加PWA</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>不要再装那些Hexo的PWA插件了。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2023-09-01T14:12:35+08:00">
         2023-09-01
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Hexo/" rel="tag">Hexo</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/PWA/" rel="tag">PWA</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Hexo/" rel="tag">Hexo</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/PWA/" rel="tag">PWA</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/sharing/my-notebook-workflow/" itemprop="url">我的笔记工作流</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>玩笔记软件算是赶时髦。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2023-08-27T21:31:18+08:00">
         2023-08-27
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Obsidian/" rel="tag">Obsidian</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Obsidian/" rel="tag">Obsidian</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/note/r7000-memo/" itemprop="url">R7000使用备忘</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>家里的R7000已经服役了6年。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2023-01-29T10:28:00+08:00">
         2023-01-29
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E6%95%B0%E7%A0%81/" rel="tag">数码</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E6%95%B0%E7%A0%81/" rel="tag">数码</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag">路由器</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/gotcha/gsm-alphabet-pitfall/" itemprop="url">留心GSM alphabet</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>这东西并不危险，但可能会影响邮箱验证。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2022-11-22T17:08:00+08:00">
         2022-11-22
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/miui/" rel="tag">miui</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E6%95%B0%E7%A0%81/" rel="tag">数码</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/miui/" rel="tag">miui</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E6%95%B0%E7%A0%81/" rel="tag">数码</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/tutorial/qbittorrent-webui-mojibake/" itemprop="url">修复qBittorrent的WebUI乱码</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>qBittorrent的WebUI一直有个乱码问题。</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2022-11-14T11:36:00+08:00">
         2022-11-14
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/PT/" rel="tag">PT</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/PT/" rel="tag">PT</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E7%BE%A4%E6%99%96/" rel="tag">群晖</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
-	
 		
-<div class="card min-w-0 bg-base-100 transition-shadow duration-200 md:shadow-xl md:hover:shadow-2xl">
-  <div class="card-body min-w-0 p-5 sm:p-8 md:min-h-60">
-    <h2 class="card-title mb-2 wrap-anywhere">
+			
+<article class="card w-full min-w-0 border border-base-content/5 bg-base-100 shadow-sm motion-safe:transition-[translate,box-shadow] motion-safe:duration-200 lg:max-w-[33rem] lg:justify-self-start lg:hover:shadow-xl lg:motion-safe:hover:-translate-y-1">
+  <div class="card-body min-w-0 gap-3 p-5 sm:p-6 lg:min-h-60 lg:p-8">
+    <h2 class="card-title text-xl leading-normal wrap-anywhere">
       <a href="/categories/life/netflix-in-china/" itemprop="url">一次失败的刷剧经历</a>
     </h2>
     
-    <div class="post-excerpt min-h-10 mb-2 wrap-anywhere">
+    <div class="post-excerpt line-clamp-3 text-base leading-relaxed text-base-content/80 wrap-anywhere">
       <p>国内刷剧太难啦……</p>
     </div>
     
-    <div class="card-actions items-center justify-between gap-3 mt-auto">
-      <div class="flex items-center gap-1 text-sm text-base-content/65">
+    <div class="mt-auto flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pt-3 text-sm">
+      <div class="flex shrink-0 items-center gap-1 text-base-content/65">
         <span class="lucide-icon" style="--lucide-mask: url('/images/lucide/calendar-days.svg')" aria-hidden="true"></span>
-        <span>
+        <time datetime="2022-02-10T10:14:00+08:00">
         2022-02-10
-        </span>
+        </time>
       </div>
-      <div class="flex flex-1 flex-wrap justify-end gap-2">
-        <a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/Netflix/" rel="tag">Netflix</a><a class="badge badge-secondary h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere" href="/tags/%E6%B5%81%E5%AA%92%E4%BD%93/" rel="tag">流媒体</a>
+      <div class="ml-auto flex min-w-0 max-w-full flex-wrap justify-end gap-2">
+        <a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/Netflix/" rel="tag">Netflix</a><a class="badge badge-soft badge-secondary text-sm text-base-content h-auto min-h-6 max-w-full whitespace-normal wrap-anywhere before:size-1.5 before:translate-y-px before:shrink-0 before:rounded-full before:bg-secondary" href="/tags/%E6%B5%81%E5%AA%92%E4%BD%93/" rel="tag">流媒体</a>
       </div>
     </div>
   </div>
-</div>
+</article>
 
 
+		
+	</div>
 	
-</div>
-
-	
+		
     <nav class="mx-4 my-6" aria-label="分页">
         <div class="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 sm:hidden">
             
@@ -432,10 +437,12 @@
     </nav>
 
 
+	
+</div>
 
-             
-        </main>
-        <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
+                </div>
+            </main>
+            <footer class="flex-none footer sm:footer-horizontal bg-base-200 text-base-content border-t border-base-300 px-4 sm:px-10 py-4 min-h-12">
   <aside class="grid-flow-col items-center">
     <img class="items-center" width="24" height="24" src="/images/site-logo.svg" alt="" aria-hidden="true"/>
     <p>
@@ -446,8 +453,7 @@
   </aside>
 </footer>
 
-        <!-- Page Content结束-->
-        </div>        
+        </div>
     </div>
     <script src="/js/theme-controls.js"></script>
 </body>
