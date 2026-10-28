@@ -116,39 +116,39 @@
                     <div class="mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto overscroll-x-contain [scrollbar-width:thin]" aria-label="个人链接">
                         
                         <a
-                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
+                          class="group btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0 hover:text-primary focus-visible:text-primary"
                           target="_blank" rel="noopener" href="https://github.com/mykonakona"
                           aria-label="GitHub"
                           title="GitHub"
                         >
-                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/github.svg')" aria-hidden="true"></span>
+                            <span class="lucide-icon text-2xl motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:-translate-y-0.5 motion-safe:group-focus-visible:scale-110" style="--lucide-mask: url('/images/lucide/github.svg')" aria-hidden="true"></span>
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
+                          class="group btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0 hover:text-primary focus-visible:text-primary"
                           target="_blank" rel="noopener" href="https://x.com/mykonakona"
                           aria-label="Twitter"
                           title="Twitter"
                         >
-                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/twitter.svg')" aria-hidden="true"></span>
+                            <span class="lucide-icon text-2xl motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:-translate-y-0.5 motion-safe:group-focus-visible:scale-110" style="--lucide-mask: url('/images/lucide/twitter.svg')" aria-hidden="true"></span>
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
+                          class="group btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0 hover:text-primary focus-visible:text-primary"
                           target="_blank" rel="noopener" href="https://space.bilibili.com/128824"
                           aria-label="Bilibili"
                           title="Bilibili"
                         >
-                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/clapperboard.svg')" aria-hidden="true"></span>
+                            <span class="lucide-icon text-2xl motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:-translate-y-0.5 motion-safe:group-focus-visible:scale-110" style="--lucide-mask: url('/images/lucide/clapperboard.svg')" aria-hidden="true"></span>
                         </a>
                         
                         <a
-                          class="btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0"
+                          class="group btn btn-ghost btn-circle size-9 min-h-9 shrink-0 p-0 hover:text-primary focus-visible:text-primary"
                           href="/atom.xml"
                           aria-label="RSS"
                           title="RSS"
                         >
-                            <span class="lucide-icon text-2xl" style="--lucide-mask: url('/images/lucide/rss.svg')" aria-hidden="true"></span>
+                            <span class="lucide-icon text-2xl motion-safe:transition-transform motion-safe:duration-200 motion-safe:ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:scale-110 motion-safe:group-focus-visible:-translate-y-0.5 motion-safe:group-focus-visible:scale-110" style="--lucide-mask: url('/images/lucide/rss.svg')" aria-hidden="true"></span>
                         </a>
                         
                     </div>
@@ -197,18 +197,57 @@
         <div class="mx-auto flex min-h-[calc(100svh-4rem)] w-full min-w-0 flex-col lg:min-h-screen lg:max-w-[69rem]">
             <main class="min-w-0 w-full flex-1 px-4 py-5 sm:p-6 lg:p-8">
                 <div class="mx-auto w-full min-w-0 max-w-[52rem] lg:max-w-none">
-                    <div class="flex min-w-0 flex-wrap items-start gap-2">
-    
-    <a class="btn h-auto min-h-10 max-w-full whitespace-normal wrap-anywhere" href="/categories/sharing/">分享</a>
-    
-    <a class="btn h-auto min-h-10 max-w-full whitespace-normal wrap-anywhere" href="/categories/tutorial/">教程</a>
-    
-    <a class="btn h-auto min-h-10 max-w-full whitespace-normal wrap-anywhere" href="/categories/life/">生活</a>
-    
-    <a class="btn h-auto min-h-10 max-w-full whitespace-normal wrap-anywhere" href="/categories/note/">笔记</a>
-    
-    <a class="btn h-auto min-h-10 max-w-full whitespace-normal wrap-anywhere" href="/categories/gotcha/">踩坑</a>
-    
+                    <div class="w-full min-w-0">
+  <section class="card min-w-0 border border-base-content/5 bg-base-100 shadow-sm" aria-label="文章分类">
+    <div class="card-body min-w-0 p-5 sm:p-6">
+      
+      <ul class="menu w-full min-w-0 p-0 text-base">
+        
+<li class="min-w-0">
+  <a class="min-h-11 min-w-0 py-3" href="/categories/sharing/">
+    <span class="min-w-0 flex-1 whitespace-normal wrap-anywhere">分享</span>
+    <span class="badge badge-ghost badge-sm shrink-0 tabular-nums" aria-label="3 篇文章">3</span>
+  </a>
+  
+</li>
+
+<li class="min-w-0">
+  <a class="min-h-11 min-w-0 py-3" href="/categories/tutorial/">
+    <span class="min-w-0 flex-1 whitespace-normal wrap-anywhere">教程</span>
+    <span class="badge badge-ghost badge-sm shrink-0 tabular-nums" aria-label="4 篇文章">4</span>
+  </a>
+  
+</li>
+
+<li class="min-w-0">
+  <a class="min-h-11 min-w-0 py-3" href="/categories/life/">
+    <span class="min-w-0 flex-1 whitespace-normal wrap-anywhere">生活</span>
+    <span class="badge badge-ghost badge-sm shrink-0 tabular-nums" aria-label="2 篇文章">2</span>
+  </a>
+  
+</li>
+
+<li class="min-w-0">
+  <a class="min-h-11 min-w-0 py-3" href="/categories/note/">
+    <span class="min-w-0 flex-1 whitespace-normal wrap-anywhere">笔记</span>
+    <span class="badge badge-ghost badge-sm shrink-0 tabular-nums" aria-label="1 篇文章">1</span>
+  </a>
+  
+</li>
+
+<li class="min-w-0">
+  <a class="min-h-11 min-w-0 py-3" href="/categories/gotcha/">
+    <span class="min-w-0 flex-1 whitespace-normal wrap-anywhere">踩坑</span>
+    <span class="badge badge-ghost badge-sm shrink-0 tabular-nums" aria-label="2 篇文章">2</span>
+  </a>
+  
+</li>
+
+
+      </ul>
+      
+    </div>
+  </section>
 </div>
 
 
