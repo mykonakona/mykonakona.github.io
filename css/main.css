@@ -2035,21 +2035,6 @@
       height: var(--size);
       padding-inline: calc(var(--size) / 2 - var(--border));
     }
-    .footer {
-      display: grid;
-      width: 100%;
-      grid-auto-flow: row;
-      place-items: start;
-      column-gap: calc(0.25rem * 4);
-      row-gap: calc(0.25rem * 10);
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-    }
-    .footer > :not(script, style, template) {
-      display: grid;
-      place-items: start;
-      gap: calc(0.25rem * 2);
-    }
     .card-title {
       display: flex;
       align-items: center;
@@ -2186,9 +2171,6 @@
   .min-h-11 {
     min-height: calc(var(--spacing) * 11);
   }
-  .min-h-12 {
-    min-height: calc(var(--spacing) * 12);
-  }
   .min-h-\[calc\(100svh-4rem\)\] {
     min-height: calc(100svh - 4rem);
   }
@@ -2264,9 +2246,6 @@
   .\[scrollbar-gutter\:stable\] {
     scrollbar-gutter: stable;
   }
-  .grid-flow-col {
-    grid-auto-flow: column;
-  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -2284,6 +2263,9 @@
   }
   .items-center {
     align-items: center;
+  }
+  .items-end {
+    align-items: flex-end;
   }
   .items-start {
     align-items: flex-start;
@@ -2572,6 +2554,12 @@
       color: color-mix(in oklab, var(--color-base-content) 55%, transparent);
     }
   }
+  .text-base-content\/60 {
+    color: var(--color-base-content);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-base-content) 60%, transparent);
+    }
+  }
   .text-base-content\/65 {
     color: var(--color-base-content);
     @supports (color: color-mix(in lab, red, red)) {
@@ -2744,14 +2732,6 @@
     .sm\:inline {
       display: inline;
     }
-    @layer daisyui.l1.l2 {
-      .sm\:footer-horizontal {
-        grid-auto-flow: column;
-      }
-      .sm\:footer-horizontal.footer-center {
-        grid-auto-flow: row dense;
-      }
-    }
     .sm\:gap-5 {
       gap: calc(var(--spacing) * 5);
     }
@@ -2766,8 +2746,8 @@
     .sm\:p-6 {
       padding: calc(var(--spacing) * 6);
     }
-    .sm\:px-10 {
-      padding-inline: calc(var(--spacing) * 10);
+    .sm\:px-6 {
+      padding-inline: calc(var(--spacing) * 6);
     }
   }
   @media (width >= 64rem) {
@@ -2812,6 +2792,9 @@
     }
     .lg\:p-8 {
       padding: calc(var(--spacing) * 8);
+    }
+    .lg\:px-8 {
+      padding-inline: calc(var(--spacing) * 8);
     }
     @media (hover: hover) {
       .lg\:hover\:shadow-xl:hover {
